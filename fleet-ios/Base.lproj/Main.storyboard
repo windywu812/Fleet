@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Fleet Controller-->
+        <!--Activity-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FleetController" customModule="fleet_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,34 +18,44 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="226-8t-wtL">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZi-gG-D9R">
-                                <rect key="frame" x="37" y="178" width="340" height="110"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZi-gG-D9R" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                <rect key="frame" x="37" y="170" width="340" height="118"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LyE-x0-nzf">
-                                        <rect key="frame" x="25" y="24.5" width="201" height="61.5"/>
+                                        <rect key="frame" x="20" y="10" width="220" height="98"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello John" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo2-JU-cKP">
-                                                <rect key="frame" x="0.0" y="0.0" width="201" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Hello John!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo2-JU-cKP">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="32.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Day Streak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tim-pQ-KG2">
-                                                <rect key="frame" x="0.0" y="20.5" width="201" height="41"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="21 Day Streak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tim-pQ-KG2">
+                                                <rect key="frame" x="0.0" y="32.5" width="220" height="46.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="34"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Goal 1000 Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWh-lP-ZSo">
+                                                <rect key="frame" x="0.0" y="79" width="220" height="19"/>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LyE-x0-nzf" firstAttribute="leading" secondItem="dZi-gG-D9R" secondAttribute="leading" constant="25" id="SFH-mr-VGh"/>
-                                    <constraint firstAttribute="width" constant="340" id="oa3-4N-8wj"/>
-                                    <constraint firstItem="LyE-x0-nzf" firstAttribute="centerY" secondItem="dZi-gG-D9R" secondAttribute="centerY" id="qGl-gt-67F"/>
-                                    <constraint firstAttribute="height" constant="110" id="uqG-DA-HiP"/>
+                                    <constraint firstItem="LyE-x0-nzf" firstAttribute="centerY" secondItem="dZi-gG-D9R" secondAttribute="centerY" id="FJn-eN-GvE"/>
+                                    <constraint firstItem="LyE-x0-nzf" firstAttribute="leading" secondItem="dZi-gG-D9R" secondAttribute="leading" constant="20" id="VJs-Iv-cCY"/>
+                                    <constraint firstItem="LyE-x0-nzf" firstAttribute="top" secondItem="dZi-gG-D9R" secondAttribute="top" constant="10" id="ZR1-6f-yCE"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHS-9b-OCc">
                                 <rect key="frame" x="157" y="687.5" width="100" height="99"/>
@@ -59,19 +69,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dZi-gG-D9R" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="38" id="AGM-mE-8DA"/>
+                            <constraint firstItem="dZi-gG-D9R" firstAttribute="centerX" secondItem="226-8t-wtL" secondAttribute="centerX" id="9He-9G-FYl"/>
+                            <constraint firstItem="dZi-gG-D9R" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="30" id="AGM-mE-8DA"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="226-8t-wtL" secondAttribute="trailing" id="DBs-QR-dhO"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="SHS-9b-OCc" secondAttribute="bottom" constant="26" id="K7O-BE-o9M"/>
                             <constraint firstItem="226-8t-wtL" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="Kha-1Y-AFd"/>
                             <constraint firstItem="226-8t-wtL" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="OJb-48-cpj"/>
-                            <constraint firstItem="dZi-gG-D9R" firstAttribute="centerX" secondItem="226-8t-wtL" secondAttribute="centerX" id="Tcv-6n-zku"/>
+                            <constraint firstAttribute="bottom" secondItem="dZi-gG-D9R" secondAttribute="bottom" constant="608" id="PkM-JT-AKu"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="226-8t-wtL" secondAttribute="bottom" id="pTR-rJ-QgK"/>
+                            <constraint firstItem="dZi-gG-D9R" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="37" id="tyx-o9-Y56"/>
                             <constraint firstItem="SHS-9b-OCc" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="v4P-eP-ol7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" id="s8f-rR-U0d">
-                        <barButtonItem key="rightBarButtonItem" image="person.circle.fill" catalog="system" id="8LG-FY-dKV">
+                    <navigationItem key="navigationItem" title="Activity" id="s8f-rR-U0d">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bell.fill" catalog="system" id="8LG-FY-dKV">
                             <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -94,7 +106,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Achievement" image="second" id="cPa-gy-q4n">
+                    <tabBarItem key="tabBarItem" title="Achievement" image="rosette" catalog="system" id="cPa-gy-q4n">
                         <color key="badgeColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
@@ -112,7 +124,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="LDD-av-GNI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="qqp-xN-AlG">
+                    <tabBarItem key="tabBarItem" title="Progress" image="chart.bar" catalog="system" id="qqp-xN-AlG">
                         <color key="badgeColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
@@ -145,7 +157,7 @@
         <scene sceneID="6q2-D6-lul">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qwv-O5-eaN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="person" catalog="system" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Sr4-pW-yjX">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -162,9 +174,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="chart.bar" catalog="system" width="128" height="90"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="play.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="second" width="30" height="30"/>
+        <image name="rosette" catalog="system" width="100" height="128"/>
     </resources>
 </document>
