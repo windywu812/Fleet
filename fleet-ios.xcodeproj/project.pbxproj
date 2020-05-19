@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372DC77246A665400ABE9D5 /* ProgressController.swift */; };
-		46F1B328A599D833CD3DD16F /* Pods_fleet_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABFB1A583F2665911A7F156 /* Pods_fleet_ios.framework */; };
+		591C03B524742D8000479DA0 /* RoundedOnlyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C03B424742D8000479DA0 /* RoundedOnlyBottomView.swift */; };
+		591C03B624742E3400479DA0 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		591C03B724742E3700479DA0 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		591C03B82474311B00479DA0 /* fleet-ios.app in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C1A246A5F73006252BA /* fleet-ios.app */; };
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
@@ -19,11 +22,13 @@
 		59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */; };
 		59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2B246A5F76006252BA /* Assets.xcassets */; };
 		59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2D246A5F76006252BA /* LaunchScreen.storyboard */; };
+		E882B994A6036F03322BB416 /* Pods_fleet_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8F44B93FAB77676B0D1402 /* Pods_fleet_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D97441AB4654BF1686590A /* Pods-fleet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.release.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.release.xcconfig"; sourceTree = "<group>"; };
 		2372DC77246A665400ABE9D5 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
-		3E8CE9731FD242382E5201D3 /* Pods-fleet-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.debug.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		591C03B424742D8000479DA0 /* RoundedOnlyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedOnlyBottomView.swift; sourceTree = "<group>"; };
 		5979AD23246B8F0900F8FC53 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5979AD5E246E428300F8FC53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,8 +41,8 @@
 		59A37C2B246A5F76006252BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A37C2E246A5F76006252BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59A37C30246A5F76006252BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		848B4F6D0F9ADF5A8B871A0D /* Pods-fleet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.release.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.release.xcconfig"; sourceTree = "<group>"; };
-		DABFB1A583F2665911A7F156 /* Pods_fleet_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fleet_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E3563C3EB2831272D3293E3 /* Pods-fleet-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.debug.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		DC8F44B93FAB77676B0D1402 /* Pods_fleet_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fleet_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F1B328A599D833CD3DD16F /* Pods_fleet_ios.framework in Frameworks */,
+				E882B994A6036F03322BB416 /* Pods_fleet_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,19 +67,12 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		5091495786D83C870ED85FBC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DABFB1A583F2665911A7F156 /* Pods_fleet_ios.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5979AD22246B8EF000F8FC53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				5979AD23246B8F0900F8FC53 /* RoundedView.swift */,
 				5979AD5E246E428300F8FC53 /* RoundedButton.swift */,
+				591C03B424742D8000479DA0 /* RoundedOnlyBottomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,7 +83,7 @@
 				59A37C1C246A5F73006252BA /* fleet-ios */,
 				59A37C1B246A5F73006252BA /* Products */,
 				9FE03428AE4DEA8812B04A59 /* Pods */,
-				5091495786D83C870ED85FBC /* Frameworks */,
+				DC65B1451C547FC130920553 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,11 +114,18 @@
 		9FE03428AE4DEA8812B04A59 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3E8CE9731FD242382E5201D3 /* Pods-fleet-ios.debug.xcconfig */,
-				848B4F6D0F9ADF5A8B871A0D /* Pods-fleet-ios.release.xcconfig */,
+				5E3563C3EB2831272D3293E3 /* Pods-fleet-ios.debug.xcconfig */,
+				21D97441AB4654BF1686590A /* Pods-fleet-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DC65B1451C547FC130920553 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC8F44B93FAB77676B0D1402 /* Pods_fleet_ios.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,11 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59A37C33246A5F76006252BA /* Build configuration list for PBXNativeTarget "fleet-ios" */;
 			buildPhases = (
-				A89DE87DC931CE7388596480 /* [CP] Check Pods Manifest.lock */,
+				3281FA49A18BA30BE5D0A3F9 /* [CP] Check Pods Manifest.lock */,
 				59A37C16246A5F73006252BA /* Sources */,
 				59A37C17246A5F73006252BA /* Frameworks */,
 				59A37C18246A5F73006252BA /* Resources */,
-				C0B581EBE16D321817F56DBE /* [CP] Embed Pods Frameworks */,
+				F3A44054BAE667A4E24996B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,7 +188,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591C03B624742E3400479DA0 /* BuildFile in Resources */,
 				59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */,
+				591C03B82474311B00479DA0 /* fleet-ios.app in Resources */,
+				591C03B724742E3700479DA0 /* BuildFile in Resources */,
 				59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */,
 				59A37C27246A5F73006252BA /* Main.storyboard in Resources */,
 			);
@@ -192,7 +200,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A89DE87DC931CE7388596480 /* [CP] Check Pods Manifest.lock */ = {
+		3281FA49A18BA30BE5D0A3F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,7 +222,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C0B581EBE16D321817F56DBE /* [CP] Embed Pods Frameworks */ = {
+		F3A44054BAE667A4E24996B3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,6 +249,7 @@
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				59A37C24246A5F73006252BA /* AchievementController.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
+				591C03B524742D8000479DA0 /* RoundedOnlyBottomView.swift in Sources */,
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
 				59A37C22246A5F73006252BA /* FleetController.swift in Sources */,
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
@@ -387,7 +396,7 @@
 		};
 		59A37C34246A5F76006252BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E8CE9731FD242382E5201D3 /* Pods-fleet-ios.debug.xcconfig */;
+			baseConfigurationReference = 5E3563C3EB2831272D3293E3 /* Pods-fleet-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,7 +415,7 @@
 		};
 		59A37C35246A5F76006252BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 848B4F6D0F9ADF5A8B871A0D /* Pods-fleet-ios.release.xcconfig */;
+			baseConfigurationReference = 21D97441AB4654BF1686590A /* Pods-fleet-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
