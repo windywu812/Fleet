@@ -7,4 +7,5 @@ target 'fleet-ios' do
 
   # Pods for fleet-ios
   pod 'Charts'
+
 end
