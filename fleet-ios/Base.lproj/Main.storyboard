@@ -155,6 +155,9 @@
                                     <segment title="Weekly"/>
                                     <segment title="Anually"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentControl:" destination="rwp-AM-AGM" eventType="valueChanged" id="aZE-fG-7RP"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
