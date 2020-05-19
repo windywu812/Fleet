@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372DC77246A665400ABE9D5 /* ProgressController.swift */; };
-		591C03B524742D8000479DA0 /* RoundedOnlyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591C03B424742D8000479DA0 /* RoundedOnlyBottomView.swift */; };
-		591C03B624742E3400479DA0 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
-		591C03B724742E3700479DA0 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		591C03B624742E3400479DA0 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		591C03B724742E3700479DA0 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		591C03B82474311B00479DA0 /* fleet-ios.app in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C1A246A5F73006252BA /* fleet-ios.app */; };
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		21D97441AB4654BF1686590A /* Pods-fleet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.release.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.release.xcconfig"; sourceTree = "<group>"; };
 		2372DC77246A665400ABE9D5 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
-		591C03B424742D8000479DA0 /* RoundedOnlyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedOnlyBottomView.swift; sourceTree = "<group>"; };
 		5979AD23246B8F0900F8FC53 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5979AD5E246E428300F8FC53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,7 +70,6 @@
 			children = (
 				5979AD23246B8F0900F8FC53 /* RoundedView.swift */,
 				5979AD5E246E428300F8FC53 /* RoundedButton.swift */,
-				591C03B424742D8000479DA0 /* RoundedOnlyBottomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,10 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				591C03B624742E3400479DA0 /* BuildFile in Resources */,
+				591C03B624742E3400479DA0 /* (null) in Resources */,
 				59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */,
 				591C03B82474311B00479DA0 /* fleet-ios.app in Resources */,
-				591C03B724742E3700479DA0 /* BuildFile in Resources */,
+				591C03B724742E3700479DA0 /* (null) in Resources */,
 				59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */,
 				59A37C27246A5F73006252BA /* Main.storyboard in Resources */,
 			);
@@ -249,7 +246,6 @@
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				59A37C24246A5F73006252BA /* AchievementController.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
-				591C03B524742D8000479DA0 /* RoundedOnlyBottomView.swift in Sources */,
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
 				59A37C22246A5F73006252BA /* FleetController.swift in Sources */,
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
