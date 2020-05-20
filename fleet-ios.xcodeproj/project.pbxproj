@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1FA14634267282950E3400ED /* Pods_fleet_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FEF8F519AF1B1144173153 /* Pods_fleet_ios.framework */; };
+		2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */; };
+		2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECD12475554C005C9DA0 /* DayModel.swift */; };
 		2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372DC77246A665400ABE9D5 /* ProgressController.swift */; };
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunction.swift; sourceTree = "<group>"; };
+		2330ECD12475554C005C9DA0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		2372DC77246A665400ABE9D5 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		5979AD23246B8F0900F8FC53 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5979AD5E246E428300F8FC53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			children = (
 				5980AD882474F6E300E232A6 /* Category.swift */,
 				5980AD8A2474F73E00E232A6 /* Dummies.swift */,
+				2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */,
+				2330ECD12475554C005C9DA0 /* DayModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,8 +275,10 @@
 			files = (
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				59A37C24246A5F73006252BA /* AchievementController.swift in Sources */,
+				2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
 				5980AD7F2474F28F00E232A6 /* AchievementCell.swift in Sources */,
+				2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */,
 				5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */,
 				5980AD7C24743CB400E232A6 /* RoundedOnlyBottomView.swift in Sources */,
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
