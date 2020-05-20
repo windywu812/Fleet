@@ -97,7 +97,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="ABT-lT-khf" firstAttribute="top" secondItem="sIe-4q-HpV" secondAttribute="top" constant="10" id="F60-l0-rXr"/>
                                     <constraint firstItem="ABT-lT-khf" firstAttribute="leading" secondItem="sIe-4q-HpV" secondAttribute="leading" constant="20" id="Fne-zB-Sfg"/>
@@ -338,7 +338,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="Qnt-hb-fN2" firstAttribute="centerY" secondItem="0at-LD-qDn" secondAttribute="centerY" id="Anl-Dh-zED"/>
                                                                 <constraint firstAttribute="height" constant="100" id="EEJ-Xt-jjC"/>
