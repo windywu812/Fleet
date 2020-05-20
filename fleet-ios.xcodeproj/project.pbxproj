@@ -16,7 +16,6 @@
 		5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5980AD7E2474F28F00E232A6 /* AchievementCell.xib */; };
 		5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD812474F44D00E232A6 /* DetailAchievementVC.swift */; };
 		5980AD852474F59F00E232A6 /* CategoryAchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */; };
-		5980AD862474F59F00E232A6 /* CategoryAchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5980AD842474F59F00E232A6 /* CategoryAchievementCell.xib */; };
 		5980AD892474F6E300E232A6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD882474F6E300E232A6 /* Category.swift */; };
 		5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD8A2474F73E00E232A6 /* Dummies.swift */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
@@ -38,7 +37,6 @@
 		5980AD7E2474F28F00E232A6 /* AchievementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCell.xib; sourceTree = "<group>"; };
 		5980AD812474F44D00E232A6 /* DetailAchievementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAchievementVC.swift; sourceTree = "<group>"; };
 		5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAchievementCell.swift; sourceTree = "<group>"; };
-		5980AD842474F59F00E232A6 /* CategoryAchievementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryAchievementCell.xib; sourceTree = "<group>"; };
 		5980AD882474F6E300E232A6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5980AD8A2474F73E00E232A6 /* Dummies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummies.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +94,6 @@
 				5980AD7D2474F28F00E232A6 /* AchievementCell.swift */,
 				5980AD7E2474F28F00E232A6 /* AchievementCell.xib */,
 				5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */,
-				5980AD842474F59F00E232A6 /* CategoryAchievementCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,7 +215,6 @@
 				5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */,
 				59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */,
 				59A37C27246A5F73006252BA /* Main.storyboard in Resources */,
-				5980AD862474F59F00E232A6 /* CategoryAchievementCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

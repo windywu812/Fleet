@@ -19,7 +19,6 @@ class AchievementController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "CategoryAchievementCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
     }
     
 }
