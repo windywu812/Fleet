@@ -9,12 +9,47 @@
 import UIKit
 
 class AchievementController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var numStreakLbl: UILabel!
+    @IBOutlet weak var imgMascot: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "CategoryAchievementCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
     }
-
-
+    
 }
 
+extension AchievementController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as? CategoryAchievementCell else {return UITableViewCell()}
+        
+        let category = categoryArray[indexPath.row]
+        cell.configureCell(category)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categoryArray[indexPath.row]
+        performSegue(withIdentifier: "toDetailAchievement", sender: category)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let category = sender as! Category
+        
+        if segue.identifier == "toDetailAchievement" {
+            if let detailVC = segue.destination as? DetailAchievementVC {
+                detailVC.category = category
+            }
+        }
+    }
+}

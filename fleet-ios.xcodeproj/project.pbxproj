@@ -12,6 +12,13 @@
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
 		5980AD7C24743CB400E232A6 /* RoundedOnlyBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD7B24743CB400E232A6 /* RoundedOnlyBottomView.swift */; };
+		5980AD7F2474F28F00E232A6 /* AchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD7D2474F28F00E232A6 /* AchievementCell.swift */; };
+		5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5980AD7E2474F28F00E232A6 /* AchievementCell.xib */; };
+		5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD812474F44D00E232A6 /* DetailAchievementVC.swift */; };
+		5980AD852474F59F00E232A6 /* CategoryAchievementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */; };
+		5980AD862474F59F00E232A6 /* CategoryAchievementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5980AD842474F59F00E232A6 /* CategoryAchievementCell.xib */; };
+		5980AD892474F6E300E232A6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD882474F6E300E232A6 /* Category.swift */; };
+		5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD8A2474F73E00E232A6 /* Dummies.swift */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
 		59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1F246A5F73006252BA /* SceneDelegate.swift */; };
 		59A37C22246A5F73006252BA /* FleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C21246A5F73006252BA /* FleetController.swift */; };
@@ -27,6 +34,13 @@
 		5979AD23246B8F0900F8FC53 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5979AD5E246E428300F8FC53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		5980AD7B24743CB400E232A6 /* RoundedOnlyBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedOnlyBottomView.swift; sourceTree = "<group>"; };
+		5980AD7D2474F28F00E232A6 /* AchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCell.swift; sourceTree = "<group>"; };
+		5980AD7E2474F28F00E232A6 /* AchievementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AchievementCell.xib; sourceTree = "<group>"; };
+		5980AD812474F44D00E232A6 /* DetailAchievementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAchievementVC.swift; sourceTree = "<group>"; };
+		5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAchievementCell.swift; sourceTree = "<group>"; };
+		5980AD842474F59F00E232A6 /* CategoryAchievementCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryAchievementCell.xib; sourceTree = "<group>"; };
+		5980AD882474F6E300E232A6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		5980AD8A2474F73E00E232A6 /* Dummies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummies.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A37C1D246A5F73006252BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A37C1F246A5F73006252BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +82,7 @@
 				59A37C21246A5F73006252BA /* FleetController.swift */,
 				59A37C23246A5F73006252BA /* AchievementController.swift */,
 				2372DC77246A665400ABE9D5 /* ProgressController.swift */,
+				5980AD812474F44D00E232A6 /* DetailAchievementVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -78,8 +93,21 @@
 				5979AD23246B8F0900F8FC53 /* RoundedView.swift */,
 				5979AD5E246E428300F8FC53 /* RoundedButton.swift */,
 				5980AD7B24743CB400E232A6 /* RoundedOnlyBottomView.swift */,
+				5980AD7D2474F28F00E232A6 /* AchievementCell.swift */,
+				5980AD7E2474F28F00E232A6 /* AchievementCell.xib */,
+				5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */,
+				5980AD842474F59F00E232A6 /* CategoryAchievementCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5980AD872474F6D800E232A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5980AD882474F6E300E232A6 /* Category.swift */,
+				5980AD8A2474F73E00E232A6 /* Dummies.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		59A37C11246A5F73006252BA = {
@@ -103,6 +131,7 @@
 		59A37C1C246A5F73006252BA /* fleet-ios */ = {
 			isa = PBXGroup;
 			children = (
+				5980AD872474F6D800E232A6 /* Model */,
 				5979AD22246B8EF000F8FC53 /* Views */,
 				2372DC79246A666000ABE9D5 /* Controller */,
 				59A37C2B246A5F76006252BA /* Assets.xcassets */,
@@ -186,8 +215,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */,
+				5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */,
 				59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */,
 				59A37C27246A5F73006252BA /* Main.storyboard in Resources */,
+				5980AD862474F59F00E232A6 /* CategoryAchievementCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,12 +274,17 @@
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				59A37C24246A5F73006252BA /* AchievementController.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
+				5980AD7F2474F28F00E232A6 /* AchievementCell.swift in Sources */,
+				5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */,
 				5980AD7C24743CB400E232A6 /* RoundedOnlyBottomView.swift in Sources */,
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
 				59A37C22246A5F73006252BA /* FleetController.swift in Sources */,
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
+				5980AD892474F6E300E232A6 /* Category.swift in Sources */,
 				59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */,
 				5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */,
+				5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */,
+				5980AD852474F59F00E232A6 /* CategoryAchievementCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
