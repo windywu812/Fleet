@@ -16,8 +16,9 @@ class DetailAchievementVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: "achievementCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
