@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -415,24 +416,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-TS-Ftd">
-                                <rect key="frame" x="16" y="375" width="382" height="391"/>
+                                <rect key="frame" x="16" y="373" width="382" height="391"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="391" id="xY2-ML-47C"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-FD-tG9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="276" id="K2s-NA-TWE"/>
+                                    <constraint firstAttribute="height" constant="190" id="K2s-NA-TWE"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-eq-3fx">
-                                <rect key="frame" x="16" y="214" width="382" height="136"/>
+                                <rect key="frame" x="16" y="153" width="382" height="136"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="WHN-9g-VfC"/>
+                                    <constraint firstAttribute="height" constant="136" id="59d-3h-emR"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pc-mj-IN4">
@@ -442,7 +443,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nWc-my-jGv">
-                                <rect key="frame" x="16" y="158" width="382" height="32"/>
+                                <rect key="frame" x="16" y="317" width="382" height="32"/>
                                 <segments>
                                     <segment title="Weekly"/>
                                     <segment title="Anually"/>
@@ -457,15 +458,15 @@
                             <constraint firstItem="LDD-av-GNI" firstAttribute="trailing" secondItem="nWc-my-jGv" secondAttribute="trailing" constant="16" id="8EJ-Yi-r8d"/>
                             <constraint firstAttribute="trailing" secondItem="o8B-FD-tG9" secondAttribute="trailing" id="Eyy-5h-zAg"/>
                             <constraint firstItem="K9f-TS-Ftd" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="16" id="FHn-Xc-Z3t"/>
-                            <constraint firstItem="K9f-TS-Ftd" firstAttribute="top" secondItem="hKV-eq-3fx" secondAttribute="bottom" constant="25" id="FeQ-aq-Vee"/>
-                            <constraint firstItem="nWc-my-jGv" firstAttribute="top" secondItem="3Pc-mj-IN4" secondAttribute="bottom" constant="25" id="MVC-ks-cam"/>
-                            <constraint firstItem="hKV-eq-3fx" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="16" id="TWL-gd-wku"/>
-                            <constraint firstItem="LDD-av-GNI" firstAttribute="trailing" secondItem="hKV-eq-3fx" secondAttribute="trailing" constant="16" id="WVh-pr-dCR"/>
+                            <constraint firstItem="LDD-av-GNI" firstAttribute="trailing" secondItem="hKV-eq-3fx" secondAttribute="trailing" constant="16" id="Fy9-RB-c93"/>
+                            <constraint firstItem="hKV-eq-3fx" firstAttribute="top" secondItem="3Pc-mj-IN4" secondAttribute="bottom" constant="20" id="JeA-9P-WM9"/>
+                            <constraint firstItem="hKV-eq-3fx" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="16" id="O30-wN-zuq"/>
                             <constraint firstItem="o8B-FD-tG9" firstAttribute="leading" secondItem="R2V-6P-4Th" secondAttribute="leading" id="b7G-dv-CCw"/>
                             <constraint firstItem="LDD-av-GNI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Pc-mj-IN4" secondAttribute="trailing" symbolic="YES" id="c4W-Wt-F6C"/>
-                            <constraint firstItem="hKV-eq-3fx" firstAttribute="top" secondItem="nWc-my-jGv" secondAttribute="bottom" constant="25" id="eJd-Da-35Y"/>
+                            <constraint firstItem="K9f-TS-Ftd" firstAttribute="top" secondItem="nWc-my-jGv" secondAttribute="bottom" constant="25" id="fu4-if-pQ0"/>
                             <constraint firstItem="3Pc-mj-IN4" firstAttribute="top" secondItem="LDD-av-GNI" secondAttribute="top" constant="48" id="hTd-Zu-b3K"/>
                             <constraint firstItem="3Pc-mj-IN4" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="16" id="hfa-RD-gbd"/>
+                            <constraint firstItem="nWc-my-jGv" firstAttribute="top" secondItem="hKV-eq-3fx" secondAttribute="bottom" constant="28" id="i8o-GN-7q0"/>
                             <constraint firstItem="nWc-my-jGv" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="16" id="lCo-6t-Rit"/>
                             <constraint firstItem="o8B-FD-tG9" firstAttribute="top" secondItem="R2V-6P-4Th" secondAttribute="top" id="tNu-Pz-uMw"/>
                             <constraint firstItem="LDD-av-GNI" firstAttribute="trailing" secondItem="K9f-TS-Ftd" secondAttribute="trailing" constant="16" id="w8O-fd-kgw"/>
@@ -483,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kF-l8-ovK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657.9710144927537" y="678.34821428571422"/>
+            <point key="canvasLocation" x="1658" y="674"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sxI-k7-MwN">
@@ -495,7 +496,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.078431372550000003" green="0.14901960780000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" name="darkblue"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="nVF-te-uQp"/>
@@ -707,5 +708,8 @@
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="rosette" catalog="system" width="100" height="128"/>
         <image name="tray.fill" catalog="system" width="128" height="88"/>
+        <namedColor name="darkblue">
+            <color red="0.078000001609325409" green="0.14900000393390656" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

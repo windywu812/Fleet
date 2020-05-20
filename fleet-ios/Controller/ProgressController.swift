@@ -30,7 +30,7 @@ class ProgressController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        setChartWeekly(countSteps, targetSteps)
+        setChartWeekly(countSteps, targetSteps)
     }
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
@@ -43,7 +43,6 @@ class ProgressController: UIViewController {
     
     func setupView() {
         
-        topBackground.backgroundColor = .orange
         cardView.backgroundColor = .white
         chartView.backgroundColor = .white
         
@@ -87,11 +86,12 @@ extension ProgressController: ChartViewDelegate {
         }
         
         let countStepsDataSet = BarChartDataSet(entries: countStepsEntry, label: "Total Steps")
-        countStepsDataSet.setColor(.orange)
         countStepsDataSet.drawValuesEnabled = false
+        countStepsDataSet.setColor(UIColor(named: "orange") ?? UIColor.orange)
+
         
         let targetStepsDataSet = BarChartDataSet(entries: targetStepsEntry, label: "Your Target")
-        targetStepsDataSet.setColor(.gray)
+        targetStepsDataSet.setColor(UIColor(named: "darkblue") ?? UIColor.black)
         targetStepsDataSet.drawValuesEnabled = false
         
         let groupChartData = BarChartData(dataSets: [countStepsDataSet, targetStepsDataSet])
@@ -134,10 +134,14 @@ extension ProgressController: ChartViewDelegate {
         let countStepsDataSet = BarChartDataSet(entries: totalStepsEntry)
         countStepsDataSet.setColor(UIColor.orange)
         countStepsDataSet.drawValuesEnabled = false
+        countStepsDataSet.setColor(UIColor(named: "orange")!)
         
         let chartData = BarChartData(dataSet: countStepsDataSet)
         chartData.notifyDataChanged()
 
+        barChart.xAxis.axisMinimum = -0.5
+        barChart.xAxis.axisMaximum = 11.5
+        barChart.xAxis.centerAxisLabelsEnabled = false
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: monthName)
         barChart.animate(yAxisDuration: 1, easingOption: .easeInCubic)
         barChart.data = chartData
@@ -172,8 +176,6 @@ extension ProgressController: ChartViewDelegate {
         barChart.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -16).isActive = true
         barChart.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: 16).isActive = true
         barChart.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: -16).isActive = true
-        
-        
     }
     
 }
