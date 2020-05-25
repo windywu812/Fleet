@@ -8,14 +8,27 @@
 
 import UIKit
 
+@IBDesignable
 class RoundedOnlyBottomView: UIView {
-    
+
+    @IBInspectable var cornerRadius: CGFloat = 3.0 {
+        didSet {
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+
     override func awakeFromNib() {
-        let rectShape = CAShapeLayer()
-        rectShape.bounds = self.frame
-        rectShape.position = self.center
-        rectShape.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft , .bottomRight], cornerRadii: CGSize(width: 20, height: 20)).cgPath
-        
-        self.layer.mask = rectShape
+        self.setupView()
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        self.setupView()
+    }
+    
+    func setupView() {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        self.clipsToBounds = true
     }
 }

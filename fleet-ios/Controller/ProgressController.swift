@@ -12,7 +12,6 @@ import Charts
 class ProgressController: UIViewController {
     
     @IBOutlet weak var topBackground: UIView!
-    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var chartView: UIView!
     
     let barChart = BarChartView()
@@ -43,10 +42,8 @@ class ProgressController: UIViewController {
     
     func setupView() {
         
-        cardView.backgroundColor = .white
         chartView.backgroundColor = .white
         
-        addShadow(cardView)
         addShadow(chartView)
         
         setUpChart()
