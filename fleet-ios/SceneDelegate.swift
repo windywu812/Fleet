@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             vc = onboardingStoryboard.instantiateViewController(identifier: "Onboarding")
         }
         
-        UserDefaults.standard.set(true, forKey: "hasLaunched")
+//        UserDefaults.standard.set(true, forKey: "hasLaunched")
         
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()

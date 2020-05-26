@@ -12,6 +12,8 @@ class OnboardingVC: UIViewController {
 
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var yes: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,16 +22,23 @@ class OnboardingVC: UIViewController {
     
     @IBAction func noTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "yesNo", sender: sender)
-        descriptionLabel.text = "Fleety believes in you. Together, we will lead you into a healthy lifestyle!"
+        yes.toggle()
     }
     
     @IBAction func yesTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "yesNo", sender: sender)
-        descriptionLabel.text = "Great! Together, we will help you create a healthier lifestyle."
     }
     
-    @IBAction func letDoItTapped(_ sender: UIButton) {
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "yesNo" {
+            let vc = segue.destination as! EndOnboardingVC
+            if yes {
+                vc.descriptionText = "Great! Together, we will help you create a healthier lifestyle."
+            } else {
+                vc.descriptionText = "Fleety believes in you. Together, we will lead you into a healthy lifestyle!"
+            }
+            
+        }
     }
     
 }

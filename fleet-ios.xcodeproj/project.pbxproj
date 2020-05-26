@@ -13,6 +13,7 @@
 		2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372DC77246A665400ABE9D5 /* ProgressController.swift */; };
 		23A2AED6247CC5040009BD3A /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A2AED5247CC5040009BD3A /* Onboarding.storyboard */; };
 		23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AED7247CD6970009BD3A /* OnboardingVC.swift */; };
+		23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */; };
 		595503D9247C201C00F7EBB5 /* MascotLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595503D8247C201C00F7EBB5 /* MascotLevel.swift */; };
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
@@ -39,6 +40,7 @@
 		2372DC77246A665400ABE9D5 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		23A2AED5247CC5040009BD3A /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		23A2AED7247CD6970009BD3A /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOnboardingVC.swift; sourceTree = "<group>"; };
 		595503D8247C201C00F7EBB5 /* MascotLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MascotLevel.swift; sourceTree = "<group>"; };
 		5979AD23246B8F0900F8FC53 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5979AD5E246E428300F8FC53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -95,12 +97,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		23A2AED9247CD6A10009BD3A /* Onboarding */ = {
+		23A2AED9247CD6A10009BD3A /* OnboardingController */ = {
 			isa = PBXGroup;
 			children = (
 				23A2AED7247CD6970009BD3A /* OnboardingVC.swift */,
+				23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */,
 			);
-			path = Onboarding;
+			path = OnboardingController;
 			sourceTree = "<group>";
 		};
 		23A2AEDA247CD6BC0009BD3A /* Storyboard */ = {
@@ -170,9 +173,9 @@
 				5980AD872474F6D800E232A6 /* Model */,
 				5979AD22246B8EF000F8FC53 /* Views */,
 				2372DC79246A666000ABE9D5 /* Controller */,
-				23A2AED9247CD6A10009BD3A /* Onboarding */,
 				59A37C2B246A5F76006252BA /* Assets.xcassets */,
 				23A2AEDA247CD6BC0009BD3A /* Storyboard */,
+				23A2AED9247CD6A10009BD3A /* OnboardingController */,
 				59A37C30246A5F76006252BA /* Info.plist */,
 				59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */,
 				59A37C1D246A5F73006252BA /* AppDelegate.swift */,
@@ -320,6 +323,7 @@
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
 				59A37C22246A5F73006252BA /* FleetController.swift in Sources */,
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
+				23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */,
 				5980AD892474F6E300E232A6 /* Category.swift in Sources */,
 				59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */,
 				5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */,
