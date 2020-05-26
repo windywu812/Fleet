@@ -283,28 +283,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-3M-uLB">
                                 <rect key="frame" x="24" y="643" width="366" height="124"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epI-wR-sGu" customClass="RoundedButton" customModule="fleet_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="366" id="ltG-Qc-vlB"/>
-                                            <constraint firstAttribute="height" constant="50" id="qmg-Db-eJE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                        <state key="normal" title="NO">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="noTapped:" destination="52r-A7-k2R" eventType="touchUpInside" id="JcQ-cS-euL"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-Q9-a8c" customClass="RoundedButton" customModule="fleet_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="74" width="366" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JnD-A6-I9F"/>
@@ -321,6 +301,26 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="yesTapped:" destination="52r-A7-k2R" eventType="touchUpInside" id="qe5-6d-IWg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epI-wR-sGu" customClass="RoundedButton" customModule="fleet_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="74" width="366" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="366" id="ltG-Qc-vlB"/>
+                                            <constraint firstAttribute="height" constant="50" id="qmg-Db-eJE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <state key="normal" title="NO">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="noTapped:" destination="52r-A7-k2R" eventType="touchUpInside" id="JcQ-cS-euL"/>
                                         </connections>
                                     </button>
                                 </subviews>
