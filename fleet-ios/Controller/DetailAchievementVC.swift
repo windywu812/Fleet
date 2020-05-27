@@ -13,6 +13,8 @@ class DetailAchievementVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var category: Category?
+    var achievement: [Achievement]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,7 @@ class DetailAchievementVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        category = achievement[0].category
         title = category?.name
     }
     
@@ -29,11 +32,14 @@ class DetailAchievementVC: UIViewController {
 
 extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return achievement.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "achievementCell") as? AchievementCell else {return UITableViewCell()}
+        
+        let ach = achievement[indexPath.row]
+        cell.configureCell(ach: ach)
         
         return cell
     }

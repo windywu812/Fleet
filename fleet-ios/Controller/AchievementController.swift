@@ -13,14 +13,21 @@ class AchievementController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var numStreakLbl: UILabel!
     @IBOutlet weak var imgMascot: UIImageView!
+    @IBOutlet weak var streakView: RoundedView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
+        streakView.addGestureRecognizer(gestureRec)
     }
     
+    @objc func goDetail() {
+        performSegue(withIdentifier: "streakSegue", sender: self)
+    }
 }
 
 extension AchievementController: UITableViewDelegate, UITableViewDataSource {
@@ -38,16 +45,21 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categoryArray[indexPath.row]
-        performSegue(withIdentifier: "toDetailAchievement", sender: category)
+        //        let category = categoryArray[indexPath.row]
+        performSegue(withIdentifier: "toDetailAchievement", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let category = sender as! Category
-        
         if segue.identifier == "toDetailAchievement" {
+            let indexPath = sender as! IndexPath
+            let achievement = achievementArray[indexPath.row]
+            
             if let detailVC = segue.destination as? DetailAchievementVC {
-                detailVC.category = category
+                detailVC.achievement = achievement
+            }
+        } else {
+            if let detailVC = segue.destination as? DetailAchievementVC {
+                detailVC.achievement = achievementArray[3]
             }
         }
     }

@@ -422,8 +422,10 @@
                     <connections>
                         <outlet property="imgMascot" destination="3Ph-Wy-dAM" id="qLQ-lX-PHB"/>
                         <outlet property="numStreakLbl" destination="xbb-jw-n2i" id="916-kx-NPf"/>
+                        <outlet property="streakView" destination="j52-qy-G2P" id="PjR-MM-yc8"/>
                         <outlet property="tableView" destination="hRQ-HP-Scv" id="3VQ-Xi-k9z"/>
                         <segue destination="eHQ-QI-F0u" kind="show" identifier="toDetailAchievement" id="52H-6W-vze"/>
+                        <segue destination="eHQ-QI-F0u" kind="show" identifier="streakSegue" id="co3-hS-ULQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -675,6 +677,9 @@
             <point key="canvasLocation" x="1657.9710144927537" y="-29.464285714285712"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="co3-hS-ULQ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chart.bar" catalog="system" width="128" height="90"/>

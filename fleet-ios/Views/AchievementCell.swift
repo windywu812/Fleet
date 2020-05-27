@@ -10,15 +10,15 @@ import UIKit
 
 class AchievementCell: UITableViewCell {
 
+    @IBOutlet weak var txtTitle: UILabel!
+    @IBOutlet weak var progress: UIProgressView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(ach: Achievement) {
+        txtTitle.text = ach.title
     }
     
 }
