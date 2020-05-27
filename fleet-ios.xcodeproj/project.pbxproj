@@ -32,6 +32,8 @@
 		59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */; };
 		59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2B246A5F76006252BA /* Assets.xcassets */; };
 		59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2D246A5F76006252BA /* LaunchScreen.storyboard */; };
+		D2D94B76247E39F70076C795 /* Achievement Complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2D94B75247E39F70076C795 /* Achievement Complete.mp3 */; };
+		D2D94B78247E3A080076C795 /* Mascot Level.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2D94B77247E3A080076C795 /* Mascot Level.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		8166937B6EF4A08ED8D53DC0 /* Pods-fleet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.release.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.release.xcconfig"; sourceTree = "<group>"; };
 		82CF27A025C752317BB6F147 /* Pods-fleet-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.debug.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C2FEF8F519AF1B1144173153 /* Pods_fleet_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fleet_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D94B75247E39F70076C795 /* Achievement Complete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Achievement Complete.mp3"; path = "fleet-ios/Sound Effect/Achievement Complete.mp3"; sourceTree = SOURCE_ROOT; };
+		D2D94B77247E3A080076C795 /* Mascot Level.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mascot Level.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 		59A37C1C246A5F73006252BA /* fleet-ios */ = {
 			isa = PBXGroup;
 			children = (
+				D2D94B79247E3A130076C795 /* Sound Effect */,
 				595503D7247C200A00F7EBB5 /* Utilities */,
 				5980AD872474F6D800E232A6 /* Model */,
 				5979AD22246B8EF000F8FC53 /* Views */,
@@ -191,6 +196,15 @@
 				8166937B6EF4A08ED8D53DC0 /* Pods-fleet-ios.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2D94B79247E3A130076C795 /* Sound Effect */ = {
+			isa = PBXGroup;
+			children = (
+				D2D94B77247E3A080076C795 /* Mascot Level.mp3 */,
+				D2D94B75247E39F70076C795 /* Achievement Complete.mp3 */,
+			);
+			path = "Sound Effect";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,7 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */,
+				D2D94B78247E3A080076C795 /* Mascot Level.mp3 in Resources */,
 				23A2AED6247CC5040009BD3A /* Onboarding.storyboard in Resources */,
+				D2D94B76247E39F70076C795 /* Achievement Complete.mp3 in Resources */,
 				5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */,
 				59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */,
 				59A37C27246A5F73006252BA /* Main.storyboard in Resources */,
