@@ -181,14 +181,14 @@
                                             <constraint firstAttribute="trailing" secondItem="yYM-Kh-17F" secondAttribute="trailing" constant="20" id="9N1-Pv-j2S"/>
                                             <constraint firstItem="3HE-bo-o7M" firstAttribute="top" secondItem="dwm-Q3-uOa" secondAttribute="top" constant="20" id="BqA-GH-8IG"/>
                                             <constraint firstAttribute="width" secondItem="dwm-Q3-uOa" secondAttribute="height" multiplier="1:1" id="GyD-LQ-lmg"/>
-                                            <constraint firstItem="lHN-VS-OB8" firstAttribute="centerY" secondItem="dwm-Q3-uOa" secondAttribute="centerY" id="Iom-kZ-Hcg"/>
                                             <constraint firstItem="Vmf-lt-rvW" firstAttribute="centerX" secondItem="dwm-Q3-uOa" secondAttribute="centerX" id="MuP-ti-5YK"/>
-                                            <constraint firstItem="p7b-PR-B1V" firstAttribute="centerY" secondItem="dwm-Q3-uOa" secondAttribute="centerY" id="avw-Ye-RWH"/>
+                                            <constraint firstItem="p7b-PR-B1V" firstAttribute="centerY" secondItem="Vmf-lt-rvW" secondAttribute="centerY" id="OzR-Bf-B0i"/>
                                             <constraint firstAttribute="height" constant="175" id="fU6-p5-o4C"/>
-                                            <constraint firstItem="p7b-PR-B1V" firstAttribute="leading" secondItem="dwm-Q3-uOa" secondAttribute="leading" constant="12" id="h12-9R-xbd"/>
                                             <constraint firstItem="3HE-bo-o7M" firstAttribute="centerX" secondItem="dwm-Q3-uOa" secondAttribute="centerX" id="mPx-fJ-Xwp"/>
-                                            <constraint firstAttribute="trailing" secondItem="lHN-VS-OB8" secondAttribute="trailing" constant="12" id="o0B-DM-rvR"/>
+                                            <constraint firstItem="lHN-VS-OB8" firstAttribute="centerY" secondItem="Vmf-lt-rvW" secondAttribute="centerY" id="p4S-Fy-kPo"/>
+                                            <constraint firstItem="p7b-PR-B1V" firstAttribute="leading" secondItem="dwm-Q3-uOa" secondAttribute="leading" constant="12" id="rHK-tq-rDP"/>
                                             <constraint firstItem="Vmf-lt-rvW" firstAttribute="centerY" secondItem="dwm-Q3-uOa" secondAttribute="centerY" id="scf-bT-rRN"/>
+                                            <constraint firstAttribute="trailing" secondItem="lHN-VS-OB8" secondAttribute="trailing" constant="12" id="z8F-ol-WK5"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

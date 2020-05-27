@@ -37,10 +37,15 @@ class FleetController: UIViewController {
             groupButton.forEach { (btn) in
                 btn.isHidden = false
             }
+            
+            sender.setTitle("Done", for: .normal)
         } else {
             groupButton.forEach { (btn) in
                 btn.isHidden = true
             }
+            
+            sender.setTitle("Edit", for: .normal)
+
         }
         
     }
