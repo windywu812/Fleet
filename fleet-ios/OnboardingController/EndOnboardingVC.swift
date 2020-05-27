@@ -23,7 +23,7 @@ class EndOnboardingVC: UIViewController {
     
     @IBAction func letsDoTapped(_ sender: UIButton) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = mainStoryboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        let vc = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! UITabBarController
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
         
