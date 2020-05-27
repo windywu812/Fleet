@@ -13,6 +13,7 @@ class ProgressController: UIViewController {
     
     @IBOutlet weak var topBackground: UIView!
     @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     let barChart = BarChartView()
     
@@ -38,10 +39,9 @@ class ProgressController: UIViewController {
     
     func setupView() {
         
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         chartView.backgroundColor = .white
-        
         addShadow(chartView)
-        
         setUpChart()
                         
     }
@@ -84,7 +84,7 @@ extension ProgressController: ChartViewDelegate {
 
         
         let targetStepsDataSet = BarChartDataSet(entries: targetStepsEntry, label: "Your Target")
-        targetStepsDataSet.setColor(UIColor(named: "darkblue") ?? UIColor.black)
+        targetStepsDataSet.setColor(UIColor(named: "darkblue") ?? UIColor.blue)
         targetStepsDataSet.drawValuesEnabled = false
         
         let groupChartData = BarChartData(dataSets: [countStepsDataSet, targetStepsDataSet])
@@ -154,6 +154,8 @@ extension ProgressController: ChartViewDelegate {
         barChart.rightAxis.enabled = false
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.drawGridLinesEnabled = false
+        barChart.xAxis.labelTextColor = UIColor.black
+        barChart.leftAxis.labelTextColor = UIColor.black
         
         // Legend
         barChart.legend.horizontalAlignment = .center

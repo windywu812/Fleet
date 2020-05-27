@@ -9,8 +9,8 @@
 import UIKit
 
 class OnboardingVC: UIViewController {
-
-    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet var groupBtn: [UIButton]!
     
     var yes: Bool = false
     
@@ -18,15 +18,22 @@ class OnboardingVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        groupBtn.forEach { (btn) in
+            btn.layer.cornerRadius = 15
+            btn.layer.shadowColor = UIColor.black.cgColor
+            btn.layer.shadowRadius = 10
+            btn.layer.shadowOpacity = 0.1
+            btn.layer.shadowOffset = CGSize(width: 0, height: 4)
+        }
     }
     
     @IBAction func noTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "yesNo", sender: sender)
-        yes.toggle()
     }
     
     @IBAction func yesTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "yesNo", sender: sender)
+        yes.toggle()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
