@@ -31,8 +31,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-w5-QSI">
-                                                <rect key="frame" x="132" y="25.5" width="208" height="29"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Mxd-w5-QSI">
+                                                <rect key="frame" x="132" y="21.5" width="208" height="37"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-ag-X1v">
                                                         <rect key="frame" x="0.0" y="0.0" width="208" height="25"/>
@@ -44,7 +44,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-vb-7Vr">
-                                                        <rect key="frame" x="0.0" y="25" width="208" height="4"/>
+                                                        <rect key="frame" x="0.0" y="33" width="208" height="4"/>
                                                         <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="4" id="e3j-if-rXQ"/>
@@ -254,6 +254,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="goalLabel" destination="Vmf-lt-rvW" id="Rin-m1-amK"/>
+                        <outlet property="levelLabel" destination="0Uc-ag-X1v" id="FLm-LI-Q6M"/>
+                        <outlet property="mascotView" destination="AYc-7Y-dOw" id="3JR-BP-7BD"/>
+                        <outlet property="progressView" destination="TlQ-vb-7Vr" id="9ZX-pG-o7r"/>
                         <outletCollection property="groupButton" destination="lHN-VS-OB8" collectionClass="NSMutableArray" id="orw-E5-QXU"/>
                         <outletCollection property="groupButton" destination="p7b-PR-B1V" collectionClass="NSMutableArray" id="fsG-6J-SUP"/>
                     </connections>

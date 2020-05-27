@@ -10,6 +10,7 @@
 		1FA14634267282950E3400ED /* Pods_fleet_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FEF8F519AF1B1144173153 /* Pods_fleet_ios.framework */; };
 		2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */; };
 		2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECD12475554C005C9DA0 /* DayModel.swift */; };
+		234A062A247E71E300190F28 /* Mascot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A0629247E71E300190F28 /* Mascot.swift */; };
 		2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2372DC77246A665400ABE9D5 /* ProgressController.swift */; };
 		23A2AED6247CC5040009BD3A /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A2AED5247CC5040009BD3A /* Onboarding.storyboard */; };
 		23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AED7247CD6970009BD3A /* OnboardingVC.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunction.swift; sourceTree = "<group>"; };
 		2330ECD12475554C005C9DA0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		234A0629247E71E300190F28 /* Mascot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mascot.swift; sourceTree = "<group>"; };
 		2372DC77246A665400ABE9D5 /* ProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		23A2AED5247CC5040009BD3A /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		23A2AED7247CD6970009BD3A /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */,
 				2330ECD12475554C005C9DA0 /* DayModel.swift */,
 				59550410247E55A600F7EBB5 /* Achievement.swift */,
+				234A0629247E71E300190F28 /* Mascot.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234A062A247E71E300190F28 /* Mascot.swift in Sources */,
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */,
 				595503D9247C201C00F7EBB5 /* MascotLevel.swift in Sources */,
@@ -494,7 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72C5A4RQ56;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,7 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teri.fleet-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -513,7 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72C5A4RQ56;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -522,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teri.fleet-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
