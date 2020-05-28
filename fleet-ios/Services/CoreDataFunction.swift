@@ -20,7 +20,7 @@ class CoreDataFunction {
         if let appDelegate = appDelegate {
             
             let manageContext = appDelegate.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DaySummary")
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityDay)
             
             do {
                 let result = try manageContext.fetch(fetchRequest) as? [NSManagedObject]
@@ -28,10 +28,10 @@ class CoreDataFunction {
                 result?.forEach { daySummary in
                     
                     daySummaries.append(DayModel(
-                        id: daySummary.value(forKey: "id") as! UUID,
-                        countSteps: daySummary.value(forKey: "totalStep") as! Int,
-                        targetSteps: daySummary.value(forKey: "targetStep") as! Int,
-                        date: daySummary.value(forKey: "date") as! Date
+                        id: daySummary.value(forKey: K.Core.id) as! UUID,
+                        countSteps: daySummary.value(forKey: K.Core.totalStep) as! Int,
+                        targetSteps: daySummary.value(forKey: K.Core.targetStep) as! Int,
+                        date: daySummary.value(forKey: K.Core.date) as! Date
                         )
                     )
                 }
@@ -65,7 +65,7 @@ class CoreDataFunction {
             
             let manageContext = appDelegate.persistentContainer.viewContext
             
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DaySummary")
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityDay)
                         
             fetchRequest.predicate = NSPredicate(format: "(date >= %@) AND (date < &@)", startDate as CVarArg, now as CVarArg)
             
@@ -74,10 +74,10 @@ class CoreDataFunction {
                 
                 result?.forEach{ daySummary in
                     daySummaries.append(DayModel(
-                        id: daySummary.value(forKey: "id") as! UUID,
-                        countSteps: daySummary.value(forKey: "totalSteps") as! Int,
-                        targetSteps: daySummary.value(forKey: "targetStep") as! Int,
-                        date: daySummary.value(forKey: "date") as! Date
+                        id: daySummary.value(forKey: K.Core.id) as! UUID,
+                        countSteps: daySummary.value(forKey: K.Core.totalStep) as! Int,
+                        targetSteps: daySummary.value(forKey: K.Core.targetStep) as! Int,
+                        date: daySummary.value(forKey: K.Core.date) as! Date
                         )
                     )
                 }
@@ -98,13 +98,13 @@ class CoreDataFunction {
             
             let managedContext = appDelegate.persistentContainer.viewContext
             
-            guard let entity = NSEntityDescription.entity(forEntityName: "DaySummary", in: managedContext) else { return }
+            guard let entity = NSEntityDescription.entity(forEntityName: K.Core.entityDay, in: managedContext) else { return }
             
             let insert = NSManagedObject(entity: entity, insertInto: managedContext)
-            insert.setValue(id, forKey: "id")
-            insert.setValue(totalStep, forKey: "totalStep")
-            insert.setValue(targetStep, forKey: "targetStep")
-            insert.setValue(date, forKey: "date")
+            insert.setValue(id, forKey: K.Core.id)
+            insert.setValue(totalStep, forKey: K.Core.totalStep)
+            insert.setValue(targetStep, forKey: K.Core.targetStep)
+            insert.setValue(date, forKey: K.Core.date)
             
             do {
                 try managedContext.save()
@@ -117,3 +117,4 @@ class CoreDataFunction {
     }
         
 }
+

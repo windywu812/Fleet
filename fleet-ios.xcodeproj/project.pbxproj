@@ -16,7 +16,7 @@
 		23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AED7247CD6970009BD3A /* OnboardingVC.swift */; };
 		23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */; };
 		593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A1247F31D30009950D /* UserDefaultServices.swift */; };
-		595503D9247C201C00F7EBB5 /* MascotLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595503D8247C201C00F7EBB5 /* MascotLevel.swift */; };
+		593226A4247F380B0009950D /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A3247F380B0009950D /* Constans.swift */; };
 		59550411247E55A600F7EBB5 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59550410247E55A600F7EBB5 /* Achievement.swift */; };
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
@@ -48,7 +48,7 @@
 		23A2AED7247CD6970009BD3A /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOnboardingVC.swift; sourceTree = "<group>"; };
 		593226A1247F31D30009950D /* UserDefaultServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultServices.swift; sourceTree = "<group>"; };
-		595503D8247C201C00F7EBB5 /* MascotLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MascotLevel.swift; sourceTree = "<group>"; };
+		593226A3247F380B0009950D /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		59550410247E55A600F7EBB5 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		5979AD23246B8F0900F8FC53 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		5979AD5E246E428300F8FC53 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		595503D7247C200A00F7EBB5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				595503D8247C201C00F7EBB5 /* MascotLevel.swift */,
+				593226A3247F380B0009950D /* Constans.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -346,7 +346,6 @@
 				234A062A247E71E300190F28 /* Mascot.swift in Sources */,
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */,
-				595503D9247C201C00F7EBB5 /* MascotLevel.swift in Sources */,
 				59A37C24246A5F73006252BA /* AchievementController.swift in Sources */,
 				2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
@@ -360,6 +359,7 @@
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
 				23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */,
 				593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */,
+				593226A4247F380B0009950D /* Constans.swift in Sources */,
 				5980AD892474F6E300E232A6 /* Category.swift in Sources */,
 				59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */,
 				5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */,

@@ -26,7 +26,7 @@ class AchievementController: UIViewController {
     }
     
     @objc func goDetail() {
-        performSegue(withIdentifier: "streakSegue", sender: self)
+        performSegue(withIdentifier: K.Identifier.streakSegue, sender: self)
     }
 }
 
@@ -36,7 +36,7 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as? CategoryAchievementCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.categoryCell) as? CategoryAchievementCell else {return UITableViewCell()}
         
         let category = categoryArray[indexPath.row]
         cell.configureCell(category)
@@ -46,11 +46,11 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        let category = categoryArray[indexPath.row]
-        performSegue(withIdentifier: "toDetailAchievement", sender: indexPath)
+        performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailAchievement" {
+        if segue.identifier == K.Identifier.toDetailSegue {
             let indexPath = sender as! IndexPath
             let achievement = achievementArray[indexPath.row]
             

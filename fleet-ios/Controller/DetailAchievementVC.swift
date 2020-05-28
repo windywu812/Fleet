@@ -20,7 +20,7 @@ class DetailAchievementVC: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: "achievementCell")
+        tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: K.Cell.achievementCell)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +36,7 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "achievementCell") as? AchievementCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.achievementCell) as? AchievementCell else {return UITableViewCell()}
         
         let ach = achievement[indexPath.row]
         cell.configureCell(ach: ach)
