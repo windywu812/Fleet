@@ -12,9 +12,16 @@ class UserDefaultServices {
     static let instance = UserDefaultServices()
     
     private let def = UserDefaults.standard
-    
+
     fileprivate let hasLaunchedKey = "hasLaunched"
-    fileprivate let currentStepKey = "currentStep"
+    
+    // For each day to be saved
+    fileprivate let currentStepEachDayKey = "currentStepEachDay"
+    fileprivate let currentGoalEachDayKey = "currentGoalEachDay"
+    
+    // For Mascot
+    fileprivate let currentLevelKey = "currentLevel"
+    fileprivate let totalStepForNextLevelKey = "totalStepsForNextLevel"
     
     var hasLaunched: Bool {
         get {
@@ -25,13 +32,43 @@ class UserDefaultServices {
         }
     }
     
+    // Each Day
     var currentStep: Int {
         get {
-            return def.integer(forKey: currentStepKey)
+            return def.integer(forKey: currentStepEachDayKey)
         }
         set {
-            def.set(newValue, forKey: currentStepKey)
+            def.set(newValue, forKey: currentStepEachDayKey)
         }
     }
+    
+    var currentGoal: Int {
+        get {
+            return def.integer(forKey: currentGoalEachDayKey)
+        }
+        set {
+            def.set(newValue, forKey: currentGoalEachDayKey)
+        }
+    }
+    
+    // For Mascot
+    var currentLevel: Int {
+        get {
+            return def.integer(forKey: currentLevelKey)
+        }
+        set {
+            def.set(newValue, forKey: currentLevelKey)
+        }
+    }
+    
+    var totalStepsForNextLevel: Int {
+        get {
+            return def.integer(forKey: totalStepForNextLevelKey)
+        }
+        set {
+            def.set(newValue, forKey: totalStepForNextLevelKey)
+        }
+    }
+    
     
 }
