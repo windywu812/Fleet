@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WG5-J3-Bax">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -130,12 +130,6 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmf-lt-rvW">
-                                                <rect key="frame" x="48" y="69.5" width="79.5" height="36"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-Kh-17F" customClass="RoundedButton" customModule="fleet_ios" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="134" width="135" height="33"/>
                                                 <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,45 +146,55 @@
                                                     <action selector="editTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="DgM-gS-eXn"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHN-VS-OB8">
-                                                <rect key="frame" x="133" y="57.5" width="30" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="+">
-                                                    <color key="titleColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="groupButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rXm-PE-tuy"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-PR-B1V">
-                                                <rect key="frame" x="12" y="57.5" width="30" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="-">
-                                                    <color key="titleColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="groupButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="gNI-fy-UqM"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oz2-Yi-5Td">
+                                                <rect key="frame" x="7.5" y="57.5" width="160" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-PR-B1V">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="-">
+                                                            <color key="titleColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="groupButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="gNI-fy-UqM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-SU-2bD">
+                                                        <rect key="frame" x="30" y="11.5" width="100" height="37.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="dLH-o5-fLL"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHN-VS-OB8">
+                                                        <rect key="frame" x="130" y="0.0" width="30" height="60"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="groupButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rXm-PE-tuy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="175" id="10j-e5-k3m"/>
                                             <constraint firstAttribute="bottom" secondItem="yYM-Kh-17F" secondAttribute="bottom" constant="8" id="1bN-Q0-agG"/>
                                             <constraint firstItem="yYM-Kh-17F" firstAttribute="leading" secondItem="dwm-Q3-uOa" secondAttribute="leading" constant="20" id="5vX-0l-Tw9"/>
+                                            <constraint firstItem="Oz2-Yi-5Td" firstAttribute="centerX" secondItem="dwm-Q3-uOa" secondAttribute="centerX" id="6D9-UH-JPP"/>
                                             <constraint firstAttribute="trailing" secondItem="yYM-Kh-17F" secondAttribute="trailing" constant="20" id="9N1-Pv-j2S"/>
                                             <constraint firstItem="3HE-bo-o7M" firstAttribute="top" secondItem="dwm-Q3-uOa" secondAttribute="top" constant="20" id="BqA-GH-8IG"/>
                                             <constraint firstAttribute="width" secondItem="dwm-Q3-uOa" secondAttribute="height" multiplier="1:1" id="GyD-LQ-lmg"/>
-                                            <constraint firstItem="Vmf-lt-rvW" firstAttribute="centerX" secondItem="dwm-Q3-uOa" secondAttribute="centerX" id="MuP-ti-5YK"/>
-                                            <constraint firstItem="p7b-PR-B1V" firstAttribute="centerY" secondItem="Vmf-lt-rvW" secondAttribute="centerY" id="OzR-Bf-B0i"/>
                                             <constraint firstAttribute="height" constant="175" id="fU6-p5-o4C"/>
                                             <constraint firstItem="3HE-bo-o7M" firstAttribute="centerX" secondItem="dwm-Q3-uOa" secondAttribute="centerX" id="mPx-fJ-Xwp"/>
-                                            <constraint firstItem="lHN-VS-OB8" firstAttribute="centerY" secondItem="Vmf-lt-rvW" secondAttribute="centerY" id="p4S-Fy-kPo"/>
-                                            <constraint firstItem="p7b-PR-B1V" firstAttribute="leading" secondItem="dwm-Q3-uOa" secondAttribute="leading" constant="12" id="rHK-tq-rDP"/>
-                                            <constraint firstItem="Vmf-lt-rvW" firstAttribute="centerY" secondItem="dwm-Q3-uOa" secondAttribute="centerY" id="scf-bT-rRN"/>
-                                            <constraint firstAttribute="trailing" secondItem="lHN-VS-OB8" secondAttribute="trailing" constant="12" id="z8F-ol-WK5"/>
+                                            <constraint firstItem="Oz2-Yi-5Td" firstAttribute="centerY" secondItem="dwm-Q3-uOa" secondAttribute="centerY" id="mrh-N4-68Y"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -255,12 +259,12 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="goalLabel" destination="Vmf-lt-rvW" id="Rin-m1-amK"/>
+                        <outlet property="goalLabel" destination="RMl-SU-2bD" id="iC1-7s-1c0"/>
                         <outlet property="levelLabel" destination="0Uc-ag-X1v" id="FLm-LI-Q6M"/>
                         <outlet property="mascotView" destination="AYc-7Y-dOw" id="3JR-BP-7BD"/>
                         <outlet property="progressView" destination="TlQ-vb-7Vr" id="9ZX-pG-o7r"/>
-                        <outletCollection property="groupButton" destination="lHN-VS-OB8" collectionClass="NSMutableArray" id="orw-E5-QXU"/>
                         <outletCollection property="groupButton" destination="p7b-PR-B1V" collectionClass="NSMutableArray" id="fsG-6J-SUP"/>
+                        <outletCollection property="groupButton" destination="lHN-VS-OB8" collectionClass="NSMutableArray" id="orw-E5-QXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

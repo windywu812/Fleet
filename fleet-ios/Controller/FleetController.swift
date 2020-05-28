@@ -13,21 +13,20 @@ class FleetController: UIViewController {
     
     
     @IBOutlet var groupButton: [UIButton]!
-    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var goalLabel: UITextField!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var mascotView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     
     var isEdit: Bool = false
     
-    // Dummy test data
     let service = UserDefaultServices.instance
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-
+        
+        setTextField()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +34,7 @@ class FleetController: UIViewController {
             btn.isHidden = true
         }
         
+        goalLabel.isUserInteractionEnabled = false
         setupMascot()
         checkProgress()
     }
@@ -63,11 +63,13 @@ class FleetController: UIViewController {
             groupButton.forEach { (btn) in
                 btn.isHidden = false
             }
+            goalLabel.isUserInteractionEnabled = true
             sender.setTitle("Done", for: .normal)
         } else {
             groupButton.forEach { (btn) in
                 btn.isHidden = true
             }
+            goalLabel.isUserInteractionEnabled = false
             sender.setTitle("Edit", for: .normal)
         }
     }
@@ -85,6 +87,51 @@ class FleetController: UIViewController {
             service.currentGoal += 500
             goalLabel.text = String(service.currentGoal)
         }
+    }
+    
+}
+
+extension FleetController: UITextFieldDelegate {
+    
+    func setTextField() {
+        goalLabel.delegate = self
+        hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        self.view.frame.origin.y = 0 - keyboardSize.height
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
+        self.view.frame.origin.y = 0
+        
+    }
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        service.currentGoal = Int(goalLabel.text ?? "") ?? 0
+        
+        print(service.currentGoal)
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
     
 }
