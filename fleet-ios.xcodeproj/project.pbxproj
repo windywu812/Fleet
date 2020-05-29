@@ -30,6 +30,7 @@
 		5980AD892474F6E300E232A6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD882474F6E300E232A6 /* Category.swift */; };
 		5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD8A2474F73E00E232A6 /* Dummies.swift */; };
 		599327712480E02C004E3B79 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599327702480E02C004E3B79 /* NotificationService.swift */; };
+		5993277324813647004E3B79 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277224813647004E3B79 /* HealthKitService.swift */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
 		59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1F246A5F73006252BA /* SceneDelegate.swift */; };
 		59A37C22246A5F73006252BA /* FleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C21246A5F73006252BA /* FleetController.swift */; };
@@ -66,6 +67,7 @@
 		5980AD882474F6E300E232A6 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		5980AD8A2474F73E00E232A6 /* Dummies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummies.swift; sourceTree = "<group>"; };
 		599327702480E02C004E3B79 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5993277224813647004E3B79 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A37C1D246A5F73006252BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A37C1F246A5F73006252BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */,
 				593226A1247F31D30009950D /* UserDefaultServices.swift */,
 				599327702480E02C004E3B79 /* NotificationService.swift */,
+				5993277224813647004E3B79 /* HealthKitService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				234A062A247E71E300190F28 /* Mascot.swift in Sources */,
 				59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */,
 				23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */,
+				5993277324813647004E3B79 /* HealthKitService.swift in Sources */,
 				59A37C24246A5F73006252BA /* AchievementController.swift in Sources */,
 				599327712480E02C004E3B79 /* NotificationService.swift in Sources */,
 				2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */,
