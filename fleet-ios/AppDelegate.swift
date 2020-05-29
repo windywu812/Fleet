@@ -17,9 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor.orange
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addStepToDB), name: .NSCalendarDayChanged, object: nil)
+
         return true
     }
 
+    @objc func addStepToDB() {
+        let currentStep = UserDefaultServices.instance.currentStep
+        
+        // save currentstep to Core Data here
+        
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
