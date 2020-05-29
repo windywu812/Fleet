@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class EndOnboardingVC: UIViewController {
 
@@ -28,6 +29,15 @@ class EndOnboardingVC: UIViewController {
         self.present(vc, animated: false)
         
         //Ask some permission
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, err) in
+            guard err != nil else { return }
+            
+            if granted {
+                print("Access granted")
+            } else {
+                print("Not granted")
+            }
+        }
     }
 
 }

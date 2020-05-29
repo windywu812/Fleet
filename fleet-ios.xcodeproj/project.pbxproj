@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1FA14634267282950E3400ED /* Pods_fleet_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FEF8F519AF1B1144173153 /* Pods_fleet_ios.framework */; };
+		230B7A852480BAE500E34F13 /* RoundedOnlyTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */; };
+		230B7A862480C78300E34F13 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593226AC247FFC760009950D /* HealthKit.framework */; };
 		2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */; };
 		2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECD12475554C005C9DA0 /* DayModel.swift */; };
 		234A062A247E71E300190F28 /* Mascot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A0629247E71E300190F28 /* Mascot.swift */; };
@@ -17,7 +19,6 @@
 		23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */; };
 		593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A1247F31D30009950D /* UserDefaultServices.swift */; };
 		593226A4247F380B0009950D /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A3247F380B0009950D /* Constans.swift */; };
-		593226AD247FFC760009950D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593226AC247FFC760009950D /* HealthKit.framework */; };
 		59550411247E55A600F7EBB5 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59550410247E55A600F7EBB5 /* Achievement.swift */; };
 		5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD23246B8F0900F8FC53 /* RoundedView.swift */; };
 		5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979AD5E246E428300F8FC53 /* RoundedButton.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedOnlyTopView.swift; sourceTree = "<group>"; };
 		2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunction.swift; sourceTree = "<group>"; };
 		2330ECD12475554C005C9DA0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		234A0629247E71E300190F28 /* Mascot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mascot.swift; sourceTree = "<group>"; };
@@ -85,7 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FA14634267282950E3400ED /* Pods_fleet_ios.framework in Frameworks */,
-				593226AD247FFC760009950D /* HealthKit.framework in Frameworks */,
+				230B7A862480C78300E34F13 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +156,7 @@
 				5979AD23246B8F0900F8FC53 /* RoundedView.swift */,
 				5979AD5E246E428300F8FC53 /* RoundedButton.swift */,
 				5980AD7B24743CB400E232A6 /* RoundedOnlyBottomView.swift */,
+				230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */,
 				5980AD7D2474F28F00E232A6 /* AchievementCell.swift */,
 				5980AD7E2474F28F00E232A6 /* AchievementCell.xib */,
 				5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */,
@@ -369,6 +372,7 @@
 				5980AD892474F6E300E232A6 /* Category.swift in Sources */,
 				59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */,
 				5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */,
+				230B7A852480BAE500E34F13 /* RoundedOnlyTopView.swift in Sources */,
 				5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */,
 				5980AD852474F59F00E232A6 /* CategoryAchievementCell.swift in Sources */,
 			);
@@ -516,8 +520,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72C5A4RQ56;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,6 +530,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teri.fleet-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -536,8 +542,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72C5A4RQ56;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.teri.fleet-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
