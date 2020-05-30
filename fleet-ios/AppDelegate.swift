@@ -25,8 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @objc func addStepToDB() {
         let currentStep = UserDefaultServices.instance.currentStep
+        let currentGoal = UserDefaultServices.instance.currentGoal
         
         // save currentstep to Core Data here
+        CoreDataFunction.saveData(id: UUID(), totalStep: currentStep, targetStep: currentGoal, date: Date())
         
     }
     

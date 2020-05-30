@@ -55,7 +55,6 @@ class FleetController: UIViewController {
     }
     
     func checkProgress() {
-        
         if progressView.progress >= 1 {
             service.currentLevel += 1
             
@@ -97,7 +96,6 @@ class FleetController: UIViewController {
     }
     
     @IBAction func groupButton(_ sender: UIButton) {
-        
         if sender.tag == 0 {
             service.currentGoal -= 500
             if service.currentGoal <= 0 {
@@ -124,26 +122,19 @@ extension FleetController: UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        
         self.view.frame.origin.y = 0 - keyboardSize.height
-        
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        
         self.view.frame.origin.y = 0
-        
     }
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         service.currentGoal = Int(goalLabel.text ?? "") ?? 0
-        
-        print(service.currentGoal)
     }
     
     func hideKeyboardWhenTappedAround() {
