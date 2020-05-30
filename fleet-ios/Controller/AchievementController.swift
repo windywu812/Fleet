@@ -61,6 +61,11 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
         
         if !category.isLocked {
             performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: indexPath)
+        } else {
+            let alert = UIAlertController(title: "Sorry", message: "You need to conquer the previous achievement", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            present(alert, animated: true)
         }
     }
     
