@@ -10,6 +10,7 @@ class ProgressController: UIViewController {
     @IBOutlet weak var dateInfo: UIStackView!
     @IBOutlet weak var totalStepsWeekly: UILabel!
     @IBOutlet weak var weeklySummary: UILabel!
+    @IBOutlet weak var infoProgress: UILabel!
     
     var isOnYear: Bool = true
     
@@ -61,9 +62,11 @@ class ProgressController: UIViewController {
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             isOnYear.toggle()
+            infoProgress.text = "Weekly Summary"
             setChartWeekly()
         } else if sender.selectedSegmentIndex == 1 {
             isOnYear.toggle()
+            infoProgress.text = "Anually Summary"
             setChartAnually()
         }
     }

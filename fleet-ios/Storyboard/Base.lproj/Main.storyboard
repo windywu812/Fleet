@@ -346,7 +346,7 @@
             <objects>
                 <viewController id="qyl-6x-uYV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MFf-ID-doE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEa-fD-mA8">
@@ -813,10 +813,10 @@
                                 <rect key="frame" x="16" y="152.66666666666663" width="382" height="136.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-en-49l">
-                                        <rect key="frame" x="10" y="13.666666666666686" width="362" height="109"/>
+                                        <rect key="frame" x="16" y="13.666666666666686" width="350" height="109"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Czl-Hl-hYL">
-                                                <rect key="frame" x="0.0" y="0.0" width="362" height="71"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="71"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcB-EY-wM8">
                                                         <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="23"/>
@@ -837,11 +837,11 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="132" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-If-rf6">
-                                                <rect key="frame" x="0.0" y="73" width="362" height="36"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-If-rf6">
+                                                <rect key="frame" x="0.0" y="73" width="350" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TOTAL STEPS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcz-0b-f9m">
-                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="U07-uz-f6a"/>
                                                         </constraints>
@@ -850,10 +850,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1212211" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvH-rN-Ei2">
-                                                        <rect key="frame" x="247" y="0.0" width="115" height="36"/>
+                                                        <rect key="frame" x="170" y="0.0" width="180" height="36"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="PUo-7p-OVy"/>
-                                                            <constraint firstAttribute="width" constant="115" id="cCf-XZ-neR"/>
+                                                            <constraint firstAttribute="width" constant="180" id="cCf-XZ-neR"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -867,6 +867,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="3EI-en-49l" firstAttribute="centerY" secondItem="hKV-eq-3fx" secondAttribute="centerY" id="6eB-NZ-9KQ"/>
+                                    <constraint firstItem="3EI-en-49l" firstAttribute="leading" secondItem="hKV-eq-3fx" secondAttribute="leading" constant="16" id="IRM-dc-Uqq"/>
+                                    <constraint firstAttribute="trailing" secondItem="3EI-en-49l" secondAttribute="trailing" constant="16" id="bPZ-Iq-0th"/>
                                     <constraint firstItem="3EI-en-49l" firstAttribute="centerX" secondItem="hKV-eq-3fx" secondAttribute="centerX" id="ofy-fm-9fp"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -922,6 +924,7 @@
                         <outlet property="chartView" destination="K9f-TS-Ftd" id="Y3b-qf-Cv8"/>
                         <outlet property="dateInfo" destination="R52-mR-T1x" id="DbQ-Ch-dlL"/>
                         <outlet property="dateLabel" destination="IJp-ag-kG8" id="de3-bS-ahc"/>
+                        <outlet property="infoProgress" destination="XcB-EY-wM8" id="tBI-fn-urk"/>
                         <outlet property="segmentControl" destination="nWc-my-jGv" id="03D-Ov-hAT"/>
                         <outlet property="topBackground" destination="o8B-FD-tG9" id="gh3-N2-u39"/>
                         <outlet property="totalStepsWeekly" destination="qvH-rN-Ei2" id="m8i-sM-f1D"/>

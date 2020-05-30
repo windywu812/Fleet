@@ -160,6 +160,9 @@ extension ProgressController: ChartViewDelegate {
         
         dateLabel.text = formatter.string(from: Date())
         
+        totalStepsWeekly.text = "\(countSteps.reduce(0, { $0 + $1 }))"
+        weeklySummary.text = "On average, you walk about \(countSteps.reduce(0, { $0 + $1 }) / 12) each months"
+        
         var totalStepsEntry = [BarChartDataEntry]()
         totalStepsEntry.removeAll()
         
