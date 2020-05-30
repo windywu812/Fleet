@@ -18,6 +18,7 @@ class FleetController: UIViewController {
     @IBOutlet weak var mascotView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var todayStepLabel: UILabel!
+    @IBOutlet weak var progressLabel: UILabel!
     
     var isEdit: Bool = false
     
@@ -58,15 +59,21 @@ class FleetController: UIViewController {
             service.currentLevel += 1
             
             service.totalStepsForNextLevel = 0
-            progressView.setProgress(0, animated: true)
+            progressView.setProgress(0, animated: false)
         }
     }
     
     func setupMascot() {
+        let currentStep = service.currentStep
+        
         goalLabel.text = String(service.currentGoal)
         mascotView.image = mascots[service.currentLevel].image
         levelLabel.text = mascots[service.currentLevel].id
-        progressView.setProgress((Float(service.totalStepsForNextLevel) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: true)
+        
+        let remainStep = mascots[service.currentLevel + 1].stepsToLvlUp - currentStep
+        progressLabel.text = "\(remainStep) steps left to level up"
+        
+        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
     }
     
     @IBAction func editTapped(_ sender: UIButton) {

@@ -34,8 +34,6 @@ class DetailAchievementVC: UIViewController {
         currentDeterminedCount = udService.determinedCount
         
         if category?.name == .determined {
-            udService.determinedCount = 4
-
             achievement = AchievementService.instance.configureDetermined(achievement)
         }
     }

@@ -53,6 +53,8 @@ class EndOnboardingVC: UIViewController {
                     let vc = mainStoryboard.instantiateViewController(withIdentifier: "Main") as! UITabBarController
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: false)
+                    
+                    UserDefaultServices.instance.currentGoal = 500
                 }
             }
         }

@@ -26,9 +26,6 @@ class AchievementController: UIViewController {
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
         streakView.addGestureRecognizer(gestureRec)
 
-        // Dummy to test logic for streak achievement
-        UserDefaultServices.instance.currentDayStreak = 29
-    
     }
     
     @objc func goDetail() {
