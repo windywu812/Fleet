@@ -14,7 +14,9 @@ class DetailAchievementVC: UIViewController {
     
     var category: Category?
     var achievement: [Achievement]!
+    let udService = UserDefaultServices.instance
     
+    var currentDeterminedCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +29,20 @@ class DetailAchievementVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         category = achievement[0].category
         title = category?.name.rawValue
+        
+        currentDeterminedCount = udService.determinedCount
+        
+        if category?.name == .determined {
+            udService.determinedCount = 4
+
+            achievement = AchievementService.instance.configureDetermined(achievement)
+            achievement.forEach { (ach) in
+                print(ach.title)
+                print(ach.isComplete)
+                print("----------------------")
+            }
+        }
     }
-    
 }
 
 extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
@@ -42,6 +56,12 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
         let ach = achievement[indexPath.row]
         cell.configureCell(ach: ach)
         
+        if category?.name == .determined {
+            let currentStep = udService.currentStep
+            if indexPath.row == currentDeterminedCount {
+                cell.progress.setProgress(Float(currentStep)/Float(ach.progressTotal), animated: false)
+            }
+        }
         return cell
     }
     

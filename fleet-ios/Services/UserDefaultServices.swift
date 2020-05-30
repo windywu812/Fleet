@@ -12,7 +12,7 @@ class UserDefaultServices {
     static let instance = UserDefaultServices()
     
     private let def = UserDefaults.standard
-
+    
     fileprivate let hasLaunchedKey = "hasLaunched"
     
     // For each day to be saved
@@ -20,6 +20,10 @@ class UserDefaultServices {
     fileprivate let currentGoalEachDayKey = "currentGoalEachDay"
     
     fileprivate let currentDayStreakKey = "currentDayStreak"
+    fileprivate let streakCountKey = "streakCount"
+    
+    fileprivate let isDeterminedTodayKey = "determinedToday"
+    fileprivate let determinedCountKey = "determinedCount"
     
     // For Mascot
     fileprivate let currentLevelKey = "currentLevel"
@@ -59,6 +63,35 @@ class UserDefaultServices {
         }
         set {
             def.set(newValue, forKey: currentDayStreakKey)
+        }
+    }
+    
+    var streakCount: Int {
+        get {
+            return def.integer(forKey: streakCountKey)
+        }
+        set {
+            def.set(newValue, forKey: streakCountKey)
+        }
+    }
+    
+    // this is variable to prevent user for complete more than 1 determined achievement in one day
+    var isDeterminedToday: Bool {
+        get {
+            return def.bool(forKey: isDeterminedTodayKey)
+        }
+        set {
+            def.set(newValue, forKey: isDeterminedTodayKey)
+        }
+    }
+    
+    // this is variable to specify which one of determined achievement is needed to proceed
+    var determinedCount: Int {
+        get {
+            return def.integer(forKey: determinedCountKey)
+        }
+        set {
+            def.set(newValue, forKey: determinedCountKey)
         }
     }
     

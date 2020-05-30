@@ -17,6 +17,7 @@ class FleetController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var mascotView: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var todayStepLabel: UILabel!
     
     var isEdit: Bool = false
     
@@ -27,6 +28,7 @@ class FleetController: UIViewController {
         super.viewDidLoad()
         
         setTextField()
+        todayStepLabel.text = String(describing: service.currentStep)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,8 +40,11 @@ class FleetController: UIViewController {
         setupMascot()
         checkProgress()
         
+        service.currentStep = 1300
         // Configure Streak to be run every midnight
-        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.configureStreak), name: .NSCalendarDayChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.addStreakNum), name: .NSCalendarDayChanged, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.setDetermined), name: .NSCalendarDayChanged, object: nil)
     }
     
     func checkProgress() {

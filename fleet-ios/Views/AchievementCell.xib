@@ -45,7 +45,7 @@ unlock this badge</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-vE-Hzj">
+                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-vE-Hzj">
                                 <rect key="frame" x="0.0" y="41" width="196" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

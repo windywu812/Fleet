@@ -29,12 +29,16 @@ class AchievementCell: UITableViewCell {
         if category.name == .streak {
             achService.setStreakComplete(ach)
             percentage = achService.getStreakNum(for: ach.progressTotal)
+        } else if category.name == .determined {
+//            var currentDeterminedCount = UserDefaultServices.instance.determinedCount
+//
+//            ach
         }
         
         if ach.isComplete == true {
             progress.isHidden = true
         } else {
-            progress.layer.cornerRadius = 5
+            progress.layer.cornerRadius = 2
             progress.setProgress(percentage, animated: false)
         }
     }

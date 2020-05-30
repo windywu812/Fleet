@@ -333,6 +333,7 @@
                         <outlet property="levelLabel" destination="aOZ-zV-mHE" id="ChZ-Jr-fDb"/>
                         <outlet property="mascotView" destination="AYc-7Y-dOw" id="3JR-BP-7BD"/>
                         <outlet property="progressView" destination="TlQ-vb-7Vr" id="9ZX-pG-o7r"/>
+                        <outlet property="todayStepLabel" destination="ive-4r-GcL" id="LJ2-hH-L5S"/>
                         <outletCollection property="groupButton" destination="p7b-PR-B1V" collectionClass="NSMutableArray" id="fsG-6J-SUP"/>
                         <outletCollection property="groupButton" destination="lHN-VS-OB8" collectionClass="NSMutableArray" id="orw-E5-QXU"/>
                     </connections>
