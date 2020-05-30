@@ -21,12 +21,6 @@ class ProgressController: UIViewController {
 
     }
     
-    func add(_ x: Int) -> Date {
-        let cal = Calendar.current
-        
-        return cal.date(byAdding: .day, value: x, to: Date())!
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         setChartWeekly()
     }
@@ -62,11 +56,9 @@ class ProgressController: UIViewController {
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             isOnYear.toggle()
-            infoProgress.text = "Weekly Summary"
             setChartWeekly()
         } else if sender.selectedSegmentIndex == 1 {
             isOnYear.toggle()
-            infoProgress.text = "Anually Summary"
             setChartAnually()
         }
     }

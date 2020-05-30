@@ -21,6 +21,8 @@ extension ProgressController: ChartViewDelegate {
     
     func setChartWeekly(_ add: Int = 0) {
         
+        infoProgress.text = "Weekly Summary"
+        
         var countSteps = [Int]()
         var targetSteps = [Int]()
         
@@ -44,11 +46,21 @@ extension ProgressController: ChartViewDelegate {
         }
         
         let myData = groupedByWeek[now]
-        print(myData?.count)
-        if myData?.count != 7 {
-
+        
+        let formatterWithoutYear = DateFormatter()
+        formatterWithoutYear.dateFormat = "dd MMM"
+        
+        let formatterWithYear = DateFormatter()
+        formatterWithYear.dateFormat = "dd MMM yyyy"
+        
+        if myData?.count == nil {
+            
+            countSteps = []
+            targetSteps = []
+            
+        } else if myData?.count != 7 {
+            
             let index = myData?.first!.date.weekDay ?? 0
-            print(index)
             if index == 0 {
                 return
             }
@@ -57,7 +69,7 @@ extension ProgressController: ChartViewDelegate {
                 countSteps.append(0)
                 targetSteps.append(0)
             }
-
+            
             myData?.forEach({
                 countSteps.append($0.countSteps)
                 targetSteps.append($0.targetSteps)
@@ -70,34 +82,30 @@ extension ProgressController: ChartViewDelegate {
             })
         }
         
-        print(countSteps)
-//        print(targetSteps)
-        
         // Comparison
-        var countStepsBefore: [Int] = []
-        let previousData = groupedByWeek[now - 1]
-        previousData?.forEach({
-            countStepsBefore.append($0.countSteps)
-        })
-        
-        let avgSum = countSteps.reduce(0, { $0 + $1 }) / 7
-        let avgPreviousSum = countStepsBefore.reduce(0, { $0 + $1 }) / 7
-        
-        let formatterWithoutYear = DateFormatter()
-        formatterWithoutYear.dateFormat = "dd MMM"
-        
-        let formatterWithYear = DateFormatter()
-        formatterWithYear.dateFormat = "dd MMM yyyy"
-        
-        dateLabel.text = "\(formatterWithoutYear.string(from: myData?.first?.date ?? Date())) - \(formatterWithYear.string(from: myData?.last?.date ?? Date()))"
-        totalStepsWeekly.text = "\(countSteps.reduce(0, { $0 + $1 }))"
-                
-        if avgSum > avgPreviousSum {
-            weeklySummary.text = "On average, this week's step count is more than last week"
+        if myData?.count == nil {
+            dateLabel.text = "\(formatterWithYear.string(from: Date()))"
+            totalStepsWeekly.text = "\(0)"
+            weeklySummary.text = "You don't have any recorded data"
         } else {
-            weeklySummary.text = "On Average, last week’s step count was lower than two weeks ago."
+            var countStepsBefore: [Int] = []
+            let previousData = groupedByWeek[now - 1]
+            previousData?.forEach({
+                countStepsBefore.append($0.countSteps)
+            })
+            
+            let avgSum = countSteps.reduce(0, { $0 + $1 }) / 7
+            let avgPreviousSum = countStepsBefore.reduce(0, { $0 + $1 }) / 7
+            
+            dateLabel.text = "\(formatterWithoutYear.string(from: myData?.first?.date ?? Date())) - \(formatterWithYear.string(from: myData?.last?.date ?? Date()))"
+            totalStepsWeekly.text = "\(countSteps.reduce(0, { $0 + $1 }))"
+            
+            if avgSum > avgPreviousSum {
+                weeklySummary.text = "On average, this week's step count is more than last week"
+            } else {
+                weeklySummary.text = "On Average, last week’s step count was lower than two weeks ago."
+            }
         }
-        
         
         for x in 0..<countSteps.count {
             // Insert count entry
@@ -108,7 +116,7 @@ extension ProgressController: ChartViewDelegate {
             let targetStepsData = BarChartDataEntry(x: Double(x), y: Double(targetSteps[x]))
             targetStepsEntry.append(targetStepsData)
         }
-                
+        
         let countStepsDataSet = BarChartDataSet(entries: countStepsEntry, label: "Total Steps")
         countStepsDataSet.drawValuesEnabled = false
         countStepsDataSet.setColor(UIColor(named: "orange") ?? UIColor.orange)
@@ -121,16 +129,12 @@ extension ProgressController: ChartViewDelegate {
         groupChartData.notifyDataChanged()
         
         // Value
-//        let groupSpace = 0.3
-//        let barSpace = 0.05
-//        let barWidth = 0.4
         let groupSpace = 0.2
         let barSpace = 0.05
         let barWidth = 0.35
-
+        
         let groupspace = groupChartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        print(groupspace)
-        print(groupspace * 7 / 2)
+        
         // XAxis
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: Calendar.current.shortWeekdaySymbols)
         barChart.xAxis.axisMinimum = 0
@@ -149,8 +153,10 @@ extension ProgressController: ChartViewDelegate {
     
     func setChartAnually() {
         
+        infoProgress.text = "Anually Summary"
+        
         var countSteps: [Int] = []
-
+        
         for x in 0...12 {
             countSteps.append(Int(sumStepEachMonth(x)))
         }
@@ -160,8 +166,13 @@ extension ProgressController: ChartViewDelegate {
         
         dateLabel.text = formatter.string(from: Date())
         
-        totalStepsWeekly.text = "\(countSteps.reduce(0, { $0 + $1 }))"
-        weeklySummary.text = "On average, you walk about \(countSteps.reduce(0, { $0 + $1 }) / 12) each months"
+        if countSteps.reduce(0, { $0 + $1 }) == 0  {
+            totalStepsWeekly.text = "\(0)"
+            weeklySummary.text = "You don't have any recorded data"
+        } else {
+            totalStepsWeekly.text = "\(countSteps.reduce(0, { $0 + $1 }))"
+            weeklySummary.text = "On average, you walk about \(countSteps.reduce(0, { $0 + $1 }) / 12) each months"
+        }
         
         var totalStepsEntry = [BarChartDataEntry]()
         totalStepsEntry.removeAll()
@@ -204,5 +215,11 @@ extension Date {
     }
     var weekDay: Int {
         return calender.component(.weekday, from: self)
+    }
+    
+    func add(_ x: Int) -> Date {
+        let cal = Calendar.current
+        
+        return cal.date(byAdding: .day, value: x, to: Date())!
     }
 }
