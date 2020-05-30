@@ -48,3 +48,21 @@ private var achOlympic: [Achievement] = [
 ]
 
 var achievementArray = [achDetermined, achConsistent, achOlympic, achStreak]
+
+
+var funFact = [
+    "Did you know? It takes approximately 200 muscles to take a single step when running!",
+    "Did you know? Walking with music boosts your performance by 15%! Try it!",
+    "Did you know? Theoretically, you could run for 3 days nonstop with your current energy!",
+    "Did you know? Over a billion pair of shoes are sold every year. Should you get one too?",
+    "Did you know? Only 14% of the world’s runners start running because of weight problems. But I doubt it..",
+    "Did you know? Around 2.182 marathons are listed all over the world in 2018, why don’t you try one?",
+    "Did you know? 75% of runners have had an injury related to running in the past 12 months! Be careful!",
+    "Did you know? Experts say that jogging for 30 minutes every day shows proven health benefits!",
+    "Did you know? Working out helps your social skills. Chicks digs joggers!",
+    "Did you know? Humans outrun almost all animals in long distance marathons. Fleety is faster, though!",
+    "Did you know? You should not drink before you jog, a good 8 oz. 5 minutes prior should do the trick.",
+    "Did you know? Short jogs can increase your productivity at work.",
+    "Did you know? Jogs can increase your brains functionality. Such as your vision and hearing.",
+    "Did you know? A Japanese runner set a record for the longest marathon ever which he finished in 54 years and 8 months."
+]

@@ -19,6 +19,7 @@ class FleetController: UIViewController {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var todayStepLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var factLabel: UILabel!
     
     var isEdit: Bool = false
     
@@ -69,6 +70,7 @@ class FleetController: UIViewController {
         goalLabel.text = String(service.currentGoal)
         mascotView.image = mascots[service.currentLevel].image
         levelLabel.text = mascots[service.currentLevel].id
+        factLabel.text = funFact.randomElement()
         
         let remainStep = mascots[service.currentLevel + 1].stepsToLvlUp - currentStep
         progressLabel.text = "\(remainStep) steps left to level up"
