@@ -22,7 +22,6 @@ class FleetController: UIViewController {
     
     let service = UserDefaultServices.instance
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +36,9 @@ class FleetController: UIViewController {
         goalLabel.isUserInteractionEnabled = false
         setupMascot()
         checkProgress()
+        
+        // Configure Streak to be run every midnight
+        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.configureStreak), name: .NSCalendarDayChanged, object: nil)
     }
     
     func checkProgress() {

@@ -8,9 +8,9 @@
 
 import Foundation
 
-private var determined = Category(name: "Determined", isLocked: false)
-private var consistent = Category(name: "Consistent", isLocked: true)
-private var olympic = Category(name: "Olympic", isLocked: true)
+private var determined = Category(name: .determined, isLocked: false)
+private var consistent = Category(name: .consistent, isLocked: true)
+private var olympic = Category(name: .olympic, isLocked: true)
 var categoryArray: [Category] = [determined, consistent, olympic]
 
 let countSteps = [300, 430, 453, 224, 232, 543, 233]
@@ -18,7 +18,7 @@ let targetSteps = [500, 500, 500, 500, 1000, 400, 300]
 
 let countStepsPerMonth = [1243, 2562, 2323, 3432, 1234, 3455, 2344, 5432, 1243, 4233, 3532, 5432]
 
-private var streak = Category(name: "Day Streak", isLocked: false)
+private var streak = Category(name: .streak, isLocked: false)
 private var achStreak: [Achievement] = [
     Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: streak),
     Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: streak),

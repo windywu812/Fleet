@@ -21,11 +21,12 @@ class DetailAchievementVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: K.Cell.achievementCell)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         category = achievement[0].category
-        title = category?.name
+        title = category?.name.rawValue
     }
     
 }

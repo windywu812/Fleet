@@ -14,14 +14,6 @@ struct Mascot {
     let stepsToLvlUp: Int
 }
 
-enum Level: String {
-    case level1 = "newbie"
-    case level2 = "rookie"
-    case level3 = "master"
-    case level4 = "grandMaster"
-    case level5 = "legend"
-}
-
 let level1 = Mascot(id: "Newbie", image: UIImage(named: Level.level1.rawValue)!, stepsToLvlUp: 10000)
 let level2 = Mascot(id: "Rookie", image: UIImage(named: Level.level2.rawValue)!, stepsToLvlUp: 15000)
 let level3 = Mascot(id: "Master", image: UIImage(named: Level.level3.rawValue)!, stepsToLvlUp: 25000)

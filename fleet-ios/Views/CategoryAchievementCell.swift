@@ -14,7 +14,7 @@ class CategoryAchievementCell: UITableViewCell {
     @IBOutlet weak var imgLock: UIImageView!
     
     func configureCell(_ category: Category) {
-        lblCategory.text = category.name
+        lblCategory.text = category.name.rawValue
         
         if category.isLocked == true {
             imgLock.isHidden = false

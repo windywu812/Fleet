@@ -31,6 +31,8 @@
 		5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD8A2474F73E00E232A6 /* Dummies.swift */; };
 		599327712480E02C004E3B79 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599327702480E02C004E3B79 /* NotificationService.swift */; };
 		5993277324813647004E3B79 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277224813647004E3B79 /* HealthKitService.swift */; };
+		5993277524820201004E3B79 /* AchievementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277424820201004E3B79 /* AchievementService.swift */; };
+		599327772482027D004E3B79 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599327762482027D004E3B79 /* Enums.swift */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
 		59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1F246A5F73006252BA /* SceneDelegate.swift */; };
 		59A37C22246A5F73006252BA /* FleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C21246A5F73006252BA /* FleetController.swift */; };
@@ -68,6 +70,8 @@
 		5980AD8A2474F73E00E232A6 /* Dummies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummies.swift; sourceTree = "<group>"; };
 		599327702480E02C004E3B79 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5993277224813647004E3B79 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		5993277424820201004E3B79 /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
+		599327762482027D004E3B79 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A37C1D246A5F73006252BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A37C1F246A5F73006252BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			children = (
 				2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */,
 				593226A1247F31D30009950D /* UserDefaultServices.swift */,
+				5993277424820201004E3B79 /* AchievementService.swift */,
 				599327702480E02C004E3B79 /* NotificationService.swift */,
 				5993277224813647004E3B79 /* HealthKitService.swift */,
 			);
@@ -178,6 +183,7 @@
 				2330ECD12475554C005C9DA0 /* DayModel.swift */,
 				59550410247E55A600F7EBB5 /* Achievement.swift */,
 				234A0629247E71E300190F28 /* Mascot.swift */,
+				599327762482027D004E3B79 /* Enums.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,19 +210,19 @@
 			isa = PBXGroup;
 			children = (
 				593226AB247FFC760009950D /* fleet-ios.entitlements */,
+				59A37C1D246A5F73006252BA /* AppDelegate.swift */,
+				59A37C1F246A5F73006252BA /* SceneDelegate.swift */,
 				593226A0247F31A00009950D /* Services */,
-				D2D94B79247E3A130076C795 /* Sound Effect */,
 				595503D7247C200A00F7EBB5 /* Utilities */,
 				5980AD872474F6D800E232A6 /* Model */,
 				5979AD22246B8EF000F8FC53 /* Views */,
 				2372DC79246A666000ABE9D5 /* Controller */,
 				23A2AEDA247CD6BC0009BD3A /* Storyboard */,
 				23A2AED9247CD6A10009BD3A /* OnboardingController */,
+				D2D94B79247E3A130076C795 /* Sound Effect */,
 				59A37C2B246A5F76006252BA /* Assets.xcassets */,
 				59A37C30246A5F76006252BA /* Info.plist */,
 				59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */,
-				59A37C1D246A5F73006252BA /* AppDelegate.swift */,
-				59A37C1F246A5F73006252BA /* SceneDelegate.swift */,
 			);
 			path = "fleet-ios";
 			sourceTree = "<group>";
@@ -367,12 +373,14 @@
 				2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
 				5980AD7F2474F28F00E232A6 /* AchievementCell.swift in Sources */,
+				5993277524820201004E3B79 /* AchievementService.swift in Sources */,
 				2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */,
 				5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */,
 				59550411247E55A600F7EBB5 /* Achievement.swift in Sources */,
 				5980AD7C24743CB400E232A6 /* RoundedOnlyBottomView.swift in Sources */,
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
 				59A37C22246A5F73006252BA /* FleetController.swift in Sources */,
+				599327772482027D004E3B79 /* Enums.swift in Sources */,
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
 				23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */,
 				593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */,

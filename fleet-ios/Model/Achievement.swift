@@ -8,16 +8,15 @@
 
 import Foundation
 
-struct Achievement {
+class Achievement {
     var title: String
     var progressTotal: Int
-    var progressCurrent: Int = 0
     var category: Category
     var isComplete: Bool = false
     
-    mutating func setComplete() {
-        if progressTotal == progressCurrent {
-            self.isComplete = true
-        }
+    init(title: String, progressTotal: Int, category: Category) {
+        self.title = title
+        self.progressTotal = progressTotal
+        self.category = category
     }
 }

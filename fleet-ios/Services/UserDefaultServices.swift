@@ -19,6 +19,8 @@ class UserDefaultServices {
     fileprivate let currentStepEachDayKey = "currentStepEachDay"
     fileprivate let currentGoalEachDayKey = "currentGoalEachDay"
     
+    fileprivate let currentDayStreakKey = "currentDayStreak"
+    
     // For Mascot
     fileprivate let currentLevelKey = "currentLevel"
     fileprivate let totalStepForNextLevelKey = "totalStepsForNextLevel"
@@ -48,6 +50,15 @@ class UserDefaultServices {
         }
         set {
             def.set(newValue, forKey: currentGoalEachDayKey)
+        }
+    }
+    
+    var currentDayStreak: Int {
+        get {
+            return def.integer(forKey: currentDayStreakKey)
+        }
+        set {
+            def.set(newValue, forKey: currentDayStreakKey)
         }
     }
     

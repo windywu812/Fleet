@@ -15,6 +15,8 @@ class AchievementController: UIViewController {
     @IBOutlet weak var imgMascot: UIImageView!
     @IBOutlet weak var streakView: RoundedView!
     
+    private let service = UserDefaultServices.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,10 +25,23 @@ class AchievementController: UIViewController {
         
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
         streakView.addGestureRecognizer(gestureRec)
+
+        // Dummy to test logic for streak achievement
+        UserDefaultServices.instance.currentDayStreak = 2
+    
     }
     
     @objc func goDetail() {
         performSegue(withIdentifier: K.Identifier.streakSegue, sender: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let currentStreak = service.currentDayStreak
+        let noun = currentStreak > 1 ? "days streak" : "day streak"
+        
+        numStreakLbl.text = "\(currentStreak) \(noun)"
     }
 }
 
@@ -45,8 +60,11 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let category = categoryArray[indexPath.row]
-        performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: indexPath)
+        let category = categoryArray[indexPath.row]
+        
+        if !category.isLocked {
+            performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: indexPath)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
