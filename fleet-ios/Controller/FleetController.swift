@@ -21,6 +21,7 @@ class FleetController: UIViewController {
     var isEdit: Bool = false
     
     let service = UserDefaultServices.instance
+    let hkService = HealthKitService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()

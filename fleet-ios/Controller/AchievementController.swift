@@ -27,7 +27,7 @@ class AchievementController: UIViewController {
         streakView.addGestureRecognizer(gestureRec)
 
         // Dummy to test logic for streak achievement
-        UserDefaultServices.instance.currentDayStreak = 2
+        UserDefaultServices.instance.currentDayStreak = 29
     
     }
     

@@ -21,14 +21,21 @@ class AchievementCell: UITableViewCell {
     }
     
     func configureCell(ach: Achievement) {
-        achService.setStreakComplete(ach)
-        
         txtTitle.text = ach.title
+
+        let category = ach.category
+        var percentage: Float = 0.0
+        
+        if category.name == .streak {
+            achService.setStreakComplete(ach)
+            percentage = achService.getStreakNum(for: ach.progressTotal)
+        }
+        
         if ach.isComplete == true {
             progress.isHidden = true
         } else {
             progress.layer.cornerRadius = 5
-            progress.setProgress(achService.getStreakNum(for: ach.progressTotal), animated: false)
+            progress.setProgress(percentage, animated: false)
         }
     }
 }
