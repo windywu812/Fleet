@@ -27,6 +27,7 @@ class DetailAchievementVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         category = achievement[0].category
         title = category?.name.rawValue
         
@@ -36,11 +37,6 @@ class DetailAchievementVC: UIViewController {
             udService.determinedCount = 4
 
             achievement = AchievementService.instance.configureDetermined(achievement)
-            achievement.forEach { (ach) in
-                print(ach.title)
-                print(ach.isComplete)
-                print("----------------------")
-            }
         }
     }
 }

@@ -31,7 +31,13 @@ class FleetController: UIViewController {
         todayStepLabel.text = String(describing: service.currentStep)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
         groupButton.forEach { (btn) in
             btn.isHidden = true
         }
@@ -40,7 +46,6 @@ class FleetController: UIViewController {
         setupMascot()
         checkProgress()
         
-        service.currentStep = 1300
         // Configure Streak to be run every midnight
         NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.addStreakNum), name: .NSCalendarDayChanged, object: nil)
         

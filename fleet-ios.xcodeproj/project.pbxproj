@@ -542,13 +542,13 @@
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S9J6B4A78J;
+				DEVELOPMENT_TEAM = 72C5A4RQ56;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleetios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -564,13 +564,13 @@
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S9J6B4A78J;
+				DEVELOPMENT_TEAM = 72C5A4RQ56;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleetios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
