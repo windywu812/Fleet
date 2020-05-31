@@ -13,11 +13,16 @@ class AchievementCell: UITableViewCell {
     @IBOutlet weak var txtTitle: UILabel!
     @IBOutlet weak var progress: UIProgressView!
     
+    @IBOutlet weak var button: UIButton!
     let achService = AchievementService.instance
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.systemGreen.cgColor
     }
     
     func configureCell(ach: Achievement) {
@@ -29,11 +34,7 @@ class AchievementCell: UITableViewCell {
         if category.name == .streak {
             achService.setStreakComplete(ach)
             percentage = achService.getStreakNum(for: ach.progressTotal)
-        } else if category.name == .determined {
-//            var currentDeterminedCount = UserDefaultServices.instance.determinedCount
-//
-//            ach
-        }
+        } 
         
         if ach.isComplete == true {
             progress.isHidden = true
