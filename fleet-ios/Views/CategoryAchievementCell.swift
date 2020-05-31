@@ -17,9 +17,9 @@ class CategoryAchievementCell: UITableViewCell {
         lblCategory.text = category.name.rawValue
         
         if category.isLocked == true {
-            imgLock.isHidden = false
+            imgLock.image = UIImage(systemName: "lock.fill")
         } else {
-            imgLock.isHidden = true
+            imgLock.image = UIImage(systemName: "chevron.right")
         }
     }
     

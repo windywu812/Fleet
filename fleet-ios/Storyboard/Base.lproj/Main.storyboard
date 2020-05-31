@@ -572,13 +572,13 @@
                                                 <rect key="frame" x="30" y="52.666666666666657" width="154" height="120"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep it up!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbL-tI-Z2h">
-                                                        <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="37.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="24.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 days streak" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xbb-jw-n2i">
-                                                        <rect key="frame" x="0.0" y="47.666666666666679" width="131.66666666666666" height="72.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="34.33333333333335" width="131.66666666666666" height="85.666666666666686"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -950,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kF-l8-ovK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657.9710144927537" y="673.66071428571422"/>
+            <point key="canvasLocation" x="1977" y="672"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sxI-k7-MwN">

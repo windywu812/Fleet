@@ -10,10 +10,12 @@ import Foundation
 
 class Category {
     var name: CategoryAchievement
+    var subtitle: String
     var isLocked: Bool
     
-    init(name: CategoryAchievement, isLocked: Bool) {
+    init(name: CategoryAchievement, subtitle: String, isLocked: Bool) {
         self.name = name
+        self.subtitle = subtitle
         self.isLocked = isLocked
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-private var determined = Category(name: .determined, isLocked: false)
-private var consistent = Category(name: .consistent, isLocked: true)
-private var olympic = Category(name: .olympic, isLocked: true)
+private var determined = Category(name: .determined, subtitle: "Walk 750-3000 steps in 7 days", isLocked: false)
+private var consistent = Category(name: .consistent, subtitle: "Do it streak for 7 days, 21 days and 30 days", isLocked: true)
+private var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", isLocked: true)
 var categoryArray: [Category] = [determined, consistent, olympic]
 
-private var streak = Category(name: .streak, isLocked: false)
+private var streak = Category(name: .streak, subtitle: "Walk with minimum 500 steps a day to get a streak!", isLocked: false)
 private var achStreak: [Achievement] = [
     Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: streak),
     Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: streak),
@@ -25,13 +25,13 @@ private var achStreak: [Achievement] = [
 ]
 
 private var achDetermined: [Achievement] = [
-    Achievement(title: "Walk 750 steps in day 1 to unlock this badge", progressTotal: 750, category: determined),
-    Achievement(title: "Walk 1121 steps in day 2 to unlock this badge", progressTotal: 1121, category: determined),
-    Achievement(title: "Walk 1140 steps in day 3 to unlock this badge", progressTotal: 1140, category: determined),
-    Achievement(title: "Walk 1821 steps in day 4 to unlock this badge", progressTotal: 1821, category: determined),
-    Achievement(title: "Walk 2200 steps in day 5 to unlock this badge", progressTotal: 2200, category: determined),
-    Achievement(title: "Walk 2575 steps in day 6 to unlock this badge", progressTotal: 2575, category: determined),
-    Achievement(title: "Walk 3000 steps in day 7 to unlock this badge", progressTotal: 3000, category: determined)
+    Achievement(title: "Walk 750 steps in day 1", progressTotal: 750, category: determined),
+    Achievement(title: "Walk 1121 steps in day 2", progressTotal: 1121, category: determined),
+    Achievement(title: "Walk 1140 steps in day 3", progressTotal: 1140, category: determined),
+    Achievement(title: "Walk 1821 steps in day 4", progressTotal: 1821, category: determined),
+    Achievement(title: "Walk 2200 steps in day 5", progressTotal: 2200, category: determined),
+    Achievement(title: "Walk 2575 steps in day 6", progressTotal: 2575, category: determined),
+    Achievement(title: "Walk 3000 steps in day 7", progressTotal: 3000, category: determined)
 ]
 
 private var achConsistent: [Achievement] = [
