@@ -11,31 +11,34 @@
         <!--Activity-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FleetController" customModule="fleet_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="FleetController" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-D9-Fad" userLabel="Background orange" customClass="RoundedOnlyTopView" customModule="fleet_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-D9-Fad" userLabel="Background orange" customClass="RoundedOnlyTopView" customModule="Fleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="493" width="414" height="320"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Ca-q20" userLabel="Fleet" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Ca-q20" userLabel="Fleet" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="27" width="360" height="80"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiX-Ah-fSf">
-                                                <rect key="frame" x="17.333333333333343" y="17.333333333333375" width="325.66666666666663" height="45.333333333333343"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiX-Ah-fSf">
+                                                <rect key="frame" x="16" y="17.333333333333375" width="328" height="45.333333333333343"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Zv-KYx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="45.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="45.333333333333336"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fleety" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PN-70-KsE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="26.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="26.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newbie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOZ-zV-mHE">
-                                                                <rect key="frame" x="0.0" y="28.333333333333258" width="63.666666666666664" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newbie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="aOZ-zV-mHE">
+                                                                <rect key="frame" x="0.0" y="28.333333333333258" width="70" height="17"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="70" id="RsE-hD-GTo"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -43,30 +46,27 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d3h-1Z-c3i">
-                                                        <rect key="frame" x="80.666666666666657" y="8.3333333333332575" width="244.99999999999997" height="29"/>
+                                                        <rect key="frame" x="87" y="0.0" width="241" height="45.333333333333336"/>
                                                         <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="240-2L-0LJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="245" height="19"/>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="240-2L-0LJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="241" height="35.333333333333336"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000 steps to level up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-ag-X1v">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="19"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="163.33333333333334" height="35.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUn-Ny-TGb">
-                                                                        <rect key="frame" x="205.66666666666669" y="0.0" width="39.333333333333343" height="19"/>
+                                                                        <rect key="frame" x="216.33333333333331" y="0.0" width="24.666666666666657" height="35.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" image="info.circle" catalog="system"/>
-                                                                        <connections>
-                                                                            <segue destination="qyl-6x-uYV" kind="modal" id="frC-rO-EXU"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-vb-7Vr">
-                                                                <rect key="frame" x="0.0" y="27" width="245" height="2"/>
+                                                                <rect key="frame" x="0.0" y="43.333333333333258" width="241" height="2"/>
                                                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </progressView>
                                                         </subviews>
@@ -79,8 +79,10 @@
                                             <constraint firstItem="eiX-Ah-fSf" firstAttribute="centerY" secondItem="tWG-Ca-q20" secondAttribute="centerY" id="OLb-Lx-14f"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="80" id="S7v-6K-hyK"/>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="360" id="STl-mQ-MgQ"/>
+                                            <constraint firstItem="eiX-Ah-fSf" firstAttribute="leading" secondItem="tWG-Ca-q20" secondAttribute="leading" constant="16" id="UXs-ib-hHw"/>
                                             <constraint firstItem="eiX-Ah-fSf" firstAttribute="centerX" secondItem="tWG-Ca-q20" secondAttribute="centerX" id="tZ1-4j-M2b"/>
                                             <constraint firstAttribute="width" secondItem="tWG-Ca-q20" secondAttribute="height" multiplier="9:2" id="yQ0-Kr-Bjt"/>
+                                            <constraint firstAttribute="trailing" secondItem="eiX-Ah-fSf" secondAttribute="trailing" constant="16" id="zJN-Rh-L0n"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -91,7 +93,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ou1-EA-xVx" userLabel="Goal&amp;Step">
                                         <rect key="frame" x="27" y="117" width="360" height="175"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-Q3-uOa" userLabel="Goal" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwm-Q3-uOa" userLabel="Goal" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HE-bo-o7M">
@@ -100,7 +102,7 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-Kh-17F" customClass="RoundedButton" customModule="fleet_ios" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-Kh-17F" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="134" width="135" height="33"/>
                                                         <color key="backgroundColor" name="orange"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -172,7 +174,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-Or-mcg" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-Or-mcg" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                                 <rect key="frame" x="185" y="0.0" width="175" height="175"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="9OI-iq-z0X">
@@ -192,7 +194,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cX-gW-qUA" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8cX-gW-qUA" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-q3-6qS">
@@ -277,7 +279,7 @@
                                     <constraint firstAttribute="width" secondItem="AYc-7Y-dOw" secondAttribute="height" multiplier="1:1" id="r0V-n8-eLX"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIe-4q-HpV" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIe-4q-HpV" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                 <rect key="frame" x="27" y="70" width="360" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wow! You walked over 10000 steps, which is equal to burning the calories of a McChicken Burger!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-lT-khf">
@@ -326,6 +328,7 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="btnInfo" destination="bUn-Ny-TGb" id="lnN-fj-7rE"/>
                         <outlet property="factLabel" destination="ABT-lT-khf" id="Vxt-N1-geu"/>
                         <outlet property="goalLabel" destination="RMl-SU-2bD" id="iC1-7s-1c0"/>
                         <outlet property="levelLabel" destination="aOZ-zV-mHE" id="ChZ-Jr-fDb"/>
@@ -335,6 +338,7 @@
                         <outlet property="todayStepLabel" destination="ive-4r-GcL" id="LJ2-hH-L5S"/>
                         <outletCollection property="groupButton" destination="p7b-PR-B1V" collectionClass="NSMutableArray" id="fsG-6J-SUP"/>
                         <outletCollection property="groupButton" destination="lHN-VS-OB8" collectionClass="NSMutableArray" id="orw-E5-QXU"/>
+                        <segue destination="qyl-6x-uYV" kind="show" identifier="toLevelInfo" id="5s1-S2-8bH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -344,19 +348,19 @@
         <!--Level InfoVC-->
         <scene sceneID="iTk-rG-I2A">
             <objects>
-                <viewController id="qyl-6x-uYV" customClass="LevelInfoVC" customModule="fleet_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qyl-6x-uYV" customClass="LevelInfoVC" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MFf-ID-doE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEa-fD-mA8">
-                                <rect key="frame" x="23.999999999999993" y="80" width="125.33333333333331" height="33.666666666666657"/>
+                                <rect key="frame" x="23.999999999999993" y="124.00000000000001" width="125.33333333333331" height="33.666666666666671"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="XlL-u0-uTw">
-                                <rect key="frame" x="24" y="145.66666666666663" width="366" height="582"/>
+                                <rect key="frame" x="24" y="189.66666666666663" width="366" height="582"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="oqe-1s-7es">
                                         <rect key="frame" x="0.0" y="0.0" width="186.33333333333334" height="94"/>
@@ -453,7 +457,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ybS-ly-SRf">
-                                                <rect key="frame" x="117.99999999999999" y="24.666666666666686" width="226.66666666666663" height="45"/>
+                                                <rect key="frame" x="117.99999999999999" y="24.666666666666742" width="226.66666666666663" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Master" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yw-0z-g7g">
                                                         <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="23"/>
@@ -510,7 +514,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jz8-fb-cPu">
-                                <rect key="frame" x="370.33333333333331" y="86" width="19.666666666666686" height="22"/>
+                                <rect key="frame" x="370.33333333333331" y="130" width="19.666666666666686" height="22"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="xmark.circle.fill" catalog="system"/>
                                 <connections>
@@ -530,6 +534,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P92-KP-O1e"/>
                     </view>
+                    <navigationItem key="navigationItem" id="S4f-r4-cfr"/>
                     <connections>
                         <outletCollection property="mascotView" destination="hAk-gB-biQ" collectionClass="NSMutableArray" id="ZwY-Ji-67D"/>
                         <outletCollection property="mascotView" destination="4Pv-jq-56l" collectionClass="NSMutableArray" id="Z2O-lS-6ai"/>
@@ -542,10 +547,64 @@
             </objects>
             <point key="canvasLocation" x="2567" y="-735"/>
         </scene>
+        <!--Level UpVC-->
+        <scene sceneID="NJe-rO-f4J">
+            <objects>
+                <viewController storyboardIdentifier="LevelUpVC" id="mVl-Cp-7Y4" customClass="LevelUpVC" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qc8-fX-NBO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqA-WZ-KD5">
+                                <rect key="frame" x="20" y="354.66666666666669" width="374" height="187.00000000000006"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cqA-WZ-KD5" secondAttribute="height" multiplier="2:1" id="9Ns-AG-lSH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUo-Un-E6G" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
+                                <rect key="frame" x="144.66666666666666" y="561.66666666666663" width="124.99999999999997" height="50"/>
+                                <color key="backgroundColor" name="orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GaC-3I-qx6"/>
+                                    <constraint firstAttribute="width" constant="125" id="MPz-aW-owV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnDoneClicked:" destination="mVl-Cp-7Y4" eventType="touchUpInside" id="8MZ-Wf-ZAS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UUo-Un-E6G" firstAttribute="top" secondItem="cqA-WZ-KD5" secondAttribute="bottom" constant="20" id="RrU-Ae-0zc"/>
+                            <constraint firstItem="cqA-WZ-KD5" firstAttribute="centerY" secondItem="qc8-fX-NBO" secondAttribute="centerY" id="ZHr-kk-OUX"/>
+                            <constraint firstItem="UUo-Un-E6G" firstAttribute="centerX" secondItem="qc8-fX-NBO" secondAttribute="centerX" id="ai0-Xf-h0f"/>
+                            <constraint firstItem="cqA-WZ-KD5" firstAttribute="leading" secondItem="GOi-Am-5Lg" secondAttribute="leading" constant="20" id="e52-DE-bXU"/>
+                            <constraint firstItem="GOi-Am-5Lg" firstAttribute="trailing" secondItem="cqA-WZ-KD5" secondAttribute="trailing" constant="20" id="tQg-ye-IUw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GOi-Am-5Lg"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="cqA-WZ-KD5" id="TY7-Gi-ezM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LlK-ck-su6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3364" y="-735"/>
+        </scene>
         <!--Achievement-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="AchievementController" customModule="fleet_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="AchievementController" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -553,7 +612,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jd2-vB-Dj5">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2l1-lz-KEw" customClass="RoundedOnlyBottomView" customModule="fleet_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2l1-lz-KEw" customClass="RoundedOnlyBottomView" customModule="Fleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <color key="backgroundColor" name="orange"/>
                                         <constraints>
@@ -565,7 +624,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j52-qy-G2P" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j52-qy-G2P" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                         <rect key="frame" x="20" y="12" width="374" height="225"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tvt-jL-zZn">
@@ -617,14 +676,14 @@
                                         <rect key="frame" x="20" y="252" width="374" height="401"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" rowHeight="110" id="Krd-eX-Guu" customClass="CategoryAchievementCell" customModule="fleet_ios" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" rowHeight="110" id="Krd-eX-Guu" customClass="CategoryAchievementCell" customModule="Fleet" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Krd-eX-Guu" id="jH7-x0-h5v">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="110"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0at-LD-qDn" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0at-LD-qDn" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-hb-fN2">
@@ -715,7 +774,7 @@
         <!--Consistent-->
         <scene sceneID="m6e-Zo-xGc">
             <objects>
-                <viewController id="eHQ-QI-F0u" customClass="DetailAchievementVC" customModule="fleet_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eHQ-QI-F0u" customClass="DetailAchievementVC" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ta2-Y2-92z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -723,7 +782,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BpM-Xa-iz5">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxz-FG-YGE" customClass="RoundedOnlyBottomView" customModule="fleet_ios" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxz-FG-YGE" customClass="RoundedOnlyBottomView" customModule="Fleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <color key="backgroundColor" name="orange"/>
                                         <constraints>
@@ -773,7 +832,7 @@
         <!--Progress-->
         <scene sceneID="yRC-PL-r3U">
             <objects>
-                <viewController id="rwp-AM-AGM" customClass="ProgressController" customModule="fleet_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rwp-AM-AGM" customClass="ProgressController" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R2V-6P-4Th">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -814,7 +873,7 @@
                                     <constraint firstAttribute="height" constant="391" id="xY2-ML-47C"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-FD-tG9" customClass="RoundedOnlyBottomView" customModule="fleet_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8B-FD-tG9" customClass="RoundedOnlyBottomView" customModule="Fleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
                                 <color key="backgroundColor" name="orange"/>
                                 <constraints>
@@ -826,7 +885,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-eq-3fx" customClass="RoundedView" customModule="fleet_ios" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKV-eq-3fx" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                 <rect key="frame" x="20" y="152.66666666666663" width="374" height="136.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="3EI-en-49l">

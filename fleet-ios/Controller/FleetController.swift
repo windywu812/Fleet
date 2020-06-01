@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class FleetController: UIViewController {
+class FleetController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     
     @IBOutlet var groupButton: [UIButton]!
@@ -20,8 +20,10 @@ class FleetController: UIViewController {
     @IBOutlet weak var todayStepLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var factLabel: UILabel!
+    @IBOutlet weak var btnInfo: UIButton!
     
     var isEdit: Bool = false
+    var remainStep = 99999
     
     let service = UserDefaultServices.instance
     let hkService = HealthKitService.instance
@@ -30,7 +32,7 @@ class FleetController: UIViewController {
         super.viewDidLoad()
         
         setTextField()
-        todayStepLabel.text = String(describing: service.currentStep)
+        btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -40,12 +42,23 @@ class FleetController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
+        
+        hkService.getTodayStep { (step) in
+            self.service.currentStep = Int(step)
+        }
+        
+        todayStepLabel.text = String(describing: service.currentStep)
+        factLabel.text = funFact.randomElement()
+
         groupButton.forEach { (btn) in
             btn.isHidden = true
         }
         
         goalLabel.isUserInteractionEnabled = false
         setupMascot()
+        
+        btnInfo.setImage(UIImage(systemName: "info.circle"), for: .normal)
+
         checkProgress()
         
         // Configure Streak to be run every midnight
@@ -57,9 +70,13 @@ class FleetController: UIViewController {
     func checkProgress() {
         if progressView.progress >= 1 {
             service.currentLevel += 1
-            
             service.totalStepsForNextLevel = 0
-            progressView.setProgress(0, animated: false)
+            print("Level: \(service.currentLevel)")
+            progressLabel.text = "Fleety ready to upgrade"
+            btnInfo.setImage(UIImage(systemName: "arrowtriangle.up.circle"), for: .normal)
+            btnInfo.removeTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
+            btnInfo.addTarget(self, action: #selector(upgradeLevel), for: .touchUpInside)
+//            progressView.setProgress(0, animated: false)
         }
     }
     
@@ -69,12 +86,14 @@ class FleetController: UIViewController {
         goalLabel.text = String(service.currentGoal)
         mascotView.image = mascots[service.currentLevel].image
         levelLabel.text = mascots[service.currentLevel].id
-        factLabel.text = funFact.randomElement()
         
-        let remainStep = mascots[service.currentLevel + 1].stepsToLvlUp - currentStep
+        if service.currentLevel < 4 {
+            remainStep = mascots[service.currentLevel + 1].stepsToLvlUp - currentStep
+        }
         progressLabel.text = "\(remainStep) steps left to level up"
         
-        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
+        progressView.setProgress(1, animated: false)
+//        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
     }
     
     @IBAction func editTapped(_ sender: UIButton) {
@@ -108,6 +127,45 @@ class FleetController: UIViewController {
             goalLabel.text = String(service.currentGoal)
         }
     }
+    
+    @objc func toInfoVC() {
+        performSegue(withIdentifier: "toLevelInfo", sender: nil)
+    }
+    
+    @objc func upgradeLevel() {
+        // LevelUpVC
+//        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let popupVC = storyboard.instantiateViewController(withIdentifier: "LevelUpVC") as! LevelUpVC
+//        popupVC.modalPresentationStyle = .popover
+//        popupVC.preferredContentSize = CGSize(width: 300, height: 300)
+//        popupVC.modalPresentationStyle = .overCurrentContext
+//        popupVC.modalTransitionStyle = .crossDissolve
+//        popupVC.nextLevel = service.currentLevel
+////        let pVC = popupVC.popoverPresentationController
+////        pVC?.permittedArrowDirections = .any
+////        pVC?.delegate = self
+////        pVC?.sourceRect = CGRect(x: 100, y: 100, width: 1, height: 1)
+//        present(popupVC, animated: true, completion: nil)
+        
+        let levelUpVC = LevelUpVC(size: CGSize(width: 300, height: 300))
+        levelUpVC.nextLevel = service.currentLevel
+        levelUpVC.modalPresentationStyle = .popover
+        levelUpVC.popoverPresentationController?.delegate = self
+        present(levelUpVC, animated: true, completion: nil)
+        levelUpVC.popoverPresentationController?.sourceView = btnInfo
+        levelUpVC.popoverPresentationController?.sourceRect = btnInfo.bounds
+    }
+    
+    /*
+     let rampPickerVC = RampPickerVC(size: CGSize(width: 250, height: 500))
+     rampPickerVC.rampPlacerVC = self
+     rampPickerVC.modalPresentationStyle = .popover
+     rampPickerVC.popoverPresentationController?.delegate = self
+     present(rampPickerVC, animated: true, completion: nil)
+     rampPickerVC.popoverPresentationController?.sourceView = sender
+     rampPickerVC.popoverPresentationController?.sourceRect = sender.bounds
+     
+     */
     
 }
 

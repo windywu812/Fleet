@@ -43,6 +43,10 @@
 		59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */; };
 		59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2B246A5F76006252BA /* Assets.xcassets */; };
 		59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2D246A5F76006252BA /* LaunchScreen.storyboard */; };
+		59EEC4B42484BA2200207244 /* toLevel2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59EEC4B12484BA2100207244 /* toLevel2.mp4 */; };
+		59EEC4B52484BA2200207244 /* toLevel3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59EEC4B22484BA2100207244 /* toLevel3.mp4 */; };
+		59EEC4B62484BA2200207244 /* toLevel4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59EEC4B32484BA2100207244 /* toLevel4.mp4 */; };
+		59EEC4B92484BB1600207244 /* LevelUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEC4B72484BB1600207244 /* LevelUpVC.swift */; };
 		D2D94B76247E39F70076C795 /* Achievement Complete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2D94B75247E39F70076C795 /* Achievement Complete.mp3 */; };
 		D2D94B78247E3A080076C795 /* Mascot Level.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D2D94B77247E3A080076C795 /* Mascot Level.mp3 */; };
 /* End PBXBuildFile section */
@@ -76,7 +80,7 @@
 		5993277224813647004E3B79 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		5993277424820201004E3B79 /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
 		599327762482027D004E3B79 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		59A37C1A246A5F73006252BA /* fleet-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fleet-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59A37C1A246A5F73006252BA /* Fleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A37C1D246A5F73006252BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A37C1F246A5F73006252BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		59A37C21246A5F73006252BA /* FleetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,10 @@
 		59A37C2B246A5F76006252BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A37C2E246A5F76006252BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59A37C30246A5F76006252BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59EEC4B12484BA2100207244 /* toLevel2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel2.mp4; sourceTree = "<group>"; };
+		59EEC4B22484BA2100207244 /* toLevel3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel3.mp4; sourceTree = "<group>"; };
+		59EEC4B32484BA2100207244 /* toLevel4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel4.mp4; sourceTree = "<group>"; };
+		59EEC4B72484BB1600207244 /* LevelUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpVC.swift; sourceTree = "<group>"; };
 		8166937B6EF4A08ED8D53DC0 /* Pods-fleet-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.release.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.release.xcconfig"; sourceTree = "<group>"; };
 		82CF27A025C752317BB6F147 /* Pods-fleet-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fleet-ios.debug.xcconfig"; path = "Target Support Files/Pods-fleet-ios/Pods-fleet-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C2FEF8F519AF1B1144173153 /* Pods_fleet_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fleet_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +131,7 @@
 				5980AD812474F44D00E232A6 /* DetailAchievementVC.swift */,
 				2372DC77246A665400ABE9D5 /* ProgressController.swift */,
 				2347A9A924826D5000A9D212 /* LevelInfoVC.swift */,
+				59EEC4B72484BB1600207244 /* LevelUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,7 +216,7 @@
 		59A37C1B246A5F73006252BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59A37C1A246A5F73006252BA /* fleet-ios.app */,
+				59A37C1A246A5F73006252BA /* Fleet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,11 +235,22 @@
 				23A2AEDA247CD6BC0009BD3A /* Storyboard */,
 				23A2AED9247CD6A10009BD3A /* OnboardingController */,
 				D2D94B79247E3A130076C795 /* Sound Effect */,
+				59EEC4B02484B8D000207244 /* Level Up */,
 				59A37C2B246A5F76006252BA /* Assets.xcassets */,
 				59A37C30246A5F76006252BA /* Info.plist */,
 				59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */,
 			);
 			path = "fleet-ios";
+			sourceTree = "<group>";
+		};
+		59EEC4B02484B8D000207244 /* Level Up */ = {
+			isa = PBXGroup;
+			children = (
+				59EEC4B12484BA2100207244 /* toLevel2.mp4 */,
+				59EEC4B22484BA2100207244 /* toLevel3.mp4 */,
+				59EEC4B32484BA2100207244 /* toLevel4.mp4 */,
+			);
+			path = "Level Up";
 			sourceTree = "<group>";
 		};
 		9FE03428AE4DEA8812B04A59 /* Pods */ = {
@@ -270,7 +290,7 @@
 			);
 			name = "fleet-ios";
 			productName = "fleet-ios";
-			productReference = 59A37C1A246A5F73006252BA /* fleet-ios.app */;
+			productReference = 59A37C1A246A5F73006252BA /* Fleet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -311,10 +331,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EEC4B42484BA2200207244 /* toLevel2.mp4 in Resources */,
 				59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */,
 				D2D94B78247E3A080076C795 /* Mascot Level.mp3 in Resources */,
+				59EEC4B52484BA2200207244 /* toLevel3.mp4 in Resources */,
 				23A2AED6247CC5040009BD3A /* Onboarding.storyboard in Resources */,
 				D2D94B76247E39F70076C795 /* Achievement Complete.mp3 in Resources */,
+				59EEC4B62484BA2200207244 /* toLevel4.mp4 in Resources */,
 				5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */,
 				59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */,
 				59A37C27246A5F73006252BA /* Main.storyboard in Resources */,
@@ -384,6 +407,7 @@
 				5993277524820201004E3B79 /* AchievementService.swift in Sources */,
 				2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */,
 				5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */,
+				59EEC4B92484BB1600207244 /* LevelUpVC.swift in Sources */,
 				59550411247E55A600F7EBB5 /* Achievement.swift in Sources */,
 				5980AD7C24743CB400E232A6 /* RoundedOnlyBottomView.swift in Sources */,
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
@@ -553,8 +577,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleetios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleet;
+				PRODUCT_NAME = Fleet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -576,8 +600,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleetios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleet;
+				PRODUCT_NAME = Fleet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

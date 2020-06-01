@@ -78,4 +78,8 @@ class AchievementService {
     @objc func setDetermined() {
         udService.isDeterminedToday = false
     }
+    
+    func isTodayDeterminedComplete(_ ach: Achievement) -> Bool {
+        return udService.currentStep >= ach.progressTotal
+    }
 }
