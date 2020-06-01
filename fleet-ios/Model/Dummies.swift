@@ -8,12 +8,12 @@
 
 import Foundation
 
-private var determined = Category(name: .determined, subtitle: "Walk 750-3000 steps in 7 days", isLocked: false)
-private var consistent = Category(name: .consistent, subtitle: "Do it streak for 7 days, 21 days and 30 days", isLocked: true)
-private var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", isLocked: true)
+private var determined = Category(name: .determined, subtitle: "Walk 750-3000 steps in 7 days", descCell: "Everyday you'll have target to achieve for Fleety grow faster in this achievement", isLocked: false)
+private var consistent = Category(name: .consistent, subtitle: "Do it streak for 7 days, 21 days and 30 days", descCell: "Complete Determined to unlock this mission", isLocked: true)
+private var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", descCell: "Complete Consistent to unlock this mission", isLocked: true)
 var categoryArray: [Category] = [determined, consistent, olympic]
 
-private var streak = Category(name: .streak, subtitle: "Walk with minimum 500 steps a day to get a streak!", isLocked: false)
+private var streak = Category(name: .streak, subtitle: "Walk with minimum 500 steps a day to get a streak!", descCell: "", isLocked: false)
 private var achStreak: [Achievement] = [
     Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: streak),
     Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: streak),

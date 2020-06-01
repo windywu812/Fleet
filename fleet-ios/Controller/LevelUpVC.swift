@@ -15,23 +15,10 @@ class LevelUpVC: UIViewController {
     
     var nextLevel = 2
     var player: AVPlayer!
-    
-    var size: CGSize!
-        
-    init(size: CGSize) {
-        super.init(nibName: nil, bundle: nil)
-        self.size = size
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        preferredContentSize = size
-
         guard let path = Bundle.main.path(forResource: "toLevel\(nextLevel)", ofType:"mp4") else {
             debugPrint("toLevel\(nextLevel).mp4 not found")
             return
@@ -40,7 +27,7 @@ class LevelUpVC: UIViewController {
         player = AVPlayer(url: URL(fileURLWithPath: path))
         let playerLayer = AVPlayerLayer(player: player)
         
-//        playerLayer.frame = CGRect(x: 0, y: 0, width: videoView.frame.width, height: videoView.frame.height)
+        playerLayer.frame = CGRect(x: 0, y: 0, width: videoView.frame.width, height: videoView.frame.height)
         videoView.layer.addSublayer(playerLayer)
         
         player.play()

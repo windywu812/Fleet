@@ -14,6 +14,7 @@ class AchievementController: UIViewController {
     @IBOutlet weak var numStreakLbl: UILabel!
     @IBOutlet weak var imgMascot: UIImageView!
     @IBOutlet weak var streakView: RoundedView!
+    @IBOutlet weak var keepUpLabel: UILabel!
     
     private let service = UserDefaultServices.instance
     
@@ -38,6 +39,7 @@ class AchievementController: UIViewController {
         let currentStreak = service.currentDayStreak
         let noun = currentStreak > 1 ? "days streak" : "day streak"
         
+        keepUpLabel.text = currentStreak < 1 ? "Let's Start!" : "Keep it up!"
         numStreakLbl.text = "\(currentStreak) \(noun)"
     }
 }

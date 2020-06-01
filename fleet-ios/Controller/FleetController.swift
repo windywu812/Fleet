@@ -11,7 +11,6 @@ import MapKit
 
 class FleetController: UIViewController, UIPopoverPresentationControllerDelegate {
     
-    
     @IBOutlet var groupButton: [UIButton]!
     @IBOutlet weak var goalLabel: UITextField!
     @IBOutlet weak var levelLabel: UILabel!
@@ -74,9 +73,10 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
             print("Level: \(service.currentLevel)")
             progressLabel.text = "Fleety ready to upgrade"
             btnInfo.setImage(UIImage(systemName: "arrowtriangle.up.circle"), for: .normal)
+            
             btnInfo.removeTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
             btnInfo.addTarget(self, action: #selector(upgradeLevel), for: .touchUpInside)
-//            progressView.setProgress(0, animated: false)
+            progressView.setProgress(0, animated: false)
         }
     }
     
@@ -93,7 +93,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         progressLabel.text = "\(remainStep) steps left to level up"
         
         progressView.setProgress(1, animated: false)
-//        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
+        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
     }
     
     @IBAction func editTapped(_ sender: UIButton) {
@@ -134,39 +134,15 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     
     @objc func upgradeLevel() {
         // LevelUpVC
-//        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let popupVC = storyboard.instantiateViewController(withIdentifier: "LevelUpVC") as! LevelUpVC
-//        popupVC.modalPresentationStyle = .popover
-//        popupVC.preferredContentSize = CGSize(width: 300, height: 300)
-//        popupVC.modalPresentationStyle = .overCurrentContext
-//        popupVC.modalTransitionStyle = .crossDissolve
-//        popupVC.nextLevel = service.currentLevel
-////        let pVC = popupVC.popoverPresentationController
-////        pVC?.permittedArrowDirections = .any
-////        pVC?.delegate = self
-////        pVC?.sourceRect = CGRect(x: 100, y: 100, width: 1, height: 1)
-//        present(popupVC, animated: true, completion: nil)
-        
-        let levelUpVC = LevelUpVC(size: CGSize(width: 300, height: 300))
-        levelUpVC.nextLevel = service.currentLevel
-        levelUpVC.modalPresentationStyle = .popover
-        levelUpVC.popoverPresentationController?.delegate = self
-        present(levelUpVC, animated: true, completion: nil)
-        levelUpVC.popoverPresentationController?.sourceView = btnInfo
-        levelUpVC.popoverPresentationController?.sourceRect = btnInfo.bounds
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let popupVC = storyboard.instantiateViewController(withIdentifier: "LevelUpVC") as! LevelUpVC
+        popupVC.modalPresentationStyle = .popover
+        popupVC.preferredContentSize = CGSize(width: 300, height: 300)
+        popupVC.modalPresentationStyle = .overCurrentContext
+        popupVC.modalTransitionStyle = .crossDissolve
+        popupVC.nextLevel = service.currentLevel
+        present(popupVC, animated: true, completion: nil)
     }
-    
-    /*
-     let rampPickerVC = RampPickerVC(size: CGSize(width: 250, height: 500))
-     rampPickerVC.rampPlacerVC = self
-     rampPickerVC.modalPresentationStyle = .popover
-     rampPickerVC.popoverPresentationController?.delegate = self
-     present(rampPickerVC, animated: true, completion: nil)
-     rampPickerVC.popoverPresentationController?.sourceView = sender
-     rampPickerVC.popoverPresentationController?.sourceRect = sender.bounds
-     
-     */
-    
 }
 
 extension FleetController: UITextFieldDelegate {

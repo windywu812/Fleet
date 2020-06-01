@@ -35,6 +35,8 @@
 		5993277324813647004E3B79 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277224813647004E3B79 /* HealthKitService.swift */; };
 		5993277524820201004E3B79 /* AchievementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277424820201004E3B79 /* AchievementService.swift */; };
 		599327772482027D004E3B79 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599327762482027D004E3B79 /* Enums.swift */; };
+		599D843D2484D67D00BAE307 /* toLevel2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 599D843B2484D67D00BAE307 /* toLevel2.mp4 */; };
+		599D843E2484D67D00BAE307 /* toLevel5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 599D843C2484D67D00BAE307 /* toLevel5.mp4 */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
 		59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1F246A5F73006252BA /* SceneDelegate.swift */; };
 		59A37C22246A5F73006252BA /* FleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C21246A5F73006252BA /* FleetController.swift */; };
@@ -43,7 +45,6 @@
 		59A37C2A246A5F73006252BA /* fleet_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C28246A5F73006252BA /* fleet_ios.xcdatamodeld */; };
 		59A37C2C246A5F76006252BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2B246A5F76006252BA /* Assets.xcassets */; };
 		59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59A37C2D246A5F76006252BA /* LaunchScreen.storyboard */; };
-		59EEC4B42484BA2200207244 /* toLevel2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59EEC4B12484BA2100207244 /* toLevel2.mp4 */; };
 		59EEC4B52484BA2200207244 /* toLevel3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59EEC4B22484BA2100207244 /* toLevel3.mp4 */; };
 		59EEC4B62484BA2200207244 /* toLevel4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 59EEC4B32484BA2100207244 /* toLevel4.mp4 */; };
 		59EEC4B92484BB1600207244 /* LevelUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEC4B72484BB1600207244 /* LevelUpVC.swift */; };
@@ -80,6 +81,8 @@
 		5993277224813647004E3B79 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		5993277424820201004E3B79 /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
 		599327762482027D004E3B79 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		599D843B2484D67D00BAE307 /* toLevel2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel2.mp4; sourceTree = "<group>"; };
+		599D843C2484D67D00BAE307 /* toLevel5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel5.mp4; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* Fleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A37C1D246A5F73006252BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A37C1F246A5F73006252BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +93,6 @@
 		59A37C2B246A5F76006252BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59A37C2E246A5F76006252BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59A37C30246A5F76006252BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59EEC4B12484BA2100207244 /* toLevel2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel2.mp4; sourceTree = "<group>"; };
 		59EEC4B22484BA2100207244 /* toLevel3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel3.mp4; sourceTree = "<group>"; };
 		59EEC4B32484BA2100207244 /* toLevel4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel4.mp4; sourceTree = "<group>"; };
 		59EEC4B72484BB1600207244 /* LevelUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpVC.swift; sourceTree = "<group>"; };
@@ -246,9 +248,10 @@
 		59EEC4B02484B8D000207244 /* Level Up */ = {
 			isa = PBXGroup;
 			children = (
-				59EEC4B12484BA2100207244 /* toLevel2.mp4 */,
+				599D843B2484D67D00BAE307 /* toLevel2.mp4 */,
 				59EEC4B22484BA2100207244 /* toLevel3.mp4 */,
 				59EEC4B32484BA2100207244 /* toLevel4.mp4 */,
+				599D843C2484D67D00BAE307 /* toLevel5.mp4 */,
 			);
 			path = "Level Up";
 			sourceTree = "<group>";
@@ -331,11 +334,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59EEC4B42484BA2200207244 /* toLevel2.mp4 in Resources */,
 				59A37C2F246A5F76006252BA /* LaunchScreen.storyboard in Resources */,
 				D2D94B78247E3A080076C795 /* Mascot Level.mp3 in Resources */,
+				599D843E2484D67D00BAE307 /* toLevel5.mp4 in Resources */,
 				59EEC4B52484BA2200207244 /* toLevel3.mp4 in Resources */,
 				23A2AED6247CC5040009BD3A /* Onboarding.storyboard in Resources */,
+				599D843D2484D67D00BAE307 /* toLevel2.mp4 in Resources */,
 				D2D94B76247E39F70076C795 /* Achievement Complete.mp3 in Resources */,
 				59EEC4B62484BA2200207244 /* toLevel4.mp4 in Resources */,
 				5980AD802474F28F00E232A6 /* AchievementCell.xib in Resources */,

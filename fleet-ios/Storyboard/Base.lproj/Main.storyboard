@@ -22,19 +22,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWG-Ca-q20" userLabel="Fleet" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                         <rect key="frame" x="27" y="27" width="360" height="80"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiX-Ah-fSf">
-                                                <rect key="frame" x="16" y="17.333333333333375" width="328" height="45.333333333333343"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiX-Ah-fSf">
+                                                <rect key="frame" x="16" y="17.333333333333371" width="328" height="45.333333333333343"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Zv-KYx">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vKC-Zv-KYx">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="45.333333333333336"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fleety" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PN-70-KsE">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Fleety" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PN-70-KsE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="26.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newbie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="aOZ-zV-mHE">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Newbie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="aOZ-zV-mHE">
                                                                 <rect key="frame" x="0.0" y="28.333333333333258" width="70" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="RsE-hD-GTo"/>
@@ -45,13 +45,13 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d3h-1Z-c3i">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d3h-1Z-c3i">
                                                         <rect key="frame" x="87" y="0.0" width="241" height="45.333333333333336"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="240-2L-0LJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="241" height="35.333333333333336"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000 steps to level up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-ag-X1v">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50000 steps to level up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-ag-X1v">
                                                                         <rect key="frame" x="0.0" y="0.0" width="163.33333333333334" height="35.333333333333336"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,13 +59,17 @@
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUn-Ny-TGb">
                                                                         <rect key="frame" x="216.33333333333331" y="0.0" width="24.666666666666657" height="35.333333333333336"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="24.670000000000002" id="38B-if-oLN"/>
+                                                                            <constraint firstAttribute="height" constant="35.329999999999998" id="9Ez-92-StD"/>
+                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" image="info.circle" catalog="system"/>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-vb-7Vr">
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="TlQ-vb-7Vr">
                                                                 <rect key="frame" x="0.0" y="43.333333333333258" width="241" height="2"/>
                                                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </progressView>
@@ -555,6 +559,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHk-Xi-IRv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ojK-ib-2lH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.16177662037037038" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqA-WZ-KD5">
                                 <rect key="frame" x="20" y="354.66666666666669" width="374" height="187.00000000000006"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -583,7 +597,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UUo-Un-E6G" firstAttribute="top" secondItem="cqA-WZ-KD5" secondAttribute="bottom" constant="20" id="RrU-Ae-0zc"/>
                             <constraint firstItem="cqA-WZ-KD5" firstAttribute="centerY" secondItem="qc8-fX-NBO" secondAttribute="centerY" id="ZHr-kk-OUX"/>
@@ -599,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LlK-ck-su6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3364" y="-735"/>
+            <point key="canvasLocation" x="3363.7681159420295" y="-735.26785714285711"/>
         </scene>
         <!--Achievement-->
         <scene sceneID="wg7-f3-ORb">
@@ -686,12 +700,23 @@
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0at-LD-qDn" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-hb-fN2">
-                                                                    <rect key="frame" x="12" y="36.333333333333336" width="59" height="27.666666666666664"/>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wOH-3g-uGI">
+                                                                    <rect key="frame" x="12" y="18.666666666666668" width="305" height="62.666666666666657"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qnt-hb-fN2">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="305" height="26.333333333333332"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everyday you'll have target to achieve for Fleety grow faster in this achievement" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXe-aG-oFT">
+                                                                            <rect key="frame" x="0.0" y="31.333333333333336" width="305" height="31.333333333333336"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qS7-L9-N2Q">
                                                                     <rect key="frame" x="337" y="38.666666666666664" width="25" height="23"/>
                                                                     <color key="tintColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -703,10 +728,11 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstItem="Qnt-hb-fN2" firstAttribute="centerY" secondItem="0at-LD-qDn" secondAttribute="centerY" id="Anl-Dh-zED"/>
+                                                                <constraint firstItem="wOH-3g-uGI" firstAttribute="centerY" secondItem="qS7-L9-N2Q" secondAttribute="centerY" id="6kS-MH-eCY"/>
+                                                                <constraint firstItem="wOH-3g-uGI" firstAttribute="leading" secondItem="0at-LD-qDn" secondAttribute="leading" constant="12" id="737-hL-LUC"/>
+                                                                <constraint firstItem="qS7-L9-N2Q" firstAttribute="leading" secondItem="wOH-3g-uGI" secondAttribute="trailing" constant="20" id="945-FI-A2m"/>
                                                                 <constraint firstAttribute="height" constant="100" id="EEJ-Xt-jjC"/>
                                                                 <constraint firstItem="qS7-L9-N2Q" firstAttribute="centerY" secondItem="0at-LD-qDn" secondAttribute="centerY" id="IBO-A1-Ugn"/>
-                                                                <constraint firstItem="Qnt-hb-fN2" firstAttribute="leading" secondItem="0at-LD-qDn" secondAttribute="leading" constant="12" id="VuU-CD-Ynr"/>
                                                                 <constraint firstAttribute="trailing" secondItem="qS7-L9-N2Q" secondAttribute="trailing" constant="12" id="cY0-Ks-fTg"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
@@ -727,6 +753,7 @@
                                                 <connections>
                                                     <outlet property="imgLock" destination="qS7-L9-N2Q" id="jC4-N7-4bp"/>
                                                     <outlet property="lblCategory" destination="Qnt-hb-fN2" id="Nfc-fb-Chw"/>
+                                                    <outlet property="lblDesc" destination="dXe-aG-oFT" id="4PM-lY-mBF"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -760,6 +787,7 @@
                     <navigationItem key="navigationItem" title="Achievement" largeTitleDisplayMode="always" id="doo-zK-1LN"/>
                     <connections>
                         <outlet property="imgMascot" destination="3Ph-Wy-dAM" id="qLQ-lX-PHB"/>
+                        <outlet property="keepUpLabel" destination="SbL-tI-Z2h" id="zLT-La-OCr"/>
                         <outlet property="numStreakLbl" destination="xbb-jw-n2i" id="916-kx-NPf"/>
                         <outlet property="streakView" destination="j52-qy-G2P" id="PjR-MM-yc8"/>
                         <outlet property="tableView" destination="hRQ-HP-Scv" id="3VQ-Xi-k9z"/>

@@ -12,9 +12,11 @@ class CategoryAchievementCell: UITableViewCell {
 
     @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var imgLock: UIImageView!
+    @IBOutlet weak var lblDesc: UILabel!
     
     func configureCell(_ category: Category) {
         lblCategory.text = category.name.rawValue
+        lblDesc.text = category.descCell
         
         if category.isLocked == true {
             imgLock.image = UIImage(systemName: "lock.fill")

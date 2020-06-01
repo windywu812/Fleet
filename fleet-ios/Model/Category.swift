@@ -11,11 +11,13 @@ import Foundation
 class Category {
     var name: CategoryAchievement
     var subtitle: String
+    var descCell: String
     var isLocked: Bool
     
-    init(name: CategoryAchievement, subtitle: String, isLocked: Bool) {
+    init(name: CategoryAchievement, subtitle: String, descCell: String, isLocked: Bool) {
         self.name = name
         self.subtitle = subtitle
+        self.descCell = descCell
         self.isLocked = isLocked
     }
 }
