@@ -823,19 +823,28 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nTX-oy-d5q">
-                                        <rect key="frame" x="20" y="15" width="374" height="638"/>
+                                        <rect key="frame" x="20" y="35" width="374" height="618"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="khh-hP-pbT">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="khh-hP-pbT" firstAttribute="leading" secondItem="BpM-Xa-iz5" secondAttribute="leading" constant="20" id="C6R-F4-3Cz"/>
                                     <constraint firstItem="nTX-oy-d5q" firstAttribute="leading" secondItem="BpM-Xa-iz5" secondAttribute="leading" constant="20" id="FM2-6Y-i5C"/>
                                     <constraint firstAttribute="trailing" secondItem="nTX-oy-d5q" secondAttribute="trailing" constant="20" id="MAc-nf-PfV"/>
+                                    <constraint firstAttribute="trailing" secondItem="khh-hP-pbT" secondAttribute="trailing" constant="20" id="QN3-ZT-GqR"/>
                                     <constraint firstItem="Kxz-FG-YGE" firstAttribute="top" secondItem="BpM-Xa-iz5" secondAttribute="top" id="Tj3-to-tTo"/>
+                                    <constraint firstItem="khh-hP-pbT" firstAttribute="top" secondItem="nTX-oy-d5q" secondAttribute="top" constant="-35" id="U7U-Yy-eoB"/>
                                     <constraint firstAttribute="trailing" secondItem="Kxz-FG-YGE" secondAttribute="trailing" id="WQI-bj-gd8"/>
                                     <constraint firstAttribute="bottom" secondItem="nTX-oy-d5q" secondAttribute="bottom" constant="20" id="YWx-BL-dvE"/>
                                     <constraint firstItem="Kxz-FG-YGE" firstAttribute="leading" secondItem="BpM-Xa-iz5" secondAttribute="leading" id="uRG-60-JuZ"/>
-                                    <constraint firstItem="nTX-oy-d5q" firstAttribute="top" secondItem="BpM-Xa-iz5" secondAttribute="top" constant="15" id="wMl-Cb-kld"/>
+                                    <constraint firstItem="nTX-oy-d5q" firstAttribute="top" secondItem="BpM-Xa-iz5" secondAttribute="top" constant="35" id="wMl-Cb-kld"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -850,6 +859,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Consistent" id="9Nr-2G-5Ts"/>
                     <connections>
+                        <outlet property="detailLbl" destination="khh-hP-pbT" id="LFO-3C-Eva"/>
                         <outlet property="tableView" destination="nTX-oy-d5q" id="Zng-Cx-go3"/>
                     </connections>
                 </viewController>

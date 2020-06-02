@@ -15,6 +15,7 @@ class DetailAchievementVC: UIViewController {
     var category: Category?
     var achievement: [Achievement]!
     let udService = UserDefaultServices.instance
+    @IBOutlet weak var detailLbl: UILabel!
     
     var currentDeterminedCount = 0
     override func viewDidLoad() {
@@ -36,6 +37,8 @@ class DetailAchievementVC: UIViewController {
         if category?.name == .determined {
             achievement = AchievementService.instance.configureDetermined(achievement)
         }
+        
+        detailLbl.text = category?.subtitle
     }
 }
 
