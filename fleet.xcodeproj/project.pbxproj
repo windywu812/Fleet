@@ -311,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 59A37C15246A5F73006252BA /* Build configuration list for PBXProject "fleet-ios" */;
+			buildConfigurationList = 59A37C15246A5F73006252BA /* Build configuration list for PBXProject "fleet" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -574,7 +574,7 @@
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72C5A4RQ56;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -597,7 +597,7 @@
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72C5A4RQ56;
+				DEVELOPMENT_TEAM = S9J6B4A78J;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,7 +615,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		59A37C15246A5F73006252BA /* Build configuration list for PBXProject "fleet-ios" */ = {
+		59A37C15246A5F73006252BA /* Build configuration list for PBXProject "fleet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59A37C31246A5F76006252BA /* Debug */,

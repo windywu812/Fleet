@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:fleet-ios.xcodeproj">
+      location = "group:/Users/windy/MyDocuments/Academy/Challenge/Mini Challenge 2/fleet-ios/fleet.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
