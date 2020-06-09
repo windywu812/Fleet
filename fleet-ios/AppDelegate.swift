@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor.orange
         
-        NotificationCenter.default.addObserver(self, selector: #selector(addStepToDB), name: .NSCalendarDayChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addStepToDB(notification:)), name: .NSCalendarDayChanged, object: nil)
 
         return true
     }
 
-    @objc func addStepToDB() {
+    @objc func addStepToDB(notification: NSNotification) {
         let currentStep = UserDefaultServices.instance.currentStep
         let currentGoal = UserDefaultServices.instance.currentGoal
         

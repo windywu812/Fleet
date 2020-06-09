@@ -31,7 +31,6 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         super.viewDidLoad()
         
         setTextField()
-        btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
         progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
         
     }
@@ -44,10 +43,11 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
         
-        hkService.getTodayStep { (step) in
-            self.service.currentStep = Int(step)
-        }
+//        hkService.getTodayStep { (step) in
+//            self.service.currentStep = Int(step)
+//        }
         
+        self.service.currentStep = 15008
         todayStepLabel.text = String(describing: service.currentStep)
         factLabel.text = funFact.randomElement()
 
@@ -56,10 +56,8 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         }
         
         goalLabel.isUserInteractionEnabled = false
-        setupMascot()
         
-        btnInfo.setImage(UIImage(systemName: "info.circle"), for: .normal)
-
+        setupMascot()
         checkProgress()
         
         // Configure Streak to be run every midnight
@@ -78,6 +76,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
             
             btnInfo.removeTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
             btnInfo.addTarget(self, action: #selector(upgradeLevel), for: .touchUpInside)
+            
             progressView.setProgress(0, animated: false)
         }
     }
@@ -92,9 +91,12 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         if service.currentLevel < 4 {
             remainStep = mascots[service.currentLevel + 1].stepsToLvlUp - currentStep
         }
-        progressLabel.text = "\(remainStep) steps left to level up"
         
-        progressView.setProgress(1, animated: false)
+        btnInfo.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        btnInfo.removeTarget(self, action: #selector(upgradeLevel), for: .touchUpInside)
+        btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
+        
+        progressLabel.text = "\(remainStep) steps left to level up"
         progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
     }
     
@@ -142,7 +144,8 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         popupVC.preferredContentSize = CGSize(width: 300, height: 300)
         popupVC.modalPresentationStyle = .overCurrentContext
         popupVC.modalTransitionStyle = .crossDissolve
-        popupVC.nextLevel = service.currentLevel
+        popupVC.fleetVC = self
+        popupVC.nextLevel = service.currentLevel + 1
         present(popupVC, animated: true, completion: nil)
     }
 }

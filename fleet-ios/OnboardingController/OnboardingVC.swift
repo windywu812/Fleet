@@ -27,6 +27,15 @@ class OnboardingVC: UIViewController {
 //        }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
     @IBAction func noTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "yesNo", sender: sender)
     }
