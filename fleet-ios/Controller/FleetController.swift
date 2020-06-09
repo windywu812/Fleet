@@ -32,6 +32,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         
         setTextField()
         btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
+        progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
