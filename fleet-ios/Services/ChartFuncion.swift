@@ -13,76 +13,72 @@ let barChart = BarChartView()
 
 extension ProgressController: ChartViewDelegate {
     
-    func sumStepEachMonth(_ month: Int) -> Double {
-        Double(allData.filter {
-            Calendar.current.component(.month, from: $0.date) == month + 1
-        }.reduce(0, { $0 + $1.countSteps }))
-    }
-    
     func setChartWeekly(_ add: Int = 0) {
         
         infoProgress.text = "Weekly Summary"
         
-        var countSteps = [Int]()
-        var targetSteps = [Int]()
+        var countSteps: [Int] = [0, 0, 0, 0, 0, 0, 0]
+        var targetSteps: [Int] = [0, 0, 0, 0, 0, 0, 0]
         
         var countStepsEntry = [BarChartDataEntry]()
         var targetStepsEntry = [BarChartDataEntry]()
-        
-        countStepsEntry.removeAll()
-        targetStepsEntry.removeAll()
-        
+                
         let groupedByWeek = Dictionary(grouping: allData, by: { $0.date.week })
         let groupedKey = groupedByWeek.keys.sorted()
         
         now += add
         
+        // Checking if out of month or day
         if now >= Date().week {
             now = Date().week
         }
-        
         if now <= groupedKey.first ?? 0 {
             now = groupedKey.first ?? 0
         }
         
         let myData = groupedByWeek[now]
         
+        myData?.forEach({ (data) in
+            print(data.date.weekDay)
+            countSteps[data.date.weekDay - 1] = data.countSteps
+            targetSteps[data.date.weekDay - 1] = data.targetSteps
+        })
+//        if myData?.count == nil {
+//
+//            countSteps = []
+//            targetSteps = []
+//
+//        } else if myData?.count != 7 {
+//
+//            let index = myData?.first!.date.weekDay ?? 0
+//            if index == 0 {
+//                return
+//            }
+//
+//            for _ in 0..<index - 1 {
+//                countSteps.append(0)
+//                targetSteps.append(0)
+//            }
+//
+//            myData?.forEach({
+//                countSteps.append($0.countSteps)
+//                targetSteps.append($0.targetSteps)
+//            })
+//
+//        } else {
+//            myData?.forEach({
+//                countSteps.append($0.countSteps)
+//                targetSteps.append($0.targetSteps)
+//            })
+//        }
+        
+        // Comparison
         let formatterWithoutYear = DateFormatter()
         formatterWithoutYear.dateFormat = "dd MMM"
         
         let formatterWithYear = DateFormatter()
         formatterWithYear.dateFormat = "dd MMM yyyy"
         
-        if myData?.count == nil {
-            
-            countSteps = []
-            targetSteps = []
-            
-        } else if myData?.count != 7 {
-            
-            let index = myData?.first!.date.weekDay ?? 0
-            if index == 0 {
-                return
-            }
-            
-            for _ in 0..<index - 1 {
-                countSteps.append(0)
-                targetSteps.append(0)
-            }
-            
-            myData?.forEach({
-                countSteps.append($0.countSteps)
-                targetSteps.append($0.targetSteps)
-            })
-            
-        } else {
-            myData?.forEach({
-                countSteps.append($0.countSteps)
-                targetSteps.append($0.targetSteps)
-            })
-        }
-        
-        // Comparison
         if myData?.count == nil {
             dateLabel.text = "\(formatterWithYear.string(from: Date()))"
             totalStepsWeekly.text = "\(0)"
@@ -197,6 +193,12 @@ extension ProgressController: ChartViewDelegate {
         barChart.animate(yAxisDuration: 1, easingOption: .easeInCubic)
         barChart.data = chartData
         
+    }
+    
+    func sumStepEachMonth(_ month: Int) -> Double {
+        Double(allData.filter {
+            Calendar.current.component(.month, from: $0.date) == month + 1
+        }.reduce(0, { $0 + $1.countSteps }))
     }
     
 }

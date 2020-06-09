@@ -66,6 +66,33 @@ class CoreDataFunction {
             }
             
         }
+    }
+    
+    static func updateData(totalStep: Int, targetStep: Int, date: Date) {
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        if let appDelegate = appDelegate {
+            
+            let manageContext = appDelegate.persistentContainer.viewContext
+                        
+            let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityDay)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.date) CONTAINS '%@'", date.weekDay as CVarArg)
+            print(date.weekDay)
+            do {
+                let fetch = try manageContext.fetch(fetchRequest)
+                
+                let dataToUpdate = fetch[0] as! NSManagedObject
+                dataToUpdate.setValue(totalStep, forKey: K.Core.totalStep)
+                dataToUpdate.setValue(targetStep, forKey: K.Core.targetStep)
+                dataToUpdate.setValue(date, forKey: K.Core.date)
+                
+                try manageContext.save()
+            } catch let err {
+                print(err)
+            }
+            
+        }
         
     }
     
