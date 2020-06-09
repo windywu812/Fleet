@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1FA14634267282950E3400ED /* Pods_fleet_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2FEF8F519AF1B1144173153 /* Pods_fleet_ios.framework */; };
+		2301A7F6248FCB4F005070B0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301A7F5248FCB4F005070B0 /* Date.swift */; };
 		230B7A852480BAE500E34F13 /* RoundedOnlyTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */; };
 		230B7A862480C78300E34F13 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593226AC247FFC760009950D /* HealthKit.framework */; };
 		2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2301A7F5248FCB4F005070B0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedOnlyTopView.swift; sourceTree = "<group>"; };
 		2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunction.swift; sourceTree = "<group>"; };
 		2330ECD12475554C005C9DA0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
@@ -161,11 +163,12 @@
 			isa = PBXGroup;
 			children = (
 				2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */,
+				23DEC6C12482415E003AF776 /* ChartFuncion.swift */,
 				593226A1247F31D30009950D /* UserDefaultServices.swift */,
 				5993277424820201004E3B79 /* AchievementService.swift */,
 				599327702480E02C004E3B79 /* NotificationService.swift */,
 				5993277224813647004E3B79 /* HealthKitService.swift */,
-				23DEC6C12482415E003AF776 /* ChartFuncion.swift */,
+				2301A7F5248FCB4F005070B0 /* Date.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				5980AD892474F6E300E232A6 /* Category.swift in Sources */,
 				59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */,
 				5979AD5F246E428300F8FC53 /* RoundedButton.swift in Sources */,
+				2301A7F6248FCB4F005070B0 /* Date.swift in Sources */,
 				230B7A852480BAE500E34F13 /* RoundedOnlyTopView.swift in Sources */,
 				5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */,
 				5980AD852474F59F00E232A6 /* CategoryAchievementCell.swift in Sources */,

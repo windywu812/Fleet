@@ -24,6 +24,9 @@ class EndOnboardingVC: UIViewController {
     }
     
     @IBAction func letsDoTapped(_ sender: UIButton) {
+        
+        UserDefaultServices.instance.hasLaunched = true
+        
         //Ask some permission
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, err) in
             guard err == nil else {
