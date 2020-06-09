@@ -43,11 +43,10 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
         
-//        hkService.getTodayStep { (step) in
-//            self.service.currentStep = Int(step)
-//        }
-        
-        self.service.currentStep = 15008
+        hkService.getTodayStep { (step) in
+            self.service.currentStep = Int(step)
+        }
+                    
         todayStepLabel.text = String(describing: service.currentStep)
         factLabel.text = funFact.randomElement()
 
@@ -97,7 +96,8 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
         
         progressLabel.text = "\(remainStep) steps left to level up"
-        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel].stepsToLvlUp)), animated: false)
+        progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel + 1].stepsToLvlUp)), animated: false)
+        
     }
     
     @IBAction func editTapped(_ sender: UIButton) {
