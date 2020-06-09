@@ -18,6 +18,7 @@ class DetailAchievementVC: UIViewController {
     @IBOutlet weak var detailLbl: UILabel!
     
     var currentDeterminedCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +26,10 @@ class DetailAchievementVC: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: K.Cell.achievementCell)
         
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
     }
     
     override func viewWillAppear(_ animated: Bool) {

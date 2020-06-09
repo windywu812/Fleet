@@ -77,12 +77,17 @@ class CoreDataFunction {
             let manageContext = appDelegate.persistentContainer.viewContext
                         
             let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityDay)
-            fetchRequest.predicate = NSPredicate(format: "\(K.Core.date) CONTAINS '%@'", date.weekDay as CVarArg)
-            print(date.weekDay)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.date) > %@ AND \(K.Core.date) < %@", Date().startOfDay as CVarArg, Date().endOfDay as CVarArg )
+            
             do {
                 let fetch = try manageContext.fetch(fetchRequest)
                 
+                if fetch.isEmpty {
+                    return
+                }
+                
                 let dataToUpdate = fetch[0] as! NSManagedObject
+                
                 dataToUpdate.setValue(totalStep, forKey: K.Core.totalStep)
                 dataToUpdate.setValue(targetStep, forKey: K.Core.targetStep)
                 dataToUpdate.setValue(date, forKey: K.Core.date)

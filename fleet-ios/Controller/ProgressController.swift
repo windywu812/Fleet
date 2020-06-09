@@ -21,6 +21,10 @@ class ProgressController: UIViewController {
 
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         setChartWeekly()
     }

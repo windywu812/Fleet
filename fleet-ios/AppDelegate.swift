@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor.orange
+        UIBarStyle(rawValue: 1)
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStepToDB(notification:)), name: .NSCalendarDayChanged, object: nil)
 

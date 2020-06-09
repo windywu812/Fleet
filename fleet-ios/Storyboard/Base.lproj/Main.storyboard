@@ -19,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIe-4q-HpV" customClass="RoundedView" customModule="Fleet" customModuleProvider="target">
                                 <rect key="frame" x="20" y="70" width="374" height="96.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know? A Japanese runner set a record for the longest marathon ever which he finished in 54 years and 8 months." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-lT-khf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know? A Japanese runner set a record for the longest marathon ever which he finished in 54 years and 8 months." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-lT-khf">
                                         <rect key="frame" x="16" y="16" width="342" height="64.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,8 +120,8 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oz2-Yi-5Td">
-                                                <rect key="frame" x="9" y="59.5" width="161" height="60"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oz2-Yi-5Td">
+                                                <rect key="frame" x="5.5" y="59.5" width="168" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7b-PR-B1V">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="60"/>
@@ -134,14 +134,17 @@
                                                             <action selector="groupButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="gNI-fy-UqM"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1800" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-SU-2bD">
-                                                        <rect key="frame" x="38" y="9.5" width="85" height="41"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMl-SU-2bD">
+                                                        <rect key="frame" x="30" y="9.5" width="108" height="41"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="fHB-v2-KJL"/>
+                                                        </constraints>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHN-VS-OB8">
-                                                        <rect key="frame" x="131" y="0.0" width="30" height="60"/>
+                                                        <rect key="frame" x="138" y="0.0" width="30" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="+">
@@ -1018,7 +1021,7 @@
         <!--Achievement-->
         <scene sceneID="qPJ-0o-bg1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aPj-r7-ZGk" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="aPj-r7-ZGk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Achievement" image="rosette" catalog="system" id="cPa-gy-q4n">
                         <color key="badgeColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>

@@ -39,38 +39,9 @@ extension ProgressController: ChartViewDelegate {
         let myData = groupedByWeek[now]
         
         myData?.forEach({ (data) in
-            print(data.date.weekDay)
             countSteps[data.date.weekDay - 1] = data.countSteps
             targetSteps[data.date.weekDay - 1] = data.targetSteps
         })
-//        if myData?.count == nil {
-//
-//            countSteps = []
-//            targetSteps = []
-//
-//        } else if myData?.count != 7 {
-//
-//            let index = myData?.first!.date.weekDay ?? 0
-//            if index == 0 {
-//                return
-//            }
-//
-//            for _ in 0..<index - 1 {
-//                countSteps.append(0)
-//                targetSteps.append(0)
-//            }
-//
-//            myData?.forEach({
-//                countSteps.append($0.countSteps)
-//                targetSteps.append($0.targetSteps)
-//            })
-//
-//        } else {
-//            myData?.forEach({
-//                countSteps.append($0.countSteps)
-//                targetSteps.append($0.targetSteps)
-//            })
-//        }
         
         // Comparison
         let formatterWithoutYear = DateFormatter()
@@ -203,25 +174,3 @@ extension ProgressController: ChartViewDelegate {
     
 }
 
-let calender = Calendar.current
-
-extension Date {
-    var year: Int {
-        return calender.component(.year, from: self)
-    }
-    var week: Int {
-        return calender.component(.weekOfYear, from: self)
-    }
-    var weekAndYear: DateComponents {
-        return calender.dateComponents([.weekOfYear, .year], from: self)
-    }
-    var weekDay: Int {
-        return calender.component(.weekday, from: self)
-    }
-    
-    func add(_ x: Int) -> Date {
-        let cal = Calendar.current
-        
-        return cal.date(byAdding: .day, value: x, to: Date())!
-    }
-}

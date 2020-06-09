@@ -29,6 +29,10 @@ class AchievementController: UIViewController {
 
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
     @objc func goDetail() {
         performSegue(withIdentifier: K.Identifier.streakSegue, sender: self)
     }

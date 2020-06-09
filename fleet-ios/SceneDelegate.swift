@@ -31,11 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             vc = onboardingStoryboard.instantiateViewController(identifier: "Onboarding")
         }
-        
-        service.hasLaunched = true
-        
+   
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -64,13 +63,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-
-        // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         
+        // Save changes in the application's managed object context when the application transitions to the background.        
         let services = UserDefaultServices.instance
         
-        CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+        if let date = CoreDataFunction.retrieveAllData().last?.date {
+            if date > Date().startOfDay && date < Date().endOfDay {
+                CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+                
+            }
+        } else {
+            CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+        }
         
     }
 
