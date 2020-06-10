@@ -68,7 +68,9 @@ class ProgressController: UIViewController {
     }
     
     func setupView() {
-         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
+         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentControl.tintColor = .black
+        
          chartView.backgroundColor = .white
          addShadow(chartView)
          setUpChart()
