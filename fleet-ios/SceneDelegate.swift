@@ -66,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Save changes in the application's managed object context when the application transitions to the background.        
         let services = UserDefaultServices.instance
-        
+                
         if let date = CoreDataFunction.retrieveAllData().last?.date {
             if date > Date().startOfDay && date < Date().endOfDay {
                 CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
@@ -74,6 +74,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
             }
         }
+        
+        print(CoreDataFunction.retrieveAllData())
         
     }
 

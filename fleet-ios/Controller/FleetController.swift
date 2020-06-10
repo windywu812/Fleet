@@ -81,7 +81,10 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     }
     
     func setupMascot() {
-        let currentStep = service.currentStep
+        
+        service.totalStepsForNextLevel = allData.map({ $0.countSteps }).reduce(0, { $0 + $1 })
+        
+        let currentStep = service.totalStepsForNextLevel
         
         goalLabel.text = String(service.currentGoal)
         mascotView.image = mascots[service.currentLevel].image
