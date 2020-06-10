@@ -84,7 +84,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         
         service.totalStepsForNextLevel = allData.map({ $0.countSteps }).reduce(0, { $0 + $1 })
         
-        let currentStep = service.totalStepsForNextLevel
+        let currentStep = service.totalStepsForNextLevel - mascots[service.currentLevel].stepsToLvlUp
         
         goalLabel.text = String(service.currentGoal)
         mascotView.image = mascots[service.currentLevel].image
