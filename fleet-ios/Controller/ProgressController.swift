@@ -11,6 +11,7 @@ class ProgressController: UIViewController {
     @IBOutlet weak var totalStepsWeekly: UILabel!
     @IBOutlet weak var weeklySummary: UILabel!
     @IBOutlet weak var infoProgress: UILabel!
+    @IBOutlet weak var cardView: RoundedView!
     
     var isOnYear: Bool = true
     
@@ -68,19 +69,20 @@ class ProgressController: UIViewController {
     }
     
     func setupView() {
-         segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
-        segmentControl.tintColor = .black
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         
-         chartView.backgroundColor = .white
-         addShadow(chartView)
-         setUpChart()
-     }
-     
+        chartView.backgroundColor = .white
+        addShadow(chartView)
+        addShadow(cardView)
+        setUpChart()
+    }
+    
      func addShadow(_ view: UIView) {
          view.layer.cornerRadius = 16
          view.layer.shadowColor = UIColor.black.cgColor
          view.layer.shadowRadius = 20
-         view.layer.shadowOpacity = 0.15
+        view.layer.shadowOpacity = 0.03
          view.layer.shadowOffset = CGSize(width: 0, height: 4)
      }
     
