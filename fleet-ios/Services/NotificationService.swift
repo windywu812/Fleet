@@ -7,27 +7,43 @@
 //
 
 import Foundation
+import UserNotifications
 
 class NotificationService {
     static let instance = NotificationService()
     
-    func scheduleDailyReminder() {
-        let calendar = Calendar.current
-
-        // Daily Reminder Time
-        let now = Date()
-        let date = calendar.date(
-            bySettingHour: 23,
-            minute: 52,
-            second: 0,
-            of: now)!
-
-        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(triggerNotification), userInfo: nil, repeats: false)
-
-        RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+    func scheduleReminder(time: TimeNotif) {
+        var components = DateComponents()
+        switch time {
+        case .morning:
+            components.hour = 6
+            triggerNotification(title: "Morning Reminder", body: "set your daily target", date: components)
+            break
+        case .night:
+            components.hour = 19
+            triggerNotification(title: "Night Reminder", body: "check your daily progress", date: components)
+            break
+        }
     }
     
-    @objc func triggerNotification(title: String, body: String) {
+    func triggerNotification(title: String, body: String, date: DateComponents) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.sound = .defaultCritical
+        content.body = body
         
+        print("component \(body) date to: \(date)")
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        let request = UNNotificationRequest(identifier: body, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+            if error != nil{
+                print("Something went wrong")
+            }
+        })
+    }
+    
+    enum TimeNotif {
+        case morning
+        case night
     }
 }

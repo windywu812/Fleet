@@ -43,6 +43,9 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
         
+        NotificationService.instance.scheduleReminder(time: .morning)
+        NotificationService.instance.scheduleReminder(time: .night)
+        
         hkService.getTodayStep { (step) in
             self.service.currentStep = Int(step)
         }
