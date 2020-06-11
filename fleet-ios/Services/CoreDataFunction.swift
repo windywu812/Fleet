@@ -10,13 +10,11 @@ import UIKit
 import CoreData
 
 class CoreDataFunction {
+    static let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
     static func retrieveAllData() -> [DayModel] {
         
         var daySummaries = [DayModel]()
-        
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        
         if let appDelegate = appDelegate {
             
             let manageContext = appDelegate.persistentContainer.viewContext
@@ -44,9 +42,6 @@ class CoreDataFunction {
     }
     
     static func saveData(id: UUID, totalStep: Int, targetStep: Int, date: Date) {
-        
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        
         if let appDelegate = appDelegate {
             
             let managedContext = appDelegate.persistentContainer.viewContext
@@ -69,13 +64,10 @@ class CoreDataFunction {
     }
     
     static func updateData(totalStep: Int, targetStep: Int, date: Date) {
-        
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        
         if let appDelegate = appDelegate {
             
             let manageContext = appDelegate.persistentContainer.viewContext
-                        
+            
             let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityDay)
             fetchRequest.predicate = NSPredicate(format: "\(K.Core.date) > %@ AND \(K.Core.date) < %@", Date().startOfDay as CVarArg, Date().endOfDay as CVarArg )
             
@@ -96,10 +88,68 @@ class CoreDataFunction {
             } catch let err {
                 print(err)
             }
-            
         }
-        
     }
     
+    static func saveAchievement(achievement: Achievement) {
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            guard let entity = NSEntityDescription.entity(forEntityName: K.Core.entityAchievement, in: managedContext) else {return}
+            
+            let insert = NSManagedObject(entity: entity, insertInto: managedContext)
+            insert.setValue(achievement.title, forKey: K.Core.title)
+            insert.setValue(achievement.progressTotal, forKey: K.Core.progressTotal)
+            insert.setValue(achievement.category.name.rawValue, forKey: K.Core.category)
+            insert.setValue(achievement.isComplete, forKey: K.Core.isFinished)
+            
+            do {
+                try managedContext.save()
+            } catch let err {
+                print(err)
+            }
+        }
+    }
+    
+    static func retrieveAchievements(for category: CategoryAchievement) -> [Achievement]? {
+        var achievements = [Achievement]()
+        
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityAchievement)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.category) = %@", category.rawValue)
+            
+            do {
+                let result = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
+                
+                result?.forEach { achievement in
+                    let selectedCategory = getCategoryFromString(value: achievement.value(forKey: K.Core.category) as! String)
+                    achievements.append(
+                        Achievement(
+                            title: achievement.value(forKey: K.Core.title) as! String,
+                            progressTotal: achievement.value(forKey: K.Core.progressTotal) as! Int,
+                            category: selectedCategory)
+                    )
+                }
+            } catch let err {
+                print("Failed to load data, \(err)")
+            }
+        }
+        
+        return achievements
+    }
+    
+    private static func getCategoryFromString(value: String) -> Category {
+        switch value {
+        case CategoryAchievement.determined.rawValue:
+            return cat.determined
+        case CategoryAchievement.consistent.rawValue:
+            return cat.consistent
+        case CategoryAchievement.olympic.rawValue:
+            return cat.olympic
+        default:
+            return cat.streak
+        }
+    }
 }
 

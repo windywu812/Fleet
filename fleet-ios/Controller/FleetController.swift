@@ -32,7 +32,6 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         
         setTextField()
         progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -11,11 +11,16 @@ import Foundation
 struct K {
     struct Core {
         static let entityDay = "DaySummary"
-        
         static let id = "id"
         static let totalStep = "totalStep"
         static let targetStep = "targetStep"
         static let date = "date"
+        
+        static let entityAchievement = "AchEntity"
+        static let title = "title"
+        static let progressTotal = "progressTotal"
+        static let category = "category"
+        static let isFinished = "isFinished"
     }
     
     struct Identifier {

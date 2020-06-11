@@ -22,17 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UITabBar.appearance().tintColor = UIColor.orange
         
         NotificationCenter.default.addObserver(self, selector: #selector(addStepToDB(notification:)), name: .NSCalendarDayChanged, object: nil)
-        
-        let center = UNUserNotificationCenter.current()
-        let options : UNAuthorizationOptions = [.alert,.sound,.badge]
-        center.requestAuthorization(options: options) { (granted, error) in
-            if let error = error{
-                print(error)
-            } else {
-                print("User is",granted)
-            }
-        }
-        
         return true
     }
     

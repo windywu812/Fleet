@@ -8,43 +8,48 @@
 
 import Foundation
 
-private var determined = Category(name: .determined, subtitle: "Walk 750-3000 steps in 7 days", descCell: "Everyday you'll have target to achieve for Fleety grow faster in this achievement", isLocked: false)
-private var consistent = Category(name: .consistent, subtitle: "Do it streak for 7 days, 21 days and 30 days", descCell: "Complete Determined to unlock this mission", isLocked: true)
-private var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", descCell: "Complete Consistent to unlock this mission", isLocked: true)
-var categoryArray: [Category] = [determined, consistent, olympic]
+struct cat {
+    static var determined = Category(name: .determined, subtitle: "Walk 750-3000 steps in 7 days", descCell: "Everyday you'll have target to achieve for Fleety grow faster in this achievement", isLocked: false)
+    static var consistent = Category(name: .consistent, subtitle: "Do it streak for 7 days, 21 days and 30 days", descCell: "Complete Determined to unlock this mission", isLocked: true)
+    static var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", descCell: "Complete Consistent to unlock this mission", isLocked: true)
+    
+    static var streak = Category(name: .streak, subtitle: "Walk with minimum 500 steps a day to get a streak!", descCell: "", isLocked: false)
+}
 
-private var streak = Category(name: .streak, subtitle: "Walk with minimum 500 steps a day to get a streak!", descCell: "", isLocked: false)
+var categoryArray: [Category] = [cat.determined, cat.consistent, cat.olympic]
+
+
 private var achStreak: [Achievement] = [
-    Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: streak),
-    Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: streak),
-    Achievement(title: "40 Days Walk Streak", progressTotal: 40, category: streak),
-    Achievement(title: "50 Days Walk Streak", progressTotal: 50, category: streak),
-    Achievement(title: "70 Days Walk Streak", progressTotal: 70, category: streak),
-    Achievement(title: "80 Days Walk Streak", progressTotal: 80, category: streak),
-    Achievement(title: "90 Days Walk Streak", progressTotal: 90, category: streak)
+    Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: cat.streak),
+    Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: cat.streak),
+    Achievement(title: "40 Days Walk Streak", progressTotal: 40, category: cat.streak),
+    Achievement(title: "50 Days Walk Streak", progressTotal: 50, category: cat.streak),
+    Achievement(title: "70 Days Walk Streak", progressTotal: 70, category: cat.streak),
+    Achievement(title: "80 Days Walk Streak", progressTotal: 80, category: cat.streak),
+    Achievement(title: "90 Days Walk Streak", progressTotal: 90, category: cat.streak)
 ]
 
 private var achDetermined: [Achievement] = [
-    Achievement(title: "Walk 750 steps in day 1", progressTotal: 750, category: determined),
-    Achievement(title: "Walk 1121 steps in day 2", progressTotal: 1121, category: determined),
-    Achievement(title: "Walk 1140 steps in day 3", progressTotal: 1140, category: determined),
-    Achievement(title: "Walk 1821 steps in day 4", progressTotal: 1821, category: determined),
-    Achievement(title: "Walk 2200 steps in day 5", progressTotal: 2200, category: determined),
-    Achievement(title: "Walk 2575 steps in day 6", progressTotal: 2575, category: determined),
-    Achievement(title: "Walk 3000 steps in day 7", progressTotal: 3000, category: determined)
+    Achievement(title: "Walk 750 steps in day 1", progressTotal: 750, category: cat.determined),
+    Achievement(title: "Walk 1121 steps in day 2", progressTotal: 1121, category: cat.determined),
+    Achievement(title: "Walk 1140 steps in day 3", progressTotal: 1140, category: cat.determined),
+    Achievement(title: "Walk 1821 steps in day 4", progressTotal: 1821, category: cat.determined),
+    Achievement(title: "Walk 2200 steps in day 5", progressTotal: 2200, category: cat.determined),
+    Achievement(title: "Walk 2575 steps in day 6", progressTotal: 2575, category: cat.determined),
+    Achievement(title: "Walk 3000 steps in day 7", progressTotal: 3000, category: cat.determined)
 ]
 
 private var achConsistent: [Achievement] = [
-    Achievement(title: "Walk 3000 steps for 7 days in a row", progressTotal: 21000, category: consistent),
-    Achievement(title: "Walk 3000 steps for 21 days in a row", progressTotal: 63000, category: consistent),
-    Achievement(title: "Walk 3500 steps for 30 days in a row", progressTotal: 105000, category: consistent)
+    Achievement(title: "Walk 3000 steps for 7 days in a row", progressTotal: 21000, category: cat.consistent),
+    Achievement(title: "Walk 3000 steps for 21 days in a row", progressTotal: 63000, category: cat.consistent),
+    Achievement(title: "Walk 3500 steps for 30 days in a row", progressTotal: 105000, category: cat.consistent)
 ]
 
 private var achOlympic: [Achievement] = [
-    Achievement(title: "Walk 10000 steps for 3 days in a row", progressTotal: 10000, category: olympic),
-    Achievement(title: "Walk 15000 steps for 7 days in a row", progressTotal: 15000, category: olympic),
-    Achievement(title: "Walk 17000 steps for a total of 25 times", progressTotal: 425000, category: olympic),
-    Achievement(title: "Walk 20000 steps for 3 days in a row", progressTotal: 60000, category: olympic)
+    Achievement(title: "Walk 10000 steps for 3 days in a row", progressTotal: 10000, category: cat.olympic),
+    Achievement(title: "Walk 15000 steps for 7 days in a row", progressTotal: 15000, category: cat.olympic),
+    Achievement(title: "Walk 17000 steps for a total of 25 times", progressTotal: 425000, category: cat.olympic),
+    Achievement(title: "Walk 20000 steps for 3 days in a row", progressTotal: 60000, category: cat.olympic)
 ]
 
 var achievementArray = [achDetermined, achConsistent, achOlympic, achStreak]
