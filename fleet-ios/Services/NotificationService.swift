@@ -32,7 +32,6 @@ class NotificationService {
         content.sound = .defaultCritical
         content.body = body
         
-        print("component \(body) date to: \(date)")
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
         let request = UNNotificationRequest(identifier: body, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in

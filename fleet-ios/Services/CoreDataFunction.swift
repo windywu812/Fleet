@@ -139,6 +139,29 @@ class CoreDataFunction {
         return achievements
     }
     
+    static func updateAchievementisFinished(achievement: Achievement) {
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityAchievement)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.title) = $!", achievement.title)
+            
+            do {
+                let fetch = try managedContext.fetch(fetchRequest)
+                
+                if fetch.isEmpty {return}
+                
+                let achToUpdate = fetch[0] as! NSManagedObject
+                
+                achToUpdate.setValue(true, forKey: K.Core.isFinished)
+                
+                try managedContext.save()
+            } catch let err {
+                print(err)
+            }
+        }
+    }
+    
     private static func getCategoryFromString(value: String) -> Category {
         switch value {
         case CategoryAchievement.determined.rawValue:
