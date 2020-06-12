@@ -848,7 +848,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9f-TS-Ftd">
-                                <rect key="frame" x="20" y="352.5" width="374" height="428.5"/>
+                                <rect key="frame" x="20" y="352.5" width="374" height="440.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R52-mR-T1x">
                                         <rect key="frame" x="16" y="16" width="133" height="22"/>
@@ -985,7 +985,7 @@
                             <constraint firstItem="o8B-FD-tG9" firstAttribute="leading" secondItem="R2V-6P-4Th" secondAttribute="leading" id="b7G-dv-CCw"/>
                             <constraint firstItem="K9f-TS-Ftd" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="20" id="c3A-Gx-1FW"/>
                             <constraint firstItem="LDD-av-GNI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3Pc-mj-IN4" secondAttribute="trailing" symbolic="YES" id="c4W-Wt-F6C"/>
-                            <constraint firstItem="LDD-av-GNI" firstAttribute="bottom" secondItem="K9f-TS-Ftd" secondAttribute="bottom" constant="32" id="e6C-Bt-P1D"/>
+                            <constraint firstItem="LDD-av-GNI" firstAttribute="bottom" secondItem="K9f-TS-Ftd" secondAttribute="bottom" constant="20" id="e6C-Bt-P1D"/>
                             <constraint firstItem="3Pc-mj-IN4" firstAttribute="top" secondItem="LDD-av-GNI" secondAttribute="top" constant="48" id="hTd-Zu-b3K"/>
                             <constraint firstItem="3Pc-mj-IN4" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="20" id="hfa-RD-gbd"/>
                             <constraint firstItem="hKV-eq-3fx" firstAttribute="leading" secondItem="LDD-av-GNI" secondAttribute="leading" constant="20" id="mHn-71-NE1"/>
