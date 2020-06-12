@@ -151,7 +151,7 @@ extension ProgressController: ChartViewDelegate {
             totalStepsEntry.append(totalStepsData)
         }
         
-        let countStepsDataSet = BarChartDataSet(entries: totalStepsEntry)
+        let countStepsDataSet = BarChartDataSet(entries: totalStepsEntry, label: "Total Steps")
         countStepsDataSet.setColor(UIColor.orange)
         countStepsDataSet.drawValuesEnabled = false
         countStepsDataSet.setColor(UIColor(named: "orange")!)

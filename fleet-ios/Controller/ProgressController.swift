@@ -28,6 +28,7 @@ class ProgressController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setChartWeekly()
+        segmentControl.selectedSegmentIndex = 0
     }
     
     func addGestureToChart() {
@@ -105,8 +106,10 @@ class ProgressController: UIViewController {
         barChart.leftAxis.labelTextColor = UIColor.black
         
         // Legend
-        barChart.legend.horizontalAlignment = .center
-        barChart.legend.enabled = false
+        barChart.legend.horizontalAlignment = .left
+        barChart.legend.enabled = true
+        barChart.legend.font = .systemFont(ofSize: 14)
+        barChart.legend.textColor = UIColor.black
         
         // Label
         barChart.leftAxis.labelFont = .systemFont(ofSize: 14)
