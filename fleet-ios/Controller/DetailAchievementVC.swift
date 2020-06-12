@@ -8,12 +8,11 @@
 
 import UIKit
 
-class DetailAchievementVC: UIViewController {
-    
+class DetailAchievementVC: UIViewController, AchievementCompleteDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var category: Category?
-    var achievement: [Achievement]!
+    var achievement = [Achievement]()
     let udService = UserDefaultServices.instance
     let service = AchievementService.instance
     
@@ -27,22 +26,9 @@ class DetailAchievementVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: K.Cell.achievementCell)
-        
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .darkContent
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        category = achievement[0].category
-        title = category?.name.rawValue
-        
-        currentDeterminedCount = udService.determinedCount
-        
+                
         if category?.name == .determined {
-            achievement = service.configureDetermined(achievement)
+            achievement = service.configureDetermined(achievement)!
         } else if category?.name == .streak {
             achievement.forEach { (achievement) in
                 if achievement.isComplete == .notFinished {
@@ -53,6 +39,28 @@ class DetailAchievementVC: UIViewController {
         }
         
         detailLbl.text = category?.subtitle
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = category?.name.rawValue
+        
+        currentDeterminedCount = udService.determinedCount
+        
+        achievement = CoreDataFunction.retrieveAchievements(for: category!.name)!
+    }
+    
+    func shareAchievementComplete(_ achievement: Achievement) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let shareVC = storyboard.instantiateViewController(withIdentifier: "ShareAchievementVC") as! ShareAchievementVC
+        shareVC.modalTransitionStyle = .crossDissolve
+        shareVC.achievement = achievement
+        shareVC.detailVC = self
+        present(shareVC, animated: true, completion: nil)
     }
 }
 
@@ -65,7 +73,7 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.achievementCell) as? AchievementCell else {return UITableViewCell()}
         
         let ach = achievement[indexPath.row]
-        cell.configureCell(ach: ach)
+        cell.configureCell(ach: ach, delegate: self)
         
         if category?.name == .determined {
             let currentStep = udService.currentStep
@@ -75,6 +83,4 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }

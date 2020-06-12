@@ -21,6 +21,7 @@
 		23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */; };
 		23DEC6C22482415E003AF776 /* ChartFuncion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DEC6C12482415E003AF776 /* ChartFuncion.swift */; };
 		5916134124933B670011F640 /* AchievementNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916134024933B660011F640 /* AchievementNavController.swift */; };
+		591613432493C9D70011F640 /* ShareAchievementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591613422493C9D70011F640 /* ShareAchievementVC.swift */; };
 		593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A1247F31D30009950D /* UserDefaultServices.swift */; };
 		593226A4247F380B0009950D /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A3247F380B0009950D /* Constans.swift */; };
 		59550411247E55A600F7EBB5 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59550410247E55A600F7EBB5 /* Achievement.swift */; };
@@ -67,6 +68,7 @@
 		23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOnboardingVC.swift; sourceTree = "<group>"; };
 		23DEC6C12482415E003AF776 /* ChartFuncion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFuncion.swift; sourceTree = "<group>"; };
 		5916134024933B660011F640 /* AchievementNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementNavController.swift; sourceTree = "<group>"; };
+		591613422493C9D70011F640 /* ShareAchievementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAchievementVC.swift; sourceTree = "<group>"; };
 		593226A1247F31D30009950D /* UserDefaultServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultServices.swift; sourceTree = "<group>"; };
 		593226A3247F380B0009950D /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		593226AB247FFC760009950D /* fleet-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fleet-ios.entitlements"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				2372DC77246A665400ABE9D5 /* ProgressController.swift */,
 				2347A9A924826D5000A9D212 /* LevelInfoVC.swift */,
 				59EEC4B72484BB1600207244 /* LevelUpVC.swift */,
+				591613422493C9D70011F640 /* ShareAchievementVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */,
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
 				5980AD7F2474F28F00E232A6 /* AchievementCell.swift in Sources */,
+				591613432493C9D70011F640 /* ShareAchievementVC.swift in Sources */,
 				23DEC6C22482415E003AF776 /* ChartFuncion.swift in Sources */,
 				5916134124933B670011F640 /* AchievementNavController.swift in Sources */,
 				5993277524820201004E3B79 /* AchievementService.swift in Sources */,

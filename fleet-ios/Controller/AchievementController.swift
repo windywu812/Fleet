@@ -29,13 +29,11 @@ class AchievementController: UIViewController {
         categoryArray = CoreDataFunction.getCategories()!
         
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
-        streakView.addGestureRecognizer(gestureRec)
-
-        service.currentDayStreak = 72
+        streakView.addGestureRecognizer(gestureRec)        
     }
     
     @objc func goDetail() {
-        performSegue(withIdentifier: K.Identifier.streakSegue, sender: self)
+        performSegue(withIdentifier: K.Identifier.streakSegue, sender: cat.streak)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,7 +68,7 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
         let category = categoryArray[indexPath.row]
         
         if !category.isLocked {
-            performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: category.name)
+            performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: category)
         } else {
             let alert = UIAlertController(title: "Sorry", message: "You need to conquer the previous achievement", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -80,18 +78,14 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var achievements = [Achievement]()
-        if segue.identifier == K.Identifier.toDetailSegue {
-            let categoryAch = sender as! CategoryAchievement
-            achievements = CoreDataFunction.retrieveAchievements(for: categoryAch)!
-            
-            if let detailVC = segue.destination as? DetailAchievementVC {
-                detailVC.achievement = achievements
-            }
-        } else {
-            if let detailVC = segue.destination as? DetailAchievementVC {
-                detailVC.achievement = CoreDataFunction.retrieveAchievements(for: .streak)
-            }
+        let category = sender as! Category
+        
+        if let detailVC = segue.destination as? DetailAchievementVC {
+            detailVC.category = category
         }
     }
+}
+
+protocol AchievementCompleteDelegate {
+    func shareAchievementComplete(_ achievement: Achievement)
 }

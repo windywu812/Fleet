@@ -18,6 +18,7 @@ class AchievementCell: UITableViewCell {
     
     let achService = AchievementService.instance
     var achievement: Achievement?
+    var delegate: AchievementCompleteDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +28,8 @@ class AchievementCell: UITableViewCell {
         progress.layer.cornerRadius = 2
     }
     
-    func configureCell(ach: Achievement) {
+    func configureCell(ach: Achievement, delegate: AchievementCompleteDelegate) {
+        self.delegate = delegate
         achievement = ach
         txtTitle.text = ach.title
         
@@ -55,9 +57,7 @@ class AchievementCell: UITableViewCell {
             button.layer.borderColor = UIColor.systemGreen.cgColor
             button.layer.borderWidth = 1
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-            
-            button.removeTarget(self, action: #selector(changeToComplete), for: .touchUpInside)
-            
+                        
         } else if ach.isComplete == AchievementStatus.notConfirmed {
             progress.isHidden = true
             imgAchievement.image = UIImage(named: "ach-incomplete")
@@ -68,8 +68,6 @@ class AchievementCell: UITableViewCell {
             button.layer.borderWidth = 2
             button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
             
-            button.addTarget(self, action: #selector(changeToComplete), for: .touchUpInside)
-
         } else {
             progress.layer.cornerRadius = 2
             progress.setProgress(percentage, animated: false)
@@ -80,8 +78,13 @@ class AchievementCell: UITableViewCell {
         }
     }
     
-    @objc func changeToComplete() {
-        CoreDataFunction.updateAchievementStatus(achievement: achievement!, status: .isFinished)
-        configureCell(ach: achievement!)
+    @IBAction func btnCompletePressed(_ sender: UIButton) {
+        if achievement?.isComplete == .notConfirmed {
+            delegate?.shareAchievementComplete(achievement!)
+        }
     }
+    //    @objc func changeToComplete() {
+//        CoreDataFunction.updateAchievementStatus(achievement: achievement!, status: .isFinished)
+//        configureCell(ach: achievement!)
+//    }
 }
