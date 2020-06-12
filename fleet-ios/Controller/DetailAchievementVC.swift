@@ -9,19 +9,21 @@
 import UIKit
 
 class DetailAchievementVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var category: Category?
     var achievement: [Achievement]!
     let udService = UserDefaultServices.instance
+    let service = AchievementService.instance
+    
     @IBOutlet weak var detailLbl: UILabel!
     
     var currentDeterminedCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: K.Cell.achievementCell)
@@ -40,7 +42,14 @@ class DetailAchievementVC: UIViewController {
         currentDeterminedCount = udService.determinedCount
         
         if category?.name == .determined {
-            achievement = AchievementService.instance.configureDetermined(achievement)
+            achievement = service.configureDetermined(achievement)
+        } else if category?.name == .streak {
+            achievement.forEach { (achievement) in
+                if achievement.isComplete == .notFinished {
+                    service.setStreakComplete(achievement, status: .notConfirmed)
+                }
+            }
+            tableView.reloadData()
         }
         
         detailLbl.text = category?.subtitle

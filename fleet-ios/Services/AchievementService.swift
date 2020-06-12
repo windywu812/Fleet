@@ -33,13 +33,10 @@ class AchievementService {
         return currentDayStreak/progressTotal
     }
     
-    func setStreakComplete(_ ach: Achievement) {
+    func setStreakComplete(_ ach: Achievement, status: AchievementStatus) {
         let currentDayStreak = udService.currentDayStreak
-        let streakCount = udService.streakCount
         if currentDayStreak >= ach.progressTotal {
-            ach.isComplete = true
-        } else {
-            ach.isComplete = false
+            CoreDataFunction.updateAchievementStatus(achievement: ach, status: status)
         }
     }
     
@@ -53,7 +50,7 @@ class AchievementService {
         
         if udService.isDeterminedToday == false {
             firstAchs.forEach { (ach) in
-                ach.isComplete = true
+                ach.isComplete = AchievementStatus.notConfirmed
                 returnedAchs.append(ach)
             }
             
@@ -83,7 +80,7 @@ class AchievementService {
         return udService.currentStep >= ach.progressTotal
     }
     
-    func unlockConsistent() {
+    func unlockAccomplished() {
         let determinedData = CoreDataFunction.retrieveAchievements(for: .determined)
         let currentDetermined = udService.determinedCount
         
@@ -94,7 +91,7 @@ class AchievementService {
     
     func unlockOlympic() {
         let consistentData = CoreDataFunction.retrieveAchievements(for: .accomplished)
-        let currentConsistent = udService.consistentCount
+        let currentConsistent = udService.accomplishedCount
         
         if currentConsistent >= consistentData!.count {
             CoreDataFunction.unlockCategory(for: .olympic)

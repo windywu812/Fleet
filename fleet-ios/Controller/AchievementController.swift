@@ -31,6 +31,7 @@ class AchievementController: UIViewController {
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
         streakView.addGestureRecognizer(gestureRec)
 
+        service.currentDayStreak = 72
     }
     
     @objc func goDetail() {
@@ -46,7 +47,7 @@ class AchievementController: UIViewController {
         keepUpLabel.text = currentStreak < 1 ? "Let's Start!" : "Keep it up!"
         numStreakLbl.text = "\(currentStreak) \(noun)"
         
-        achService.unlockConsistent()
+        achService.unlockAccomplished()
         achService.unlockOlympic()
     }
 }
@@ -69,7 +70,7 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
         let category = categoryArray[indexPath.row]
         
         if !category.isLocked {
-            performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: indexPath)
+            performSegue(withIdentifier: K.Identifier.toDetailSegue, sender: category.name)
         } else {
             let alert = UIAlertController(title: "Sorry", message: "You need to conquer the previous achievement", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -79,16 +80,17 @@ extension AchievementController: UITableViewDelegate, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var achievements = [Achievement]()
         if segue.identifier == K.Identifier.toDetailSegue {
-            let indexPath = sender as! IndexPath
-            let achievement = achievementArray[indexPath.row]
+            let categoryAch = sender as! CategoryAchievement
+            achievements = CoreDataFunction.retrieveAchievements(for: categoryAch)!
             
             if let detailVC = segue.destination as? DetailAchievementVC {
-                detailVC.achievement = achievement
+                detailVC.achievement = achievements
             }
         } else {
             if let detailVC = segue.destination as? DetailAchievementVC {
-                detailVC.achievement = achievementArray[3]
+                detailVC.achievement = CoreDataFunction.retrieveAchievements(for: .streak)
             }
         }
     }

@@ -103,7 +103,7 @@ class CoreDataFunction {
             insert.setValue(achievement.title, forKey: K.Core.title)
             insert.setValue(achievement.progressTotal, forKey: K.Core.progressTotal)
             insert.setValue(achievement.category.name.rawValue, forKey: K.Core.category)
-            insert.setValue(achievement.isComplete, forKey: K.Core.isFinished)
+            insert.setValue(achievement.isComplete.rawValue, forKey: K.Core.isFinished)
             
             do {
                 try managedContext.save()
@@ -126,11 +126,13 @@ class CoreDataFunction {
                 
                 result?.forEach { achievement in
                     let selectedCategory = getCategoryFromString(value: achievement.value(forKey: K.Core.category) as! String)
+                    let selectedStatus = getStatusFromInt(value: achievement.value(forKey: K.Core.isFinished) as! Int)
                     achievements.append(
                         Achievement(
                             title: achievement.value(forKey: K.Core.title) as! String,
                             progressTotal: achievement.value(forKey: K.Core.progressTotal) as! Int,
-                            category: selectedCategory)
+                            category: selectedCategory,
+                            isComplete: selectedStatus)
                     )
                 }
             } catch let err {
@@ -141,7 +143,7 @@ class CoreDataFunction {
         return achievements
     }
     
-    static func updateAchievementisFinished(achievement: Achievement) {
+    static func updateAchievementStatus(achievement: Achievement, status: AchievementStatus) {
         if let appDelegate = appDelegate {
             let managedContext = appDelegate.persistentContainer.viewContext
             
@@ -150,17 +152,25 @@ class CoreDataFunction {
             
             do {
                 let fetch = try managedContext.fetch(fetchRequest)
-                
-                if fetch.isEmpty {return}
-                
                 let achToUpdate = fetch[0] as! NSManagedObject
-                
-                achToUpdate.setValue(true, forKey: K.Core.isFinished)
+
+                achToUpdate.setValue(status.rawValue, forKey: K.Core.isFinished)
                 
                 try managedContext.save()
             } catch let err {
                 print(err)
             }
+        }
+    }
+    
+    private static func getStatusFromInt(value: Int) -> AchievementStatus {
+        switch value {
+        case AchievementStatus.notConfirmed.rawValue:
+            return AchievementStatus.notConfirmed
+        case AchievementStatus.isFinished.rawValue:
+            return AchievementStatus.isFinished
+        default:
+            return AchievementStatus.notFinished
         }
     }
     
@@ -246,12 +256,12 @@ class CoreDataFunction {
                 achToUpdate.setValue(false, forKey: K.Core.catIsLocked)
                 
                 if category == .accomplished {
-                    updatedDescCell = ""
+                    updatedDescCell = "In this achievement you should do it streak for 7 days, 21 days and 30 days"
                 } else if category == .olympic {
-                    updatedDescCell = ""
+                    updatedDescCell = "Bigger things are waiting you here for the growth of Fleety!"
                 }
                 achToUpdate.setValue(updatedDescCell, forKey: K.Core.catDescCell)
-
+                
                 try managedContext.save()
             } catch let err {
                 print(err)
@@ -267,7 +277,7 @@ class CoreDataFunction {
             return CategoryAchievement.accomplished
         default:
             return CategoryAchievement.olympic
-        
+            
         }
     }
 }

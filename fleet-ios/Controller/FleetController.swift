@@ -115,7 +115,6 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
         
         progressLabel.text = "\(remainStep) steps left to level up"
-        print(remainStep)
         progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel + 1].stepsToLvlUp)), animated: false)
         
     }

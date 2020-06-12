@@ -22,3 +22,9 @@ enum CategoryAchievement: String {
     case accomplished = "Accomplished"
     case olympic = "Olympic"
 }
+
+enum AchievementStatus: Int {
+    case notFinished = 0
+    case notConfirmed = 1
+    case isFinished = 2
+}

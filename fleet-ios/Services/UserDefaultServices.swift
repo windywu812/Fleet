@@ -20,12 +20,11 @@ class UserDefaultServices {
     fileprivate let currentGoalEachDayKey = "currentGoalEachDay"
     
     fileprivate let currentDayStreakKey = "currentDayStreak"
-    fileprivate let streakCountKey = "streakCount"
     
     fileprivate let isDeterminedTodayKey = "determinedToday"
     fileprivate let determinedCountKey = "determinedCount"
     
-    fileprivate let consistentCountKey = "consistentCountKey"
+    fileprivate let accomplishedCountKey = "accomplishedCountKey"
     fileprivate let olympicCountKey = "olympicCountKey"
     
     // For Mascot
@@ -69,15 +68,6 @@ class UserDefaultServices {
         }
     }
     
-    var streakCount: Int {
-        get {
-            return def.integer(forKey: streakCountKey)
-        }
-        set {
-            def.set(newValue, forKey: streakCountKey)
-        }
-    }
-    
     // this is variable to prevent user for complete more than 1 determined achievement in one day
     var isDeterminedToday: Bool {
         get {
@@ -98,12 +88,12 @@ class UserDefaultServices {
         }
     }
     
-    var consistentCount: Int {
+    var accomplishedCount: Int {
         get {
-            return def.integer(forKey: consistentCountKey)
+            return def.integer(forKey: accomplishedCountKey)
         }
         set {
-            def.set(newValue, forKey: consistentCountKey)
+            def.set(newValue, forKey: accomplishedCountKey)
         }
     }
     

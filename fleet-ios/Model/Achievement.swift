@@ -12,11 +12,12 @@ class Achievement {
     var title: String
     var progressTotal: Int
     var category: Category
-    var isComplete: Bool = false
+    var isComplete: AchievementStatus
     
-    init(title: String, progressTotal: Int, category: Category) {
+    init(title: String, progressTotal: Int, category: Category, isComplete: AchievementStatus) {
         self.title = title
         self.progressTotal = progressTotal
         self.category = category
+        self.isComplete = isComplete
     }
 }

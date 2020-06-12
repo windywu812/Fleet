@@ -20,40 +20,39 @@ var categoryArray: [Category] = [cat.determined, cat.accomplished, cat.olympic]
 
 
 private var achStreak: [Achievement] = [
-    Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: cat.streak),
-    Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: cat.streak),
-    Achievement(title: "40 Days Walk Streak", progressTotal: 40, category: cat.streak),
-    Achievement(title: "50 Days Walk Streak", progressTotal: 50, category: cat.streak),
-    Achievement(title: "70 Days Walk Streak", progressTotal: 70, category: cat.streak),
-    Achievement(title: "80 Days Walk Streak", progressTotal: 80, category: cat.streak),
-    Achievement(title: "90 Days Walk Streak", progressTotal: 90, category: cat.streak)
+    Achievement(title: "10 Days Walk Streak", progressTotal: 10, category: cat.streak, isComplete: .notFinished),
+    Achievement(title: "20 Days Walk Streak", progressTotal: 20, category: cat.streak, isComplete: .notFinished),
+    Achievement(title: "40 Days Walk Streak", progressTotal: 40, category: cat.streak, isComplete: .notFinished),
+    Achievement(title: "50 Days Walk Streak", progressTotal: 50, category: cat.streak, isComplete: .notFinished),
+    Achievement(title: "70 Days Walk Streak", progressTotal: 70, category: cat.streak, isComplete: .notFinished),
+    Achievement(title: "80 Days Walk Streak", progressTotal: 80, category: cat.streak, isComplete: .notFinished),
+    Achievement(title: "90 Days Walk Streak", progressTotal: 90, category: cat.streak, isComplete: .notFinished)
 ]
 
 private var achDetermined: [Achievement] = [
-    Achievement(title: "Walk 750 steps in day 1", progressTotal: 750, category: cat.determined),
-    Achievement(title: "Walk 1121 steps in day 2", progressTotal: 1121, category: cat.determined),
-    Achievement(title: "Walk 1140 steps in day 3", progressTotal: 1140, category: cat.determined),
-    Achievement(title: "Walk 1821 steps in day 4", progressTotal: 1821, category: cat.determined),
-    Achievement(title: "Walk 2200 steps in day 5", progressTotal: 2200, category: cat.determined),
-    Achievement(title: "Walk 2575 steps in day 6", progressTotal: 2575, category: cat.determined),
-    Achievement(title: "Walk 3000 steps in day 7", progressTotal: 3000, category: cat.determined)
+    Achievement(title: "Walk 750 steps in day 1", progressTotal: 750, category: cat.determined, isComplete: .notFinished),
+    Achievement(title: "Walk 1121 steps in day 2", progressTotal: 1121, category: cat.determined, isComplete: .notFinished),
+    Achievement(title: "Walk 1140 steps in day 3", progressTotal: 1140, category: cat.determined, isComplete: .notFinished),
+    Achievement(title: "Walk 1821 steps in day 4", progressTotal: 1821, category: cat.determined, isComplete: .notFinished),
+    Achievement(title: "Walk 2200 steps in day 5", progressTotal: 2200, category: cat.determined, isComplete: .notFinished),
+    Achievement(title: "Walk 2575 steps in day 6", progressTotal: 2575, category: cat.determined, isComplete: .notFinished),
+    Achievement(title: "Walk 3000 steps in day 7", progressTotal: 3000, category: cat.determined, isComplete: .notFinished)
 ]
 
 private var achAccomplished: [Achievement] = [
-    Achievement(title: "Walk 3000 steps for 7 days in a row", progressTotal: 21000, category: cat.accomplished),
-    Achievement(title: "Walk 3000 steps for 21 days in a row", progressTotal: 63000, category: cat.accomplished),
-    Achievement(title: "Walk 3500 steps for 30 days in a row", progressTotal: 105000, category: cat.accomplished)
+    Achievement(title: "Walk 3000 steps for 7 days in a row", progressTotal: 21000, category: cat.accomplished, isComplete: .notFinished),
+    Achievement(title: "Walk 3000 steps for 21 days in a row", progressTotal: 63000, category: cat.accomplished, isComplete: .notFinished),
+    Achievement(title: "Walk 3500 steps for 30 days in a row", progressTotal: 105000, category: cat.accomplished, isComplete: .notFinished)
 ]
 
 private var achOlympic: [Achievement] = [
-    Achievement(title: "Walk 10000 steps for 3 days in a row", progressTotal: 10000, category: cat.olympic),
-    Achievement(title: "Walk 15000 steps for 7 days in a row", progressTotal: 15000, category: cat.olympic),
-    Achievement(title: "Walk 17000 steps for a total of 25 times", progressTotal: 425000, category: cat.olympic),
-    Achievement(title: "Walk 20000 steps for 3 days in a row", progressTotal: 60000, category: cat.olympic)
+    Achievement(title: "Walk 10000 steps for 3 days in a row", progressTotal: 10000, category: cat.olympic, isComplete: .notFinished),
+    Achievement(title: "Walk 15000 steps for 7 days in a row", progressTotal: 15000, category: cat.olympic, isComplete: .notFinished),
+    Achievement(title: "Walk 17000 steps for a total of 25 times", progressTotal: 425000, category: cat.olympic, isComplete: .notFinished),
+    Achievement(title: "Walk 20000 steps for 3 days in a row", progressTotal: 60000, category: cat.olympic, isComplete: .notFinished)
 ]
 
 var achievementArray = [achDetermined, achAccomplished, achOlympic, achStreak]
-
 
 var funFact = [
     "Did you know? It takes approximately 200 muscles to take a single step when running!",
