@@ -21,6 +21,12 @@ struct K {
         static let progressTotal = "progressTotal"
         static let category = "category"
         static let isFinished = "isFinished"
+        
+        static let entityCategory = "CategoryEntity"
+        static let catName = "catName"
+        static let catSubtitle = "catSubtitle"
+        static let catDescCell = "catDescCell"
+        static let catIsLocked = "catIsLocked"
     }
     
     struct Identifier {

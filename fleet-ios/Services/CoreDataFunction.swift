@@ -12,6 +12,7 @@ import CoreData
 class CoreDataFunction {
     static let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
+    //MARK: - PROGRESS'S FUNCTIONS
     static func retrieveAllData() -> [DayModel] {
         
         var daySummaries = [DayModel]()
@@ -91,6 +92,7 @@ class CoreDataFunction {
         }
     }
     
+    //MARK: - ACHIEVEMENT'S FUNCTIONS
     static func saveAchievement(achievement: Achievement) {
         if let appDelegate = appDelegate {
             let managedContext = appDelegate.persistentContainer.viewContext
@@ -172,6 +174,100 @@ class CoreDataFunction {
             return cat.olympic
         default:
             return cat.streak
+        }
+    }
+    
+    //MARK: - CATEGORY'S FUNCTIONS
+    static func saveCategory(category: Category) {
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            guard let entity = NSEntityDescription.entity(forEntityName: K.Core.entityCategory, in: managedContext) else {return}
+            
+            let insert = NSManagedObject(entity: entity, insertInto: managedContext)
+            insert.setValue(category.name.rawValue, forKey: K.Core.catName)
+            insert.setValue(category.subtitle, forKey: K.Core.catSubtitle)
+            insert.setValue(category.descCell, forKey: K.Core.catDescCell)
+            insert.setValue(category.isLocked, forKey: K.Core.catIsLocked)
+            
+            do {
+                try managedContext.save()
+            } catch let err {
+                print(err)
+            }
+        }
+    }
+    
+    static func retrieveAchievements() -> [Category]? {
+        var categories = [Category]()
+        
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityAchievement)
+            
+            do {
+                let result = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
+                
+                result?.forEach { achievement in
+                    let selectedCategory = getCategoryAchievementFromString(value: achievement.value(forKey: K.Core.catName) as! String)
+                    categories.append(
+                        Category(
+                            name: selectedCategory,
+                            subtitle: achievement.value(forKey: K.Core.catSubtitle) as! String,
+                            descCell: achievement.value(forKey: K.Core.catDescCell) as! String,
+                            isLocked: achievement.value(forKey: K.Core.catIsLocked) as! Bool
+                        )
+                    )
+                }
+            } catch let err {
+                print("Failed to load data, \(err)")
+            }
+        }
+        
+        return categories
+    }
+    
+    static func unlockCategory(for category: CategoryAchievement) {
+        var updatedDescCell = ""
+        
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityCategory)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.catName) = $!", category.rawValue)
+            
+            do {
+                let fetch = try managedContext.fetch(fetchRequest)
+                
+                if fetch.isEmpty {return}
+                
+                let achToUpdate = fetch[0] as! NSManagedObject
+                
+                achToUpdate.setValue(false, forKey: K.Core.catIsLocked)
+                
+                if category == .consistent {
+                    updatedDescCell = ""
+                } else if category == .olympic {
+                    updatedDescCell = ""
+                }
+                achToUpdate.setValue(updatedDescCell, forKey: K.Core.catDescCell)
+
+                try managedContext.save()
+            } catch let err {
+                print(err)
+            }
+        }
+    }
+    
+    static func getCategoryAchievementFromString(value: String) -> CategoryAchievement {
+        switch value {
+        case CategoryAchievement.determined.rawValue:
+            return CategoryAchievement.determined
+        case CategoryAchievement.consistent.rawValue:
+            return CategoryAchievement.consistent
+        default:
+            return CategoryAchievement.olympic
+        
         }
     }
 }

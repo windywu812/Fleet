@@ -82,4 +82,22 @@ class AchievementService {
     func isTodayDeterminedComplete(_ ach: Achievement) -> Bool {
         return udService.currentStep >= ach.progressTotal
     }
+    
+    func unlockConsistent() {
+        let determinedData = CoreDataFunction.retrieveAchievements(for: .determined)
+        let currentDetermined = udService.determinedCount
+        
+        if currentDetermined >= determinedData!.count {
+            CoreDataFunction.unlockCategory(for: .consistent)
+        }
+    }
+    
+    func unlockOlympic() {
+        let consistentData = CoreDataFunction.retrieveAchievements(for: .consistent)
+        let currentConsistent = udService.consistentCount
+        
+        if currentConsistent >= consistentData!.count {
+            CoreDataFunction.unlockCategory(for: .olympic)
+        }
+    }
 }

@@ -25,6 +25,9 @@ class UserDefaultServices {
     fileprivate let isDeterminedTodayKey = "determinedToday"
     fileprivate let determinedCountKey = "determinedCount"
     
+    fileprivate let consistentCountKey = "consistentCountKey"
+    fileprivate let olympicCountKey = "olympicCountKey"
+    
     // For Mascot
     fileprivate let currentLevelKey = "currentLevel"
     fileprivate let totalStepForNextLevelKey = "totalStepsForNextLevel"
@@ -92,6 +95,24 @@ class UserDefaultServices {
         }
         set {
             def.set(newValue, forKey: determinedCountKey)
+        }
+    }
+    
+    var consistentCount: Int {
+        get {
+            return def.integer(forKey: consistentCountKey)
+        }
+        set {
+            def.set(newValue, forKey: consistentCountKey)
+        }
+    }
+    
+    var olympicCount: Int {
+        get {
+            return def.integer(forKey: olympicCountKey)
+        }
+        set {
+            def.set(newValue, forKey: olympicCountKey)
         }
     }
     
