@@ -20,6 +20,7 @@
 		23A2AED8247CD6970009BD3A /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AED7247CD6970009BD3A /* OnboardingVC.swift */; };
 		23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */; };
 		23DEC6C22482415E003AF776 /* ChartFuncion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DEC6C12482415E003AF776 /* ChartFuncion.swift */; };
+		5916134124933B670011F640 /* AchievementNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916134024933B660011F640 /* AchievementNavController.swift */; };
 		593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A1247F31D30009950D /* UserDefaultServices.swift */; };
 		593226A4247F380B0009950D /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593226A3247F380B0009950D /* Constans.swift */; };
 		59550411247E55A600F7EBB5 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59550410247E55A600F7EBB5 /* Achievement.swift */; };
@@ -65,6 +66,7 @@
 		23A2AED7247CD6970009BD3A /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOnboardingVC.swift; sourceTree = "<group>"; };
 		23DEC6C12482415E003AF776 /* ChartFuncion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartFuncion.swift; sourceTree = "<group>"; };
+		5916134024933B660011F640 /* AchievementNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementNavController.swift; sourceTree = "<group>"; };
 		593226A1247F31D30009950D /* UserDefaultServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultServices.swift; sourceTree = "<group>"; };
 		593226A3247F380B0009950D /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		593226AB247FFC760009950D /* fleet-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fleet-ios.entitlements"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				5980AD7D2474F28F00E232A6 /* AchievementCell.swift */,
 				5980AD7E2474F28F00E232A6 /* AchievementCell.xib */,
 				5980AD832474F59F00E232A6 /* CategoryAchievementCell.swift */,
+				5916134024933B660011F640 /* AchievementNavController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				5979AD24246B8F0900F8FC53 /* RoundedView.swift in Sources */,
 				5980AD7F2474F28F00E232A6 /* AchievementCell.swift in Sources */,
 				23DEC6C22482415E003AF776 /* ChartFuncion.swift in Sources */,
+				5916134124933B670011F640 /* AchievementNavController.swift in Sources */,
 				5993277524820201004E3B79 /* AchievementService.swift in Sources */,
 				2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */,
 				5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */,
@@ -578,14 +582,14 @@
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S9J6B4A78J;
+				DEVELOPMENT_TEAM = 72C5A4RQ56;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleety;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleet;
 				PRODUCT_NAME = Fleet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -601,14 +605,14 @@
 				CODE_SIGN_ENTITLEMENTS = "fleet-ios/fleet-ios.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S9J6B4A78J;
+				DEVELOPMENT_TEAM = 72C5A4RQ56;
 				INFOPLIST_FILE = "fleet-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleety;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teri.fleet;
 				PRODUCT_NAME = Fleet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -38,6 +38,19 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         .darkContent
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let date = CoreDataFunction.retrieveAllData().last?.date {
+            if date > Date().startOfDay && date < Date().endOfDay {
+                CoreDataFunction.updateData(totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
+            } else {
+                CoreDataFunction.saveData(id: UUID(), totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
+            }
+        } else {
+            CoreDataFunction.saveData(id: UUID(), totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNeedsStatusBarAppearanceUpdate()
@@ -48,10 +61,10 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         hkService.getTodayStep { (step) in
             self.service.currentStep = Int(step)
         }
-                    
+        
         todayStepLabel.text = String(describing: service.currentStep)
         factLabel.text = funFact.randomElement()
-
+        
         groupButton.forEach { (btn) in
             btn.isHidden = true
         }
@@ -65,6 +78,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.addStreakNum), name: .NSCalendarDayChanged, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.setDetermined), name: .NSCalendarDayChanged, object: nil)
+        
     }
     
     func checkProgress() {
@@ -101,6 +115,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         btnInfo.addTarget(self, action: #selector(toInfoVC), for: .touchUpInside)
         
         progressLabel.text = "\(remainStep) steps left to level up"
+        print(remainStep)
         progressView.setProgress((Float(currentStep) / Float(mascots[service.currentLevel + 1].stepsToLvlUp)), animated: false)
         
     }

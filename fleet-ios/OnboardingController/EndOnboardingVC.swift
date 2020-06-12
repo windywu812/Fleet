@@ -24,7 +24,6 @@ class EndOnboardingVC: UIViewController {
         let achievements = CoreDataFunction.retrieveAchievements(for: .streak)
         if achievements?.count == 0 {
             let arrayAchievement = achievementArray.flatMap { $0.map { $0 }}
-            print("count ", arrayAchievement.count)
             arrayAchievement.forEach { (achievement) in
                 CoreDataFunction.saveAchievement(achievement: achievement)
             }
