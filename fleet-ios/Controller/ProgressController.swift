@@ -115,7 +115,7 @@ class ProgressController: UIViewController {
         
         // Add some constraint
         barChart.translatesAutoresizingMaskIntoConstraints = false
-        barChart.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 16).isActive = true
+        barChart.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 8).isActive = true
         barChart.bottomAnchor.constraint(equalTo: chartView.bottomAnchor, constant: -16).isActive = true
         barChart.leadingAnchor.constraint(equalTo: chartView.leadingAnchor, constant: 16).isActive = true
         barChart.trailingAnchor.constraint(equalTo: chartView.trailingAnchor, constant: -16).isActive = true

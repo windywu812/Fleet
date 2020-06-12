@@ -54,6 +54,7 @@ extension ProgressController: ChartViewDelegate {
             dateLabel.text = "\(formatterWithYear.string(from: Date()))"
             totalStepsWeekly.text = "\(0)"
             weeklySummary.text = "You don't have any recorded data"
+            return
         } else {
             var countStepsBefore: [Int] = []
             let previousData = groupedByWeek[now - 1]
@@ -136,6 +137,7 @@ extension ProgressController: ChartViewDelegate {
         if countSteps.reduce(0, { $0 + $1 }) == 0  {
             totalStepsWeekly.text = "\(0)"
             weeklySummary.text = "You don't have any recorded data"
+            return
         } else {
             totalStepsWeekly.text = "\(countSteps.reduce(0, { $0 + $1 }))"
             weeklySummary.text = "On average, you walk about \(countSteps.reduce(0, { $0 + $1 }) / 12) each months"
