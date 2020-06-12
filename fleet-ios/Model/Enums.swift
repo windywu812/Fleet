@@ -19,6 +19,6 @@ enum Level: String {
 enum CategoryAchievement: String {
     case streak = "Day Streak"
     case determined = "Determined"
-    case consistent = "Consistent"
+    case accomplished = "Accomplished"
     case olympic = "Olympic"
 }

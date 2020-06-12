@@ -10,13 +10,13 @@ import Foundation
 
 struct cat {
     static var determined = Category(name: .determined, subtitle: "Walk 750-3000 steps in 7 days", descCell: "Everyday you'll have target to achieve for Fleety grow faster in this achievement", isLocked: false)
-    static var consistent = Category(name: .consistent, subtitle: "Do it streak for 7 days, 21 days and 30 days", descCell: "Complete Determined to unlock this mission", isLocked: true)
-    static var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", descCell: "Complete Consistent to unlock this mission", isLocked: true)
+    static var accomplished = Category(name: .accomplished, subtitle: "Do it streak for 7 days, 21 days and 30 days", descCell: "Complete Determined to unlock this mission", isLocked: true)
+    static var olympic = Category(name: .olympic, subtitle: "Walk more than 10.000 steps streak", descCell: "Complete Accomplished to unlock this mission", isLocked: true)
     
     static var streak = Category(name: .streak, subtitle: "Walk with minimum 500 steps a day to get a streak!", descCell: "", isLocked: false)
 }
 
-var categoryArray: [Category] = [cat.determined, cat.consistent, cat.olympic]
+var categoryArray: [Category] = [cat.determined, cat.accomplished, cat.olympic]
 
 
 private var achStreak: [Achievement] = [
@@ -39,10 +39,10 @@ private var achDetermined: [Achievement] = [
     Achievement(title: "Walk 3000 steps in day 7", progressTotal: 3000, category: cat.determined)
 ]
 
-private var achConsistent: [Achievement] = [
-    Achievement(title: "Walk 3000 steps for 7 days in a row", progressTotal: 21000, category: cat.consistent),
-    Achievement(title: "Walk 3000 steps for 21 days in a row", progressTotal: 63000, category: cat.consistent),
-    Achievement(title: "Walk 3500 steps for 30 days in a row", progressTotal: 105000, category: cat.consistent)
+private var achAccomplished: [Achievement] = [
+    Achievement(title: "Walk 3000 steps for 7 days in a row", progressTotal: 21000, category: cat.accomplished),
+    Achievement(title: "Walk 3000 steps for 21 days in a row", progressTotal: 63000, category: cat.accomplished),
+    Achievement(title: "Walk 3500 steps for 30 days in a row", progressTotal: 105000, category: cat.accomplished)
 ]
 
 private var achOlympic: [Achievement] = [
@@ -52,7 +52,7 @@ private var achOlympic: [Achievement] = [
     Achievement(title: "Walk 20000 steps for 3 days in a row", progressTotal: 60000, category: cat.olympic)
 ]
 
-var achievementArray = [achDetermined, achConsistent, achOlympic, achStreak]
+var achievementArray = [achDetermined, achAccomplished, achOlympic, achStreak]
 
 
 var funFact = [

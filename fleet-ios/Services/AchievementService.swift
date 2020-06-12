@@ -88,12 +88,12 @@ class AchievementService {
         let currentDetermined = udService.determinedCount
         
         if currentDetermined >= determinedData!.count {
-            CoreDataFunction.unlockCategory(for: .consistent)
+            CoreDataFunction.unlockCategory(for: .accomplished)
         }
     }
     
     func unlockOlympic() {
-        let consistentData = CoreDataFunction.retrieveAchievements(for: .consistent)
+        let consistentData = CoreDataFunction.retrieveAchievements(for: .accomplished)
         let currentConsistent = udService.consistentCount
         
         if currentConsistent >= consistentData!.count {

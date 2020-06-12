@@ -28,6 +28,13 @@ class EndOnboardingVC: UIViewController {
                 CoreDataFunction.saveAchievement(achievement: achievement)
             }
         }
+        
+        let categories = CoreDataFunction.getCategories()
+        if categories?.count == 0 {
+            categoryArray.forEach { (category) in
+                CoreDataFunction.saveCategory(category: category)
+            }
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -146,7 +146,7 @@ class CoreDataFunction {
             let managedContext = appDelegate.persistentContainer.viewContext
             
             let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityAchievement)
-            fetchRequest.predicate = NSPredicate(format: "\(K.Core.title) = $!", achievement.title)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.title) = %@", achievement.title)
             
             do {
                 let fetch = try managedContext.fetch(fetchRequest)
@@ -168,8 +168,8 @@ class CoreDataFunction {
         switch value {
         case CategoryAchievement.determined.rawValue:
             return cat.determined
-        case CategoryAchievement.consistent.rawValue:
-            return cat.consistent
+        case CategoryAchievement.accomplished.rawValue:
+            return cat.accomplished
         case CategoryAchievement.olympic.rawValue:
             return cat.olympic
         default:
@@ -198,24 +198,24 @@ class CoreDataFunction {
         }
     }
     
-    static func retrieveAchievements() -> [Category]? {
+    static func getCategories() -> [Category]? {
         var categories = [Category]()
         
         if let appDelegate = appDelegate {
             let managedContext = appDelegate.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityAchievement)
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityCategory)
             
             do {
                 let result = try managedContext.fetch(fetchRequest) as? [NSManagedObject]
                 
-                result?.forEach { achievement in
-                    let selectedCategory = getCategoryAchievementFromString(value: achievement.value(forKey: K.Core.catName) as! String)
+                result?.forEach { category in
+                    let selectedCategory = getCategoryAchievementFromString(value: category.value(forKey: K.Core.catName) as! String)
                     categories.append(
                         Category(
                             name: selectedCategory,
-                            subtitle: achievement.value(forKey: K.Core.catSubtitle) as! String,
-                            descCell: achievement.value(forKey: K.Core.catDescCell) as! String,
-                            isLocked: achievement.value(forKey: K.Core.catIsLocked) as! Bool
+                            subtitle: category.value(forKey: K.Core.catSubtitle) as! String,
+                            descCell: category.value(forKey: K.Core.catDescCell) as! String,
+                            isLocked: category.value(forKey: K.Core.catIsLocked) as! Bool
                         )
                     )
                 }
@@ -234,7 +234,7 @@ class CoreDataFunction {
             let managedContext = appDelegate.persistentContainer.viewContext
             
             let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityCategory)
-            fetchRequest.predicate = NSPredicate(format: "\(K.Core.catName) = $!", category.rawValue)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.catName) = %@", category.rawValue)
             
             do {
                 let fetch = try managedContext.fetch(fetchRequest)
@@ -245,7 +245,7 @@ class CoreDataFunction {
                 
                 achToUpdate.setValue(false, forKey: K.Core.catIsLocked)
                 
-                if category == .consistent {
+                if category == .accomplished {
                     updatedDescCell = ""
                 } else if category == .olympic {
                     updatedDescCell = ""
@@ -263,8 +263,8 @@ class CoreDataFunction {
         switch value {
         case CategoryAchievement.determined.rawValue:
             return CategoryAchievement.determined
-        case CategoryAchievement.consistent.rawValue:
-            return CategoryAchievement.consistent
+        case CategoryAchievement.accomplished.rawValue:
+            return CategoryAchievement.accomplished
         default:
             return CategoryAchievement.olympic
         

@@ -17,12 +17,16 @@ class AchievementController: UIViewController {
     @IBOutlet weak var keepUpLabel: UILabel!
     
     private let service = UserDefaultServices.instance
+    private var categoryArray = [Category]()
+    private let achService = AchievementService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        categoryArray = CoreDataFunction.getCategories()!
         
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
         streakView.addGestureRecognizer(gestureRec)
@@ -41,6 +45,9 @@ class AchievementController: UIViewController {
         
         keepUpLabel.text = currentStreak < 1 ? "Let's Start!" : "Keep it up!"
         numStreakLbl.text = "\(currentStreak) \(noun)"
+        
+        achService.unlockConsistent()
+        achService.unlockOlympic()
     }
 }
 
