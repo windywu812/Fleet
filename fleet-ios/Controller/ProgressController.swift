@@ -17,9 +17,9 @@ class ProgressController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
-
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -39,7 +39,7 @@ class ProgressController: UIViewController {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
         swipeLeft.direction = .left
         chartView.addGestureRecognizer(swipeLeft)
-
+        
     }
     
     @objc func swipeGesture(sender: UISwipeGestureRecognizer) {
@@ -58,7 +58,7 @@ class ProgressController: UIViewController {
         }
         
     }
-
+    
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             isOnYear.toggle()
@@ -79,13 +79,13 @@ class ProgressController: UIViewController {
         setUpChart()
     }
     
-     func addShadow(_ view: UIView) {
-         view.layer.cornerRadius = 16
-         view.layer.shadowColor = UIColor.black.cgColor
-         view.layer.shadowRadius = 20
+    func addShadow(_ view: UIView) {
+        view.layer.cornerRadius = 16
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowRadius = 20
         view.layer.shadowOpacity = 0.03
-         view.layer.shadowOffset = CGSize(width: 0, height: 4)
-     }
+        view.layer.shadowOffset = CGSize(width: 0, height: 4)
+    }
     
     func setUpChart() {
         

@@ -153,7 +153,7 @@ class CoreDataFunction {
             do {
                 let fetch = try managedContext.fetch(fetchRequest)
                 let achToUpdate = fetch[0] as! NSManagedObject
-
+                
                 achToUpdate.setValue(status.rawValue, forKey: K.Core.isFinished)
                 
                 try managedContext.save()
@@ -177,11 +177,11 @@ class CoreDataFunction {
     private static func getCategoryFromString(value: String) -> Category {
         switch value {
         case CategoryAchievement.determined.rawValue:
-            return cat.determined
+            return getCategory(for: .determined)
         case CategoryAchievement.accomplished.rawValue:
-            return cat.accomplished
+            return getCategory(for: .accomplished)
         case CategoryAchievement.olympic.rawValue:
-            return cat.olympic
+            return getCategory(for: .olympic)
         default:
             return cat.streak
         }
@@ -235,6 +235,33 @@ class CoreDataFunction {
         }
         
         return categories
+    }
+    
+    static func getCategory(for name: CategoryAchievement) -> Category {
+        var category: Category?
+        if let appDelegate = appDelegate {
+            let managedContext = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: K.Core.entityCategory)
+            fetchRequest.predicate = NSPredicate(format: "\(K.Core.catName) = %@", name.rawValue)
+            
+            do {
+                let result = try managedContext.fetch(fetchRequest)
+                
+                if let resultCategory = result[0] as? NSManagedObject {
+                    let selectedCategory = getCategoryAchievementFromString(value: resultCategory.value(forKey: K.Core.catName) as! String)
+                    category = Category(
+                        name: selectedCategory,
+                        subtitle: resultCategory.value(forKey: K.Core.catSubtitle) as! String,
+                        descCell: resultCategory.value(forKey: K.Core.catDescCell) as! String,
+                        isLocked: resultCategory.value(forKey: K.Core.catIsLocked) as! Bool
+                    )
+                }
+            } catch let err {
+                print("Failed to load data, \(err)")
+            }
+        }
+        
+        return category!
     }
     
     static func unlockCategory(for category: CategoryAchievement) {

@@ -89,4 +89,20 @@ class AchievementService {
         
         return CoreDataFunction.retrieveAchievements(for: category.name)!
     }
+    
+    func configureAccomplished(_ ach: Achievement, status: AchievementStatus) {
+        let accomplishedStatus = CoreDataFunction.getCategory(for: .accomplished).isLocked
+        
+        if accomplishedStatus == false {
+            
+        }
+    }
+    
+    func configureOlympic(_ ach: Achievement, status: AchievementStatus) {
+        let olympicStatus = CoreDataFunction.getCategory(for: .olympic).isLocked
+        
+        if olympicStatus == false {
+            
+        }
+    }
 }
