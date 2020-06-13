@@ -29,7 +29,8 @@ class AchievementController: UIViewController {
         categoryArray = CoreDataFunction.getCategories()!
         
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
-        streakView.addGestureRecognizer(gestureRec)        
+        streakView.addGestureRecognizer(gestureRec)
+        
     }
     
     @objc func goDetail() {

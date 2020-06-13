@@ -41,43 +41,14 @@ class AchievementService {
     }
     
     // configure which of determined achievements need to set completed base on determinedCount on user default
-    func configureDetermined(_ achs: [Achievement]) -> [Achievement]? {
-        var returnedAchs = [Achievement]()
-        let determinedCount = udService.determinedCount
-        
-        let firstAchs = achs.prefix(determinedCount)
-        let lastAchs = achs.suffix(achs.count - determinedCount)
-        
+    func configureDetermined(_ ach: Achievement, status: AchievementStatus) {
         if udService.isDeterminedToday == false {
-            firstAchs.forEach { (ach) in
-                ach.isComplete = AchievementStatus.notConfirmed
-                returnedAchs.append(ach)
+            let currentStep = udService.currentStep
+            if currentStep >= ach.progressTotal {
+                CoreDataFunction.updateAchievementStatus(achievement: ach, status: .notConfirmed)
+                udService.isDeterminedToday = true
             }
-            
-            lastAchs.forEach { (ach) in
-                returnedAchs.append(ach)
-            }
-            
-            return returnedAchs
-        } else {
-            return nil
         }
-    }
-    
-    func addDeterminedNum(ach: Achievement) {
-        let currentStep = udService.currentStep
-        
-        if currentStep >= ach.progressTotal {
-            udService.determinedCount += 1
-        }
-    }
-    
-    @objc func setDetermined() {
-        udService.isDeterminedToday = false
-    }
-    
-    func isTodayDeterminedComplete(_ ach: Achievement) -> Bool {
-        return udService.currentStep >= ach.progressTotal
     }
     
     func unlockAccomplished() {
@@ -96,5 +67,24 @@ class AchievementService {
         if currentConsistent >= consistentData!.count {
             CoreDataFunction.unlockCategory(for: .olympic)
         }
+    }
+    
+    func configureAchievements(for category: Category) -> [Achievement] {
+        let achievements = CoreDataFunction.retrieveAchievements(for: category.name)!
+        
+        if category.name == .determined {
+            let determinedToday = achievements[udService.determinedCount]
+            if determinedToday.isComplete == .notFinished {
+                configureDetermined(determinedToday, status: .notConfirmed)
+            }
+        } else if category.name == .streak {
+            achievements.forEach { (achievement) in
+                if achievement.isComplete == .notFinished {
+                    setStreakComplete(achievement, status: .notConfirmed)
+                }
+            }
+        }
+        
+        return CoreDataFunction.retrieveAchievements(for: category.name)!
     }
 }

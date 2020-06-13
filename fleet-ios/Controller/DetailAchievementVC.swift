@@ -12,33 +12,19 @@ class DetailAchievementVC: UIViewController, AchievementCompleteDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var category: Category?
-    var achievement = [Achievement]()
+    var achievements = [Achievement]()
     let udService = UserDefaultServices.instance
     let service = AchievementService.instance
     
     @IBOutlet weak var detailLbl: UILabel!
-    
-    var currentDeterminedCount = 0
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "AchievementCell", bundle: nil), forCellReuseIdentifier: K.Cell.achievementCell)
-                
-        if category?.name == .determined {
-            achievement = service.configureDetermined(achievement)!
-        } else if category?.name == .streak {
-            achievement.forEach { (achievement) in
-                if achievement.isComplete == .notFinished {
-                    service.setStreakComplete(achievement, status: .notConfirmed)
-                }
-            }
-            tableView.reloadData()
-        }
         
-        detailLbl.text = category?.subtitle
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -48,10 +34,9 @@ class DetailAchievementVC: UIViewController, AchievementCompleteDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = category?.name.rawValue
+        detailLbl.text = category?.subtitle
         
-        currentDeterminedCount = udService.determinedCount
-        
-        achievement = CoreDataFunction.retrieveAchievements(for: category!.name)!
+        achievements = service.configureAchievements(for: category!)
     }
     
     func shareAchievementComplete(_ achievement: Achievement) {
@@ -66,19 +51,21 @@ class DetailAchievementVC: UIViewController, AchievementCompleteDelegate {
 
 extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return achievement.count
+        return achievements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.achievementCell) as? AchievementCell else {return UITableViewCell()}
         
-        let ach = achievement[indexPath.row]
+        let ach = achievements[indexPath.row]
         cell.configureCell(ach: ach, delegate: self)
         
         if category?.name == .determined {
             let currentStep = udService.currentStep
-            if indexPath.row == currentDeterminedCount {
-                cell.progress.setProgress(Float(currentStep)/Float(ach.progressTotal), animated: false)
+            if indexPath.row == udService.determinedCount {
+                if udService.isDeterminedToday == false {
+                    cell.progress.setProgress(Float(currentStep)/Float(ach.progressTotal), animated: false)
+                }
             }
         }
         return cell

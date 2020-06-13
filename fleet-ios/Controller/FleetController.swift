@@ -32,6 +32,7 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         
         setTextField()
         progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -77,8 +78,18 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         // Configure Streak to be run every midnight
         NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.addStreakNum), name: .NSCalendarDayChanged, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.setDetermined), name: .NSCalendarDayChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setDetermined), name: .NSCalendarDayChanged, object: nil)
+    }
+    
+    @objc func setDetermined() {
+        service.isDeterminedToday = false
         
+        let determinedAchs = CoreDataFunction.retrieveAchievements(for: .determined)
+        let determinedCount = service.determinedCount
+        
+        if determinedAchs![determinedCount].isComplete != .notFinished {
+            service.determinedCount += 1
+        }
     }
     
     func checkProgress() {

@@ -9,7 +9,7 @@
 import UIKit
 
 class ShareAchievementVC: UIViewController {
-
+    
     @IBOutlet weak var roundedView: RoundedView!
     @IBOutlet weak var lblCategory: UILabel!
     @IBOutlet weak var lblAchievement: UILabel!
@@ -20,14 +20,14 @@ class ShareAchievementVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         lblCategory.text = "\(achievement.category.name.rawValue) Achievement"
         lblAchievement.text = "Successfully \(achievement.title)"
+        
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
         CoreDataFunction.updateAchievementStatus(achievement: achievement, status: .isFinished)
-
         detailVC?.tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }

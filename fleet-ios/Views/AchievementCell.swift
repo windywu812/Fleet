@@ -38,14 +38,6 @@ class AchievementCell: UITableViewCell {
         
         if category.name == .streak {
             percentage = achService.getStreakNum(for: ach.progressTotal)
-        } else if category.name == .determined {
-            if achService.isTodayDeterminedComplete(ach) {
-                progress.isHidden = true
-                imgAchievement.image = UIImage(named: "ach-complete")
-            } else {
-                imgAchievement.image = UIImage(named: "ach-incomplete")
-            }
-            return
         }
         
         if ach.isComplete == AchievementStatus.isFinished {
@@ -83,8 +75,4 @@ class AchievementCell: UITableViewCell {
             delegate?.shareAchievementComplete(achievement!)
         }
     }
-    //    @objc func changeToComplete() {
-//        CoreDataFunction.updateAchievementStatus(achievement: achievement!, status: .isFinished)
-//        configureCell(ach: achievement!)
-//    }
 }
