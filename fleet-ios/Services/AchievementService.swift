@@ -73,9 +73,11 @@ class AchievementService {
         let achievements = CoreDataFunction.retrieveAchievements(for: category.name)!
         
         if category.name == .determined {
-            let determinedToday = achievements[udService.determinedCount]
-            if determinedToday.isComplete == .notFinished {
-                configureDetermined(determinedToday, status: .notConfirmed)
+            if udService.determinedCount < achievements.count {
+                let determinedToday = achievements[udService.determinedCount]
+                if determinedToday.isComplete == .notFinished {
+                    configureDetermined(determinedToday, status: .notConfirmed)
+                }
             }
         } else if category.name == .streak {
             achievements.forEach { (achievement) in

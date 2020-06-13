@@ -25,9 +25,7 @@ class AchievementController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        categoryArray = CoreDataFunction.getCategories()!
-        
+                
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
         streakView.addGestureRecognizer(gestureRec)
         
@@ -46,8 +44,13 @@ class AchievementController: UIViewController {
         keepUpLabel.text = currentStreak < 1 ? "Let's Start!" : "Keep it up!"
         numStreakLbl.text = "\(currentStreak) \(noun)"
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         achService.unlockAccomplished()
         achService.unlockOlympic()
+        
+        categoryArray = CoreDataFunction.getCategories()!
     }
 }
 
