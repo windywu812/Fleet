@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import AVFoundation
 
 class FleetController: UIViewController, UIPopoverPresentationControllerDelegate {
     
@@ -20,10 +21,13 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var factLabel: UILabel!
     @IBOutlet weak var btnInfo: UIButton!
+    @IBOutlet weak var btnVoiceOver: UIButton!
     
     var isEdit: Bool = false
     var remainStep = 99999
-    
+
+    var speechSynthesizer = AVSpeechSynthesizer()
+
     let service = UserDefaultServices.instance
     let hkService = HealthKitService.instance
     
@@ -33,7 +37,6 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         setTextField()
         progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
      
-        service.currentDayStreak = 98
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -42,6 +45,8 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        speechSynthesizer.delegate = self
+
         if let date = CoreDataFunction.retrieveAllData().last?.date {
             if date > Date().startOfDay && date < Date().endOfDay {
                 CoreDataFunction.updateData(totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
@@ -166,6 +171,10 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         popupVC.nextLevel = service.currentLevel + 1
         present(popupVC, animated: true, completion: nil)
     }
+    
+    @IBAction func btnVoiceOverPressed(_ sender: Any) {
+        synthesizeSpeech(from: factLabel.text!)
+    }
 }
 
 extension FleetController: UITextFieldDelegate {
@@ -202,5 +211,22 @@ extension FleetController: UITextFieldDelegate {
     
     @objc func hideKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension FleetController: AVSpeechSynthesizerDelegate {
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        btnVoiceOver.isEnabled = false
+        btnVoiceOver.alpha = 0.5
+    }
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        btnVoiceOver.isEnabled = true
+        btnVoiceOver.alpha = 1
+    }
+    
+    func synthesizeSpeech(from string: String) {
+        let speechUtterance = AVSpeechUtterance(string: string)
+        speechSynthesizer.speak(speechUtterance)
     }
 }

@@ -36,10 +36,10 @@
 		5980AD8B2474F73E00E232A6 /* Dummies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5980AD8A2474F73E00E232A6 /* Dummies.swift */; };
 		599327712480E02C004E3B79 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599327702480E02C004E3B79 /* NotificationService.swift */; };
 		5993277324813647004E3B79 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277224813647004E3B79 /* HealthKitService.swift */; };
-		5993277524820201004E3B79 /* AchievementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5993277424820201004E3B79 /* AchievementService.swift */; };
 		599327772482027D004E3B79 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599327762482027D004E3B79 /* Enums.swift */; };
 		599D843D2484D67D00BAE307 /* toLevel2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 599D843B2484D67D00BAE307 /* toLevel2.mp4 */; };
 		599D843E2484D67D00BAE307 /* toLevel5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 599D843C2484D67D00BAE307 /* toLevel5.mp4 */; };
+		599E7641249680A300E626B3 /* AchievementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E7640249680A200E626B3 /* AchievementService.swift */; };
 		59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1D246A5F73006252BA /* AppDelegate.swift */; };
 		59A37C20246A5F73006252BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C1F246A5F73006252BA /* SceneDelegate.swift */; };
 		59A37C22246A5F73006252BA /* FleetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A37C21246A5F73006252BA /* FleetController.swift */; };
@@ -85,10 +85,10 @@
 		5980AD8A2474F73E00E232A6 /* Dummies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummies.swift; sourceTree = "<group>"; };
 		599327702480E02C004E3B79 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5993277224813647004E3B79 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
-		5993277424820201004E3B79 /* AchievementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
 		599327762482027D004E3B79 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		599D843B2484D67D00BAE307 /* toLevel2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel2.mp4; sourceTree = "<group>"; };
 		599D843C2484D67D00BAE307 /* toLevel5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = toLevel5.mp4; sourceTree = "<group>"; };
+		599E7640249680A200E626B3 /* AchievementService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementService.swift; sourceTree = "<group>"; };
 		59A37C1A246A5F73006252BA /* Fleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59A37C1D246A5F73006252BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59A37C1F246A5F73006252BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */,
 				23DEC6C12482415E003AF776 /* ChartFuncion.swift */,
 				593226A1247F31D30009950D /* UserDefaultServices.swift */,
-				5993277424820201004E3B79 /* AchievementService.swift */,
+				599E7640249680A200E626B3 /* AchievementService.swift */,
 				599327702480E02C004E3B79 /* NotificationService.swift */,
 				5993277224813647004E3B79 /* HealthKitService.swift */,
 				2301A7F5248FCB4F005070B0 /* Date.swift */,
@@ -419,8 +419,8 @@
 				591613432493C9D70011F640 /* ShareAchievementVC.swift in Sources */,
 				23DEC6C22482415E003AF776 /* ChartFuncion.swift in Sources */,
 				5916134124933B670011F640 /* AchievementNavController.swift in Sources */,
-				5993277524820201004E3B79 /* AchievementService.swift in Sources */,
 				2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */,
+				599E7641249680A300E626B3 /* AchievementService.swift in Sources */,
 				5980AD822474F44D00E232A6 /* DetailAchievementVC.swift in Sources */,
 				59EEC4B92484BB1600207244 /* LevelUpVC.swift in Sources */,
 				59550411247E55A600F7EBB5 /* Achievement.swift in Sources */,
