@@ -29,6 +29,7 @@ class UserDefaultServices {
     
     fileprivate let olympicCountKey = "olympicCountKey"
     fileprivate let olympicUnlockedDateKey = "olympicUnlockedDateKey"
+    fileprivate let olympic25TimesKey = "olympic25TimesKey"
     
     // For Mascot
     fileprivate let currentLevelKey = "currentLevel"
@@ -124,6 +125,15 @@ class UserDefaultServices {
         }
         set {
             def.set(newValue, forKey: olympicUnlockedDateKey)
+        }
+    }
+    
+    var olympic25Times: Int {
+        get {
+            return def.integer(forKey: olympic25TimesKey)
+        }
+        set {
+            def.set(newValue, forKey: olympic25TimesKey)
         }
     }
     

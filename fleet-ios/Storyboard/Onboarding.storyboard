@@ -187,10 +187,7 @@ rebuild your lifestyle!</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buble" translatesAutoresizingMaskIntoConstraints="NO" id="70A-sw-wPG">
-                                <rect key="frame" x="36" y="139" width="342" height="172"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="172" id="WqW-Fg-XVu"/>
-                                </constraints>
+                                <rect key="frame" x="36" y="120" width="342" height="191"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grandMaster" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-cH-EEc">
                                 <rect key="frame" x="82" y="323" width="250" height="250"/>
@@ -200,7 +197,7 @@ rebuild your lifestyle!</string>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QDb-4q-Eus" userLabel="Text">
-                                <rect key="frame" x="56" y="158.33333333333334" width="302" height="103.66666666666666"/>
+                                <rect key="frame" x="56" y="148.66666666666666" width="302" height="103.66666666666666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Fleet!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4O-vh-uh8">
                                         <rect key="frame" x="43.333333333333329" y="0.0" width="215.66666666666669" height="33.666666666666664"/>
@@ -208,8 +205,8 @@ rebuild your lifestyle!</string>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fleety here shall accompany you along your journey of creating a habit. Fleety grows with you as you walk." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xP-8a-VCo">
-                                        <rect key="frame" x="0.0" y="37.666666666666657" width="302" height="66"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fleety here shall accompany you along your journey of creating a habit. Fleety grows with you as you walk." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2xP-8a-VCo">
+                                        <rect key="frame" x="0.0" y="37.666666666666686" width="302" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="ayg-Dw-jwZ"/>
                                             <constraint firstAttribute="width" constant="302" id="jKI-fa-INg"/>

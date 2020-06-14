@@ -68,7 +68,7 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         } else if category?.name == .accomplished {
-            var accomplishedDay: AccomplishedDays = .seven
+            var accomplishedDay: AchievementCompletedDays = .seven
             if indexPath.row == 0 {
                 accomplishedDay = .seven
             } else if indexPath.row == 1 {
@@ -78,6 +78,22 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
             }
             
             cell.progress.setProgress(Float(service.stepCounts(for: accomplishedDay))/Float(ach.progressTotal), animated: false)
+        } else if category?.name == .olympic {
+            var olympicDay: AchievementCompletedDays = .seven
+            
+            if indexPath.row == 0 {
+                olympicDay = .three
+            } else if indexPath.row == 1 {
+                olympicDay = .seven
+            } else if indexPath.row == 3 {
+                olympicDay = .three
+            }
+            
+            if indexPath.row == 2 {
+                cell.progress.setProgress(Float(udService.olympic25Times)/Float(ach.progressTotal), animated: false)
+            } else {
+                cell.progress.setProgress(Float(service.stepCounts(for: olympicDay))/Float(ach.progressTotal), animated: false)
+            }
         }
         
         return cell

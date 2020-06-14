@@ -202,5 +202,4 @@ extension FleetController: UITextFieldDelegate {
     @objc func hideKeyboard() {
         view.endEditing(true)
     }
-    
 }

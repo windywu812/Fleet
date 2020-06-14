@@ -46,9 +46,9 @@ private var achAccomplished: [Achievement] = [
 ]
 
 private var achOlympic: [Achievement] = [
-    Achievement(title: "Walk 10000 steps for 3 days in a row", progressTotal: 10000, category: cat.olympic, isComplete: .notFinished),
-    Achievement(title: "Walk 15000 steps for 7 days in a row", progressTotal: 15000, category: cat.olympic, isComplete: .notFinished),
-    Achievement(title: "Walk 17000 steps for a total of 25 times", progressTotal: 425000, category: cat.olympic, isComplete: .notFinished),
+    Achievement(title: "Walk 10000 steps for 3 days in a row", progressTotal: 30000, category: cat.olympic, isComplete: .notFinished),
+    Achievement(title: "Walk 15000 steps for 7 days in a row", progressTotal: 105000, category: cat.olympic, isComplete: .notFinished),
+    Achievement(title: "Walk 17000 steps for a total of 25 times", progressTotal: 25, category: cat.olympic, isComplete: .notFinished),
     Achievement(title: "Walk 20000 steps for 3 days in a row", progressTotal: 60000, category: cat.olympic, isComplete: .notFinished)
 ]
 

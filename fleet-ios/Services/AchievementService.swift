@@ -150,9 +150,13 @@ class AchievementService {
                 }
             }
         }
+        
+        if udService.accomplishedCount >= CoreDataFunction.retrieveAchievements(for: .accomplished)!.count {
+            udService.olympicUnlockedDate = Date()
+        }
     }
     
-    func stepCounts(for days: AccomplishedDays) -> Int {
+    func stepCounts(for days: AchievementCompletedDays) -> Int {
         let accomplishedUnlockedDate = udService.accomplishedUnlockedDate
         
         var arrayAllData = [DayModel]()
@@ -182,11 +186,57 @@ class AchievementService {
         }
     }
     
-    func configureOlympic(_ ach: Achievement, status: AchievementStatus) {
+    func configureOlympic() {
+        let olympicData = CoreDataFunction.retrieveAchievements(for: .olympic)!
         let olympicStatus = CoreDataFunction.getCategory(for: .olympic).isLocked
         
         if olympicStatus == false {
+            if olympicData[0].isComplete == .notFinished {
+                if stepCounts(for: .three) >= olympicData[0].progressTotal {
+                    CoreDataFunction.updateAchievementStatus(achievement: olympicData[0], status: .notConfirmed)
+                    udService.olympicCount += 1
+                }
+            }
             
+            if olympicData[1].isComplete == .notFinished {
+                if stepCounts(for: .seven) >= olympicData[1].progressTotal {
+                    CoreDataFunction.updateAchievementStatus(achievement: olympicData[1], status: .notConfirmed)
+                    udService.olympicCount += 1
+                }
+            }
+            
+            if olympicData[3].isComplete == .notFinished {
+                if stepCounts(for: .three) >= olympicData[3].progressTotal {
+                    CoreDataFunction.updateAchievementStatus(achievement: olympicData[3], status: .notConfirmed)
+                    udService.olympicCount += 1
+                }
+            }
+            
+            if olympicData[2].isComplete == .notFinished {
+                if udService.olympic25Times >= 25 {
+                    CoreDataFunction.updateAchievementStatus(achievement: olympicData[2], status: .notConfirmed)
+                    udService.olympicCount += 1
+                }
+            }
         }
+    }
+    
+    func olympic25Count() -> Int {
+        var count = 0
+        
+        var dataAfterUnlocked = [DayModel]()
+        allData.forEach { (data) in
+            if data.date >= udService.olympicUnlockedDate {
+                dataAfterUnlocked.append(data)
+            }
+        }
+        
+        dataAfterUnlocked.forEach { (data) in
+            if data.countSteps >= 17000 {
+                count += 1
+            }
+        }
+        
+        return count
     }
 }

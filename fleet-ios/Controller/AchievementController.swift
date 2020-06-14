@@ -50,6 +50,9 @@ class AchievementController: UIViewController {
         achService.unlockAccomplished()
         achService.unlockOlympic()
         
+        achService.configureAccomplished()
+        achService.configureOlympic()
+        
         categoryArray = CoreDataFunction.getCategories()!
     }
 }
