@@ -26,6 +26,8 @@
 	<string>We need access to your health kit data to share your steps data</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to access your location</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need access to your photos to save achievement badge</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
