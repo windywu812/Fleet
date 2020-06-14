@@ -28,3 +28,9 @@ enum AchievementStatus: Int {
     case notConfirmed = 1
     case isFinished = 2
 }
+
+enum AccomplishedDays: Int {
+    case seven = 7
+    case twentyOne = 21
+    case thirty = 30
+}

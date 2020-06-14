@@ -43,24 +43,22 @@ class AchievementService {
     @objc func addStreakNum() {
         let minimumRequiredStep = 500
         
-        let data = CoreDataFunction.retrieveAllData()
-        
         let formatter = DateFormatter()
         formatter.timeStyle = .none
         formatter.dateStyle = .full
         formatter.timeZone = TimeZone.current
         
         // Check whether last data is exist
-        if let lastData = data.last {
+        if let lastData = allData.last {
             // Check whether amount of data is bigger than 1
-            if data.count > 1 {
+            if allData.count > 1 {
                 let formattedLastData = formatter.string(from: lastData.date)
                 let formatterDateNow = formatter.string(from: Date())
                 
                 // Check whether last date of data stored in coredata is same with today's date
                 if formattedLastData == formatterDateNow {
                     // Check whether yesterday's count step meet the minimum requirement
-                    if data[data.count - 2].countSteps >= minimumRequiredStep {
+                    if allData[allData.count - 2].countSteps >= minimumRequiredStep {
                         udService.currentDayStreak += 1
                     } else {
                         udService.currentDayStreak = 0
@@ -108,6 +106,11 @@ class AchievementService {
                 udService.determinedCount += 1
             }
         }
+        
+        if udService.determinedCount == determinedAchs!.count {
+            udService.accomplishedUnlockedDate = Date()
+            udService.determinedCount += 1
+        }
     }
     
     
@@ -121,14 +124,53 @@ class AchievementService {
         }
     }
     
-    func configureAccomplished(_ ach: Achievement, status: AchievementStatus) {
+    func configureAccomplished() {
+        let accomplishedData = CoreDataFunction.retrieveAchievements(for: .accomplished)!
         let accomplishedStatus = CoreDataFunction.getCategory(for: .accomplished).isLocked
         
         if accomplishedStatus == false {
+            if accomplishedData[0].isComplete == .notFinished {
+                if stepCounts(for: .seven) >= accomplishedData[0].progressTotal {
+                    CoreDataFunction.updateAchievementStatus(achievement: accomplishedData[0], status: .notConfirmed)
+                    udService.accomplishedCount += 1
+                }
+            }
             
+            if accomplishedData[1].isComplete == .notFinished {
+                if stepCounts(for: .twentyOne) >= accomplishedData[1].progressTotal {
+                    CoreDataFunction.updateAchievementStatus(achievement: accomplishedData[1], status: .notConfirmed)
+                    udService.accomplishedCount += 1
+                }
+            }
+            
+            if accomplishedData[2].isComplete == .notFinished {
+                if stepCounts(for: .thirty) >= accomplishedData[2].progressTotal {
+                    CoreDataFunction.updateAchievementStatus(achievement: accomplishedData[2], status: .notConfirmed)
+                    udService.accomplishedCount += 1
+                }
+            }
         }
     }
     
+    func stepCounts(for days: AccomplishedDays) -> Int {
+        let accomplishedUnlockedDate = udService.accomplishedUnlockedDate
+        
+        var arrayAllData = [DayModel]()
+        allData.forEach { (model) in
+            if model.date >= accomplishedUnlockedDate {
+                arrayAllData.append(model)
+            }
+        }
+        
+        let data = Array(arrayAllData.suffix(days.rawValue))
+        
+        var stepCount = 0
+        data.forEach { (model) in
+            stepCount += model.countSteps
+        }
+        
+        return stepCount
+    }
     
     //MARK: - OLYMPIC SECTION
     func unlockOlympic() {

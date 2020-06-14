@@ -67,7 +67,19 @@ extension DetailAchievementVC: UITableViewDelegate, UITableViewDataSource {
                     cell.progress.setProgress(Float(currentStep)/Float(ach.progressTotal), animated: false)
                 }
             }
+        } else if category?.name == .accomplished {
+            var accomplishedDay: AccomplishedDays = .seven
+            if indexPath.row == 0 {
+                accomplishedDay = .seven
+            } else if indexPath.row == 1 {
+                accomplishedDay = .twentyOne
+            } else if indexPath.row == 2 {
+                accomplishedDay = .thirty
+            }
+            
+            cell.progress.setProgress(Float(service.stepCounts(for: accomplishedDay))/Float(ach.progressTotal), animated: false)
         }
+        
         return cell
     }
 }

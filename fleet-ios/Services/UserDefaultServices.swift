@@ -25,7 +25,10 @@ class UserDefaultServices {
     fileprivate let determinedCountKey = "determinedCount"
     
     fileprivate let accomplishedCountKey = "accomplishedCountKey"
+    fileprivate let accomplishedUnlockedDateKey = "accomplishedUnlockedDateKey"
+    
     fileprivate let olympicCountKey = "olympicCountKey"
+    fileprivate let olympicUnlockedDateKey = "olympicUnlockedDateKey"
     
     // For Mascot
     fileprivate let currentLevelKey = "currentLevel"
@@ -97,12 +100,30 @@ class UserDefaultServices {
         }
     }
     
+    var accomplishedUnlockedDate: Date {
+        get {
+            return def.object(forKey: accomplishedUnlockedDateKey) as! Date
+        }
+        set {
+            def.set(newValue, forKey: accomplishedUnlockedDateKey)
+        }
+    }
+    
     var olympicCount: Int {
         get {
             return def.integer(forKey: olympicCountKey)
         }
         set {
             def.set(newValue, forKey: olympicCountKey)
+        }
+    }
+    
+    var olympicUnlockedDate: Date {
+        get {
+            return def.object(forKey: olympicUnlockedDateKey) as! Date
+        }
+        set {
+            def.set(newValue, forKey: olympicUnlockedDateKey)
         }
     }
     
@@ -125,5 +146,9 @@ class UserDefaultServices {
         }
     }
     
-    
+    fileprivate func getDate(from value: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
+        return formatter.date(from: value)!
+    }
 }

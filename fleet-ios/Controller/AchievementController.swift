@@ -25,7 +25,7 @@ class AchievementController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-                
+        
         let gestureRec = UITapGestureRecognizer(target: self, action:  #selector(goDetail))
         streakView.addGestureRecognizer(gestureRec)
         
