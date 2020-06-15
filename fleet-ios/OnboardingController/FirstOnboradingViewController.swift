@@ -14,6 +14,14 @@ class FirstOnboradingViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var blurEffect: UIVisualEffectView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

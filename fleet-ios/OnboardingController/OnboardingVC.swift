@@ -16,15 +16,6 @@ class OnboardingVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        groupBtn.forEach { (btn) in
-//            btn.layer.cornerRadius = 15
-//            btn.layer.shadowColor = UIColor.black.cgColor
-//            btn.layer.shadowRadius = 10
-//            btn.layer.shadowOpacity = 0.1
-//            btn.layer.shadowOffset = CGSize(width: 0, height: 4)
-//        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
