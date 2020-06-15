@@ -14,7 +14,7 @@ class AchievementService {
     fileprivate let udService = UserDefaultServices.instance
     
     //MARK: - GENERAL ACHIEVEMENT SECTION
-    func configureAchievements(for category: Category) -> [Achievement] {
+    func configureAchievements(for category: Category) {
         let achievements = CoreDataFunction.retrieveAchievements(for: category.name)!
         
         if category.name == .determined {
@@ -31,41 +31,21 @@ class AchievementService {
                 }
             }
         }
-        
-        return CoreDataFunction.retrieveAchievements(for: category.name)!
     }
     
     
     //MARK: - STREAK SECTION
-    
-    // get current day streak -> determined whether today step is 500 or less -> if yes than day streak + 1, if not than set current streak to 0
-    // following lines will be executed every midnight
-    @objc func addStreakNum() {
+    func addStreakNum() {
         let minimumRequiredStep = 500
-        
-        let formatter = DateFormatter()
-        formatter.timeStyle = .none
-        formatter.dateStyle = .full
-        formatter.timeZone = TimeZone.current
-        
-        // Check whether last data is exist
-        if let lastData = allData.last {
-            // Check whether amount of data is bigger than 1
-            if allData.count > 1 {
-                let formattedLastData = formatter.string(from: lastData.date)
-                let formatterDateNow = formatter.string(from: Date())
-                
-                // Check whether last date of data stored in coredata is same with today's date
-                if formattedLastData == formatterDateNow {
-                    // Check whether yesterday's count step meet the minimum requirement
-                    if allData[allData.count - 2].countSteps >= minimumRequiredStep {
-                        udService.currentDayStreak += 1
-                    } else {
-                        udService.currentDayStreak = 0
-                    }
-                }
+        var count = 0
+        for data in allData {
+            if data.countSteps >= minimumRequiredStep {
+                count += 1
+            } else {
+                count = 0
             }
         }
+        udService.currentDayStreak = count
     }
     
     func getStreakNum(for progressTotal: Int) -> Float {
@@ -91,13 +71,15 @@ class AchievementService {
             if currentStep >= ach.progressTotal {
                 CoreDataFunction.updateAchievementStatus(achievement: ach, status: .notConfirmed)
                 udService.isDeterminedToday = true
+                
+                setDeterminedDate()
             }
         }
     }
     
-    @objc func setDetermined() {
-        udService.isDeterminedToday = false
-        
+    func setDetermined() {
+        setupDeterminedStatus()
+    
         let determinedAchs = CoreDataFunction.retrieveAchievements(for: .determined)
         let determinedCount = udService.determinedCount
         
@@ -113,6 +95,20 @@ class AchievementService {
         }
     }
     
+    func setDeterminedDate(date: Date = Date()) {
+        var arrayDate = udService.determinedDateArray
+        arrayDate.append(Date())
+        udService.determinedDateArray = arrayDate
+    }
+    
+    func setupDeterminedStatus() {
+        let arrayDate = udService.determinedDateArray
+        if arrayDate.last == Date() {
+            udService.isDeterminedToday = true
+        } else {
+            udService.isDeterminedToday = false
+        }
+    }
     
     //MARK: - ACCOMPLISHED SECTION
     func unlockAccomplished() {

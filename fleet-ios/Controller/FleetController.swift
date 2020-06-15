@@ -81,8 +81,8 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         setupMascot()
         checkProgress()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.addStreakNum), name: .NSCalendarDayChanged, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AchievementService.instance.setDetermined), name: .NSCalendarDayChanged, object: nil)
+        AchievementService.instance.setDetermined()
+        AchievementService.instance.addStreakNum()
     }
     
     func checkProgress() {

@@ -36,7 +36,8 @@ class DetailAchievementVC: UIViewController, AchievementCompleteDelegate {
         title = category?.name.rawValue
         detailLbl.text = category?.subtitle
         
-        achievements = service.configureAchievements(for: category!)
+        service.configureAchievements(for: category!)
+        achievements = CoreDataFunction.retrieveAchievements(for: category!.name)!
     }
     
     func shareAchievementComplete(_ achievement: Achievement) {

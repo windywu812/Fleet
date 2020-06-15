@@ -23,6 +23,7 @@ class UserDefaultServices {
     
     fileprivate let isDeterminedTodayKey = "determinedToday"
     fileprivate let determinedCountKey = "determinedCount"
+    fileprivate let determinedDateArrayKey = "determinedDateArrayKey"
     
     fileprivate let accomplishedCountKey = "accomplishedCountKey"
     fileprivate let accomplishedUnlockedDateKey = "accomplishedUnlockedDateKey"
@@ -79,6 +80,15 @@ class UserDefaultServices {
         }
         set {
             def.set(newValue, forKey: isDeterminedTodayKey)
+        }
+    }
+    
+    var determinedDateArray: [Date] {
+        get {
+            return def.array(forKey: determinedDateArrayKey) as? [Date] ?? [Date]()
+        }
+        set {
+            def.set(newValue, forKey: determinedDateArrayKey)
         }
     }
     
