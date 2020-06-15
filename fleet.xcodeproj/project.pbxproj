@@ -11,6 +11,7 @@
 		2301A7F6248FCB4F005070B0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2301A7F5248FCB4F005070B0 /* Date.swift */; };
 		230B7A852480BAE500E34F13 /* RoundedOnlyTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */; };
 		230B7A862480C78300E34F13 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593226AC247FFC760009950D /* HealthKit.framework */; };
+		231B517F24975789008B4DBA /* FirstOnboradingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231B517E24975789008B4DBA /* FirstOnboradingViewController.swift */; };
 		2330ECD0247554F8005C9DA0 /* CoreDataFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */; };
 		2330ECD22475554C005C9DA0 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330ECD12475554C005C9DA0 /* DayModel.swift */; };
 		2347A9AA24826D5000A9D212 /* LevelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347A9A924826D5000A9D212 /* LevelInfoVC.swift */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		2301A7F5248FCB4F005070B0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		230B7A842480BAE500E34F13 /* RoundedOnlyTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedOnlyTopView.swift; sourceTree = "<group>"; };
+		231B517E24975789008B4DBA /* FirstOnboradingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstOnboradingViewController.swift; path = "fleet-ios/OnboardingController/FirstOnboradingViewController.swift"; sourceTree = SOURCE_ROOT; };
 		2330ECCF247554F8005C9DA0 /* CoreDataFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunction.swift; sourceTree = "<group>"; };
 		2330ECD12475554C005C9DA0 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
 		2347A9A924826D5000A9D212 /* LevelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelInfoVC.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		23A2AED9247CD6A10009BD3A /* OnboardingController */ = {
 			isa = PBXGroup;
 			children = (
+				231B517E24975789008B4DBA /* FirstOnboradingViewController.swift */,
 				23A2AED7247CD6970009BD3A /* OnboardingVC.swift */,
 				23A2AEDD247CDEE90009BD3A /* EndOnboardingVC.swift */,
 			);
@@ -428,6 +431,7 @@
 				2372DC78246A665400ABE9D5 /* ProgressController.swift in Sources */,
 				59A37C22246A5F73006252BA /* FleetController.swift in Sources */,
 				599327772482027D004E3B79 /* Enums.swift in Sources */,
+				231B517F24975789008B4DBA /* FirstOnboradingViewController.swift in Sources */,
 				59A37C1E246A5F73006252BA /* AppDelegate.swift in Sources */,
 				23A2AEDE247CDEE90009BD3A /* EndOnboardingVC.swift in Sources */,
 				593226A2247F31D30009950D /* UserDefaultServices.swift in Sources */,

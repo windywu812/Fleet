@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFg-q3-CBZ">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First Onborading View Controller-->
         <scene sceneID="1nO-Rr-J9a">
             <objects>
-                <viewController storyboardIdentifier="Onboarding" id="VFg-q3-CBZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Onboarding" id="VFg-q3-CBZ" customClass="FirstOnboradingViewController" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cmP-jF-Le0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="QOX-Rf-BgX">
-                                <rect key="frame" x="16" y="181" width="343" height="305.5"/>
+                                <rect key="frame" x="16" y="295.5" width="382" height="305.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="G1k-gD-YrZ">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="70.5"/>
@@ -53,7 +53,7 @@ rebuild your lifestyle!</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TBL-lq-6Ym">
-                                        <rect key="frame" x="0.0" y="106.5" width="343" height="92.5"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="366" height="92.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="milestone" translatesAutoresizingMaskIntoConstraints="NO" id="bGq-jN-FDr">
                                                 <rect key="frame" x="0.0" y="21" width="50" height="50"/>
@@ -65,7 +65,7 @@ rebuild your lifestyle!</string>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wf3-HJ-D3y">
-                                                <rect key="frame" x="66" y="0.0" width="277" height="92.5"/>
+                                                <rect key="frame" x="66" y="0.0" width="300" height="92.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achieve Great Milestone." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7K4-qv-HYn">
                                                         <rect key="frame" x="0.0" y="0.0" width="235.5" height="24"/>
@@ -74,7 +74,7 @@ rebuild your lifestyle!</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fleet rewards you for every feat you did. Improve your lifestyle by achieving great things." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="JBG-gZ-4OO">
-                                                        <rect key="frame" x="0.0" y="28" width="277" height="64.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="300" height="64.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@ rebuild your lifestyle!</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4c2-eP-glV">
-                                        <rect key="frame" x="0.0" y="235" width="343" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="235" width="364" height="70.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chart" translatesAutoresizingMaskIntoConstraints="NO" id="HLr-xO-aEu">
                                                 <rect key="frame" x="0.0" y="10" width="50" height="50"/>
@@ -96,7 +96,7 @@ rebuild your lifestyle!</string>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="04C-DB-l4i">
-                                                <rect key="frame" x="66" y="0.0" width="277" height="70.5"/>
+                                                <rect key="frame" x="66" y="0.0" width="298" height="70.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Your Progress." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHh-aR-4gZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="194" height="24"/>
@@ -105,7 +105,7 @@ rebuild your lifestyle!</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fleet gives you detailed analysis about your performance every week." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="ehv-wF-6Ko">
-                                                        <rect key="frame" x="0.0" y="28" width="277" height="42.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="298" height="42.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -117,7 +117,7 @@ rebuild your lifestyle!</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-jA-AvB" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
-                                <rect key="frame" x="36" y="533" width="303" height="50"/>
+                                <rect key="frame" x="36" y="728" width="342" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ETi-U5-pKF"/>
@@ -136,28 +136,96 @@ rebuild your lifestyle!</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xu-BB-XAd">
-                                <rect key="frame" x="82.5" y="84" width="210.5" height="48"/>
+                                <rect key="frame" x="102" y="128" width="210.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYL-jc-BuY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rPO-CD-VPJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QOX-Rf-BgX" firstAttribute="leading" secondItem="7wc-tx-0mW" secondAttribute="leading" constant="16" id="1pT-Uh-KWF"/>
                             <constraint firstItem="7wc-tx-0mW" firstAttribute="trailing" secondItem="QOX-Rf-BgX" secondAttribute="trailing" constant="16" id="2T1-27-i7R"/>
                             <constraint firstItem="7xu-BB-XAd" firstAttribute="top" secondItem="7wc-tx-0mW" secondAttribute="top" constant="84" id="2ZE-tl-ny3"/>
+                            <constraint firstItem="QYL-jc-BuY" firstAttribute="leading" secondItem="7wc-tx-0mW" secondAttribute="leading" id="Civ-P7-wOD"/>
                             <constraint firstItem="7xu-BB-XAd" firstAttribute="centerX" secondItem="cmP-jF-Le0" secondAttribute="centerX" id="F5v-Mh-CXX"/>
                             <constraint firstItem="QOX-Rf-BgX" firstAttribute="centerY" secondItem="cmP-jF-Le0" secondAttribute="centerY" id="G5E-IS-UYq"/>
                             <constraint firstItem="QOX-Rf-BgX" firstAttribute="centerX" secondItem="cmP-jF-Le0" secondAttribute="centerX" id="HB8-aX-Pwf"/>
                             <constraint firstItem="9wH-jA-AvB" firstAttribute="leading" secondItem="7wc-tx-0mW" secondAttribute="leading" constant="36" id="JjF-d3-BUb"/>
+                            <constraint firstAttribute="bottom" secondItem="QYL-jc-BuY" secondAttribute="bottom" id="L5b-Yt-cz8"/>
                             <constraint firstItem="7wc-tx-0mW" firstAttribute="trailing" secondItem="9wH-jA-AvB" secondAttribute="trailing" constant="36" id="aDo-tX-dix"/>
+                            <constraint firstItem="QYL-jc-BuY" firstAttribute="trailing" secondItem="7wc-tx-0mW" secondAttribute="trailing" id="adH-u7-G2i"/>
                             <constraint firstItem="7wc-tx-0mW" firstAttribute="bottom" secondItem="9wH-jA-AvB" secondAttribute="bottom" constant="84" id="avU-h3-wBB"/>
+                            <constraint firstItem="QYL-jc-BuY" firstAttribute="top" secondItem="cmP-jF-Le0" secondAttribute="top" id="zf9-Rl-uoT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7wc-tx-0mW"/>
                     </view>
+                    <connections>
+                        <outlet property="blurEffect" destination="QYL-jc-BuY" id="fpF-1X-4MM"/>
+                        <outlet property="disclamerPopUp" destination="uQV-eb-pyh" id="prt-6w-LTW"/>
+                        <outlet property="label" destination="645-HA-AeO" id="UhO-ef-jvl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hR-UV-jwa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="uQV-eb-pyh">
+                    <rect key="frame" x="0.0" y="0.0" width="350" height="419"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclamer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMe-lz-c63">
+                            <rect key="frame" x="16" y="64" width="318" height="41"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="As7-qh-DU9">
+                            <rect key="frame" x="32" y="267" width="286" height="81.5"/>
+                            <string key="text">If you are uncertain whether you suffer from any of the misfortunate things above, please contact your doctor. User discretion is advised.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vut-pE-mrD">
+                            <rect key="frame" x="316.5" y="16" width="17.5" height="22"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="xmark" catalog="system">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="closeButton:" destination="VFg-q3-CBZ" eventType="touchUpInside" id="bg6-TS-DjQ"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="645-HA-AeO">
+                            <rect key="frame" x="32" y="137" width="286" height="122"/>
+                            <string key="text">Fleet is not intended for those who want to create a healthy walking habit and by no means a health app. Also, Fleet is not for those who risk a physical disability and/or suffering from a chronic disease.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.99844270940000002" green="0.55786567929999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="W7C-VC-X9e" firstAttribute="trailing" secondItem="645-HA-AeO" secondAttribute="trailing" constant="32" id="Efn-bE-onJ"/>
+                        <constraint firstAttribute="trailing" secondItem="EMe-lz-c63" secondAttribute="trailing" constant="16" id="OXa-ET-JaY"/>
+                        <constraint firstItem="645-HA-AeO" firstAttribute="leading" secondItem="W7C-VC-X9e" secondAttribute="leading" constant="32" id="Qnq-F9-WLS"/>
+                        <constraint firstItem="Vut-pE-mrD" firstAttribute="top" secondItem="uQV-eb-pyh" secondAttribute="top" constant="16" id="Quw-FB-aef"/>
+                        <constraint firstAttribute="trailing" secondItem="As7-qh-DU9" secondAttribute="trailing" constant="32" id="S6s-20-8B8"/>
+                        <constraint firstItem="EMe-lz-c63" firstAttribute="top" secondItem="uQV-eb-pyh" secondAttribute="top" constant="64" id="SnD-62-2Uy"/>
+                        <constraint firstItem="645-HA-AeO" firstAttribute="top" secondItem="EMe-lz-c63" secondAttribute="bottom" constant="32" id="fbH-Rq-2RF"/>
+                        <constraint firstItem="As7-qh-DU9" firstAttribute="leading" secondItem="uQV-eb-pyh" secondAttribute="leading" constant="32" id="gTX-ZW-EXd"/>
+                        <constraint firstItem="As7-qh-DU9" firstAttribute="top" secondItem="645-HA-AeO" secondAttribute="bottom" constant="8" id="lYQ-mQ-RuF"/>
+                        <constraint firstItem="EMe-lz-c63" firstAttribute="leading" secondItem="uQV-eb-pyh" secondAttribute="leading" constant="16" id="mmD-OC-KH1"/>
+                        <constraint firstAttribute="trailing" secondItem="Vut-pE-mrD" secondAttribute="trailing" constant="16" id="v1F-16-pXD"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="W7C-VC-X9e"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="-84.057971014492765" y="-724.55357142857144"/>
         </scene>
@@ -166,11 +234,11 @@ rebuild your lifestyle!</string>
             <objects>
                 <viewController id="K8m-CM-gGi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7lK-hv-Q9T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nu-WU-iNC" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
-                                <rect key="frame" x="36" y="533" width="303" height="50"/>
+                                <rect key="frame" x="36" y="728" width="342" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qV6-RU-JzN"/>
@@ -189,17 +257,17 @@ rebuild your lifestyle!</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buble" translatesAutoresizingMaskIntoConstraints="NO" id="70A-sw-wPG">
-                                <rect key="frame" x="16" y="16" width="343" height="180.5"/>
+                                <rect key="frame" x="16" y="60" width="382" height="251"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grandMaster" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-cH-EEc">
-                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="RFt-bf-0Fk"/>
                                     <constraint firstAttribute="height" constant="250" id="oTR-oc-TO5"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="QDb-4q-Eus" userLabel="Text">
-                                <rect key="frame" x="36.5" y="39.5" width="302" height="103.5"/>
+                                <rect key="frame" x="56" y="119" width="302" height="103.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Fleet!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4O-vh-uh8">
                                         <rect key="frame" x="43" y="0.0" width="216" height="33.5"/>
@@ -246,17 +314,17 @@ rebuild your lifestyle!</string>
             <objects>
                 <viewController id="52r-A7-k2R" customClass="OnboardingVC" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ob1-y1-24K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buble" translatesAutoresizingMaskIntoConstraints="NO" id="KOP-He-uhw">
-                                <rect key="frame" x="16" y="16" width="343" height="172"/>
+                                <rect key="frame" x="16" y="60" width="382" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="Uqt-5U-5xy"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="S4v-09-NZd">
-                                <rect key="frame" x="36.5" y="48.5" width="302" height="87.5"/>
+                                <rect key="frame" x="56" y="92.5" width="302" height="87.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can do this" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgM-pp-rNK">
                                         <rect key="frame" x="60" y="0.0" width="182.5" height="33.5"/>
@@ -277,17 +345,17 @@ rebuild your lifestyle!</string>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grandMaster" translatesAutoresizingMaskIntoConstraints="NO" id="cSw-Xx-XRT">
-                                <rect key="frame" x="62.5" y="200" width="250" height="250"/>
+                                <rect key="frame" x="82" y="244" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Wc9-hz-1ph"/>
                                     <constraint firstAttribute="height" constant="250" id="mJD-4J-UWw"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-3M-uLB">
-                                <rect key="frame" x="36" y="459" width="303" height="124"/>
+                                <rect key="frame" x="36" y="528" width="342" height="124"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-Q9-a8c" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JnD-A6-I9F"/>
@@ -306,7 +374,7 @@ rebuild your lifestyle!</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epI-wR-sGu" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="74" width="303" height="50"/>
+                                        <rect key="frame" x="0.0" y="74" width="342" height="50"/>
                                         <color key="backgroundColor" name="orange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="qmg-Db-eJE"/>
@@ -360,11 +428,11 @@ rebuild your lifestyle!</string>
             <objects>
                 <viewController id="FLb-qp-fTV" customClass="EndOnboardingVC" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f9w-7B-2uE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PP-ht-tpj" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">
-                                <rect key="frame" x="36" y="533" width="303" height="50"/>
+                                <rect key="frame" x="36" y="728" width="342" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.58039215690000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="kbK-vX-nQC"/>
@@ -383,20 +451,20 @@ rebuild your lifestyle!</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buble" translatesAutoresizingMaskIntoConstraints="NO" id="BZk-93-HND">
-                                <rect key="frame" x="16" y="24.5" width="343" height="172"/>
+                                <rect key="frame" x="16" y="139" width="382" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="172" id="pC0-s4-I1U"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grandMaster" translatesAutoresizingMaskIntoConstraints="NO" id="R93-f6-ZpX">
-                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Gos-5Z-S7q"/>
                                     <constraint firstAttribute="width" constant="250" id="LLa-WO-qF7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMR-zS-tMC">
-                                <rect key="frame" x="36.5" y="67.5" width="302" height="66"/>
+                                <rect key="frame" x="56" y="182" width="302" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="0WO-RQ-b29"/>
                                     <constraint firstAttribute="width" constant="302" id="dkm-zb-HSf"/>
@@ -438,6 +506,7 @@ will lead you into a healthy lifestyle!</string>
         <image name="grandMaster" width="3738" height="3761"/>
         <image name="lifestyle" width="50" height="50"/>
         <image name="milestone" width="50" height="46"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="orange">
             <color red="1" green="0.58399999141693115" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
