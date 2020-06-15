@@ -204,7 +204,7 @@ rebuild your lifestyle!</string>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="645-HA-AeO">
                             <rect key="frame" x="32" y="137" width="286" height="122"/>
-                            <string key="text">Fleet is not intended for those who want to create a healthy walking habit and by no means a health app. Also, Fleet is not for those who risk a physical disability and/or suffering from a chronic disease.</string>
+                            <string key="text">Fleet is intended for those who want to create a healthy walking habit and by no means a health app. Also, Fleet is not for those who risk a physical disability and/or suffering from a chronic disease.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
