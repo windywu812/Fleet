@@ -245,7 +245,7 @@ rebuild your lifestyle!</string>
         <scene sceneID="QPY-u3-3Bt">
             <objects>
                 <viewController id="52r-A7-k2R" customClass="OnboardingVC" customModule="Fleet" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Ob1-y1-24K">
+                    <view key="view" contentMode="scaleToFill" id="Ob1-y1-24K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -283,7 +283,7 @@ rebuild your lifestyle!</string>
                                     <constraint firstAttribute="height" constant="250" id="mJD-4J-UWw"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-3M-uLB">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-3M-uLB">
                                 <rect key="frame" x="36" y="459" width="303" height="124"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqH-Q9-a8c" customClass="RoundedButton" customModule="Fleet" customModuleProvider="target">

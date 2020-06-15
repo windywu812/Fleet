@@ -23,9 +23,9 @@
 	<key>NSFileProviderDomainUsageDescription</key>
 	<string></string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>We need access to your health kit data to share your steps data</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to access your location</string>
+	<string>We need access to your health data to manage steps count</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>We need update your health data to manage steps count effectively</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>We need access to your photos to save achievement badge</string>
 	<key>UIApplicationSceneManifest</key>
