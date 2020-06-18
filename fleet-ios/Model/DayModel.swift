@@ -15,6 +15,6 @@ struct DayModel {
     var date: Date   
 }
 
-let allData = CoreDataFunction.retrieveAllData()
+var allData = CoreDataFunction.retrieveAllData()
 
 var now = Date().week

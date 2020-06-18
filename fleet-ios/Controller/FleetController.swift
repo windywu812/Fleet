@@ -85,6 +85,28 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         AchievementService.instance.addStreakNum()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        
+        let services = UserDefaultServices.instance
+        
+        if let date = CoreDataFunction.retrieveAllData().last?.date {
+            if date > Date().startOfDay && date < Date().endOfDay {
+                CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+            } else {
+                CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+            }
+        } else {
+            CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+        }
+        
+        allData = CoreDataFunction.retrieveAllData()
+        
+        debugPrint(CoreDataFunction.retrieveAllData())
+        
+    }
+    
     func checkProgress() {
         if progressView.progress >= 1 {
             service.currentLevel += 1
