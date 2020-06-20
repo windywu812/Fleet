@@ -33,6 +33,8 @@ class DetailAchievementVC: UIViewController, AchievementCompleteDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        CoreDataFunction.saveOrUpdateData()
+        
         title = category?.name.rawValue
         detailLbl.text = category?.subtitle
         

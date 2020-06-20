@@ -65,18 +65,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         
         // Save changes in the application's managed object context when the application transitions to the background.        
-        let services = UserDefaultServices.instance
         
-        if let date = CoreDataFunction.retrieveAllData().last?.date {
-            if date > Date().startOfDay && date < Date().endOfDay {
-                CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
-            } else {
-                CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
-            }
-        } else {
-            CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
-        }
-        
+        CoreDataFunction.saveOrUpdateData()
         print("allData: ", CoreDataFunction.retrieveAllData())
         
     }

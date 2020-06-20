@@ -307,5 +307,19 @@ class CoreDataFunction {
             
         }
     }
+    
+    static func saveOrUpdateData() {
+        let services = UserDefaultServices.instance
+        
+        if let date = CoreDataFunction.retrieveAllData().last?.date {
+            if date > Date().startOfDay && date < Date().endOfDay {
+                CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+            } else {
+                CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+            }
+        } else {
+            CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
+        }
+    }
 }
 

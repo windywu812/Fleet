@@ -47,6 +47,9 @@ class AchievementController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        CoreDataFunction.saveOrUpdateData()
+        achService.addStreakNum()
+
         achService.unlockAccomplished()
         achService.unlockOlympic()
         

@@ -17,11 +17,11 @@ class NotificationService {
         switch time {
         case .morning:
             components.hour = 6
-            triggerNotification(title: "Morning Reminder", body: "set your daily target", date: components)
+            triggerNotification(title: "Morning Reminder", body: "It's a new day, let's set your daily target!", date: components)
             break
         case .night:
             components.hour = 19
-            triggerNotification(title: "Night Reminder", body: "check your daily progress", date: components)
+            triggerNotification(title: "Night Reminder", body: "Its been a while, Go take a look your weekly report", date: components)
             break
         }
     }

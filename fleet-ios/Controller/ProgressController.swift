@@ -20,6 +20,7 @@ class ProgressController: UIViewController {
         
         setupView()
         
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -27,6 +28,8 @@ class ProgressController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        CoreDataFunction.saveOrUpdateData()
+        
         setChartWeekly()
         segmentControl.selectedSegmentIndex = 0
     }

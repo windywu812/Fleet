@@ -33,29 +33,17 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        speechSynthesizer.delegate = self
+
         setTextField()
         progressView.transform = CGAffineTransform(scaleX: 1, y: 3)
      
+        let tap = UITapGestureRecognizer(target: self, action: #selector(updateStepCount))
+        view.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        speechSynthesizer.delegate = self
-
-        if let date = CoreDataFunction.retrieveAllData().last?.date {
-            if date > Date().startOfDay && date < Date().endOfDay {
-                CoreDataFunction.updateData(totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
-            } else {
-                CoreDataFunction.saveData(id: UUID(), totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
-            }
-        } else {
-            CoreDataFunction.saveData(id: UUID(), totalStep: service.currentStep, targetStep: service.currentGoal, date: Date())
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,11 +53,9 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
         NotificationService.instance.scheduleReminder(time: .morning)
         NotificationService.instance.scheduleReminder(time: .night)
         
-        hkService.getTodayStep { (step) in
-            self.service.currentStep = Int(step)
-        }
+        CoreDataFunction.saveOrUpdateData()
+        updateStepCount()
         
-        todayStepLabel.text = String(describing: service.currentStep)
         factLabel.text = funFact.randomElement()
         
         groupButton.forEach { (btn) in
@@ -88,22 +74,8 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         
-        
-        let services = UserDefaultServices.instance
-        
-        if let date = CoreDataFunction.retrieveAllData().last?.date {
-            if date > Date().startOfDay && date < Date().endOfDay {
-                CoreDataFunction.updateData(totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
-            } else {
-                CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
-            }
-        } else {
-            CoreDataFunction.saveData(id: UUID(), totalStep: services.currentStep, targetStep: services.currentGoal, date: Date())
-        }
-        
+        CoreDataFunction.saveOrUpdateData()
         allData = CoreDataFunction.retrieveAllData()
-        
-        debugPrint(CoreDataFunction.retrieveAllData())
         
     }
     
@@ -196,6 +168,14 @@ class FleetController: UIViewController, UIPopoverPresentationControllerDelegate
     
     @IBAction func btnVoiceOverPressed(_ sender: Any) {
         synthesizeSpeech(from: factLabel.text!)
+    }
+    
+    @objc func updateStepCount() {
+        hkService.getTodayStep { (step) in
+            self.service.currentStep = Int(step)
+        }
+        
+        todayStepLabel.text = String(describing: service.currentStep)
     }
 }
 
